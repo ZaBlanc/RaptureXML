@@ -1,0 +1,466 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0252B2C4142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
+		0252B2C6142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
+		0252B2C8142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
+		0252B2CE142ADFC60018B75D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0252B2CC142ADFC60018B75D /* InfoPlist.strings */; };
+		0252B2D0142ADFC60018B75D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2CF142ADFC60018B75D /* main.m */; };
+		0252B2D4142ADFC60018B75D /* RaptureXMLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2D3142ADFC60018B75D /* RaptureXMLAppDelegate.m */; };
+		0252B2D7142ADFC60018B75D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0252B2D5142ADFC60018B75D /* MainWindow.xib */; };
+		0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2DE142ADFC60018B75D /* SenTestingKit.framework */; };
+		0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
+		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
+		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
+		0252B2EA142ADFC60018B75D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0252B2E8142ADFC60018B75D /* InfoPlist.strings */; };
+		0252B2EC142ADFC60018B75D /* RaptureXMLTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 0252B2EB142ADFC60018B75D /* RaptureXMLTests.h */; };
+		0252B2EE142ADFC70018B75D /* RaptureXMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2ED142ADFC70018B75D /* RaptureXMLTests.m */; };
+		0252B2FC142AE05B0018B75D /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2F9142AE05B0018B75D /* NSDataAdditions.m */; };
+		0252B2FD142AE05B0018B75D /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2FB142AE05B0018B75D /* TBXML.m */; };
+		0252B306142AE3FF0018B75D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0252B2E3142ADFC60018B75D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0252B2B6142ADFC60018B75D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0252B2BE142ADFC60018B75D;
+			remoteInfo = RaptureXML;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0252B2BF142ADFC60018B75D /* RaptureXML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaptureXML.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0252B2C3142ADFC60018B75D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		0252B2C5142ADFC60018B75D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		0252B2C7142ADFC60018B75D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		0252B2CB142ADFC60018B75D /* RaptureXML-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaptureXML-Info.plist"; sourceTree = "<group>"; };
+		0252B2CD142ADFC60018B75D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0252B2CF142ADFC60018B75D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0252B2D1142ADFC60018B75D /* RaptureXML-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RaptureXML-Prefix.pch"; sourceTree = "<group>"; };
+		0252B2D2142ADFC60018B75D /* RaptureXMLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaptureXMLAppDelegate.h; sourceTree = "<group>"; };
+		0252B2D3142ADFC60018B75D /* RaptureXMLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaptureXMLAppDelegate.m; sourceTree = "<group>"; };
+		0252B2D6142ADFC60018B75D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		0252B2DE142ADFC60018B75D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0252B2E7142ADFC60018B75D /* RaptureXMLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaptureXMLTests-Info.plist"; sourceTree = "<group>"; };
+		0252B2E9142ADFC60018B75D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		0252B2EB142ADFC60018B75D /* RaptureXMLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaptureXMLTests.h; sourceTree = "<group>"; };
+		0252B2ED142ADFC70018B75D /* RaptureXMLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaptureXMLTests.m; sourceTree = "<group>"; };
+		0252B2F8142AE05B0018B75D /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		0252B2F9142AE05B0018B75D /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		0252B2FA142AE05B0018B75D /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		0252B2FB142AE05B0018B75D /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		0252B305142AE3FF0018B75D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0252B2BC142ADFC60018B75D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0252B306142AE3FF0018B75D /* libz.dylib in Frameworks */,
+				0252B2C4142ADFC60018B75D /* UIKit.framework in Frameworks */,
+				0252B2C6142ADFC60018B75D /* Foundation.framework in Frameworks */,
+				0252B2C8142ADFC60018B75D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0252B2D9142ADFC60018B75D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */,
+				0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */,
+				0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */,
+				0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0252B2B4142ADFC60018B75D = {
+			isa = PBXGroup;
+			children = (
+				0252B2C9142ADFC60018B75D /* RaptureXML */,
+				0252B2E5142ADFC60018B75D /* RaptureXMLTests */,
+				0252B2C2142ADFC60018B75D /* Frameworks */,
+				0252B2C0142ADFC60018B75D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0252B2C0142ADFC60018B75D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0252B2BF142ADFC60018B75D /* RaptureXML.app */,
+				0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0252B2C2142ADFC60018B75D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0252B305142AE3FF0018B75D /* libz.dylib */,
+				0252B2C3142ADFC60018B75D /* UIKit.framework */,
+				0252B2C5142ADFC60018B75D /* Foundation.framework */,
+				0252B2C7142ADFC60018B75D /* CoreGraphics.framework */,
+				0252B2DE142ADFC60018B75D /* SenTestingKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0252B2C9142ADFC60018B75D /* RaptureXML */ = {
+			isa = PBXGroup;
+			children = (
+				0252B2D2142ADFC60018B75D /* RaptureXMLAppDelegate.h */,
+				0252B2D3142ADFC60018B75D /* RaptureXMLAppDelegate.m */,
+				0252B2D5142ADFC60018B75D /* MainWindow.xib */,
+				0252B2F7142AE05B0018B75D /* RaptureXML */,
+				0252B2CA142ADFC60018B75D /* Supporting Files */,
+			);
+			path = RaptureXML;
+			sourceTree = "<group>";
+		};
+		0252B2CA142ADFC60018B75D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0252B2CB142ADFC60018B75D /* RaptureXML-Info.plist */,
+				0252B2CC142ADFC60018B75D /* InfoPlist.strings */,
+				0252B2CF142ADFC60018B75D /* main.m */,
+				0252B2D1142ADFC60018B75D /* RaptureXML-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0252B2E5142ADFC60018B75D /* RaptureXMLTests */ = {
+			isa = PBXGroup;
+			children = (
+				0252B2EB142ADFC60018B75D /* RaptureXMLTests.h */,
+				0252B2ED142ADFC70018B75D /* RaptureXMLTests.m */,
+				0252B2E6142ADFC60018B75D /* Supporting Files */,
+			);
+			path = RaptureXMLTests;
+			sourceTree = "<group>";
+		};
+		0252B2E6142ADFC60018B75D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0252B2E7142ADFC60018B75D /* RaptureXMLTests-Info.plist */,
+				0252B2E8142ADFC60018B75D /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0252B2F7142AE05B0018B75D /* RaptureXML */ = {
+			isa = PBXGroup;
+			children = (
+				0252B2F8142AE05B0018B75D /* NSDataAdditions.h */,
+				0252B2F9142AE05B0018B75D /* NSDataAdditions.m */,
+				0252B2FA142AE05B0018B75D /* TBXML.h */,
+				0252B2FB142AE05B0018B75D /* TBXML.m */,
+			);
+			path = RaptureXML;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0252B2BE142ADFC60018B75D /* RaptureXML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0252B2F1142ADFC70018B75D /* Build configuration list for PBXNativeTarget "RaptureXML" */;
+			buildPhases = (
+				0252B2BB142ADFC60018B75D /* Sources */,
+				0252B2BC142ADFC60018B75D /* Frameworks */,
+				0252B2BD142ADFC60018B75D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RaptureXML;
+			productName = RaptureXML;
+			productReference = 0252B2BF142ADFC60018B75D /* RaptureXML.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0252B2DC142ADFC60018B75D /* RaptureXMLTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0252B2F4142ADFC70018B75D /* Build configuration list for PBXNativeTarget "RaptureXMLTests" */;
+			buildPhases = (
+				0252B2D8142ADFC60018B75D /* Sources */,
+				0252B2D9142ADFC60018B75D /* Frameworks */,
+				0252B2DA142ADFC60018B75D /* Resources */,
+				0252B2DB142ADFC60018B75D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0252B2E4142ADFC60018B75D /* PBXTargetDependency */,
+			);
+			name = RaptureXMLTests;
+			productName = RaptureXMLTests;
+			productReference = 0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0252B2B6142ADFC60018B75D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Rapture In Venice";
+			};
+			buildConfigurationList = 0252B2B9142ADFC60018B75D /* Build configuration list for PBXProject "RaptureXML" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 0252B2B4142ADFC60018B75D;
+			productRefGroup = 0252B2C0142ADFC60018B75D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0252B2BE142ADFC60018B75D /* RaptureXML */,
+				0252B2DC142ADFC60018B75D /* RaptureXMLTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0252B2BD142ADFC60018B75D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0252B2CE142ADFC60018B75D /* InfoPlist.strings in Resources */,
+				0252B2D7142ADFC60018B75D /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0252B2DA142ADFC60018B75D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0252B2EA142ADFC60018B75D /* InfoPlist.strings in Resources */,
+				0252B2EC142ADFC60018B75D /* RaptureXMLTests.h in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0252B2DB142ADFC60018B75D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0252B2BB142ADFC60018B75D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0252B2D0142ADFC60018B75D /* main.m in Sources */,
+				0252B2D4142ADFC60018B75D /* RaptureXMLAppDelegate.m in Sources */,
+				0252B2FC142AE05B0018B75D /* NSDataAdditions.m in Sources */,
+				0252B2FD142AE05B0018B75D /* TBXML.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0252B2D8142ADFC60018B75D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0252B2EE142ADFC70018B75D /* RaptureXMLTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0252B2E4142ADFC60018B75D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0252B2BE142ADFC60018B75D /* RaptureXML */;
+			targetProxy = 0252B2E3142ADFC60018B75D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0252B2CC142ADFC60018B75D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0252B2CD142ADFC60018B75D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		0252B2D5142ADFC60018B75D /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0252B2D6142ADFC60018B75D /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+		0252B2E8142ADFC60018B75D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0252B2E9142ADFC60018B75D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0252B2EF142ADFC70018B75D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		0252B2F0142ADFC70018B75D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0252B2F2142ADFC70018B75D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RaptureXML/RaptureXML-Prefix.pch";
+				INFOPLIST_FILE = "RaptureXML/RaptureXML-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		0252B2F3142ADFC70018B75D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RaptureXML/RaptureXML-Prefix.pch";
+				INFOPLIST_FILE = "RaptureXML/RaptureXML-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		0252B2F5142ADFC70018B75D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RaptureXML.app/RaptureXML";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RaptureXML/RaptureXML-Prefix.pch";
+				INFOPLIST_FILE = "RaptureXMLTests/RaptureXMLTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		0252B2F6142ADFC70018B75D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RaptureXML.app/RaptureXML";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "RaptureXML/RaptureXML-Prefix.pch";
+				INFOPLIST_FILE = "RaptureXMLTests/RaptureXMLTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0252B2B9142ADFC60018B75D /* Build configuration list for PBXProject "RaptureXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0252B2EF142ADFC70018B75D /* Debug */,
+				0252B2F0142ADFC70018B75D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0252B2F1142ADFC70018B75D /* Build configuration list for PBXNativeTarget "RaptureXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0252B2F2142ADFC70018B75D /* Debug */,
+				0252B2F3142ADFC70018B75D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0252B2F4142ADFC70018B75D /* Build configuration list for PBXNativeTarget "RaptureXMLTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0252B2F5142ADFC70018B75D /* Debug */,
+				0252B2F6142ADFC70018B75D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0252B2B6142ADFC60018B75D /* Project object */;
+}
