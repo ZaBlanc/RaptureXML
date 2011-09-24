@@ -10,7 +10,7 @@ To be accurate, RaptureXML does no XML processing of its own.  It leverages TBXM
 
 RaptureXML provides a powerful new interface into TBXML.  So, why do we need it?  I'll let you answer it.  Imagine for a minute the code that would be required to process the XML for a list of baseball players, retrieving their number, name, and position.  Now, take a look at how you do it with RaptureXML:
 
-RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+  RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
 
   [rxml iterate:@"players.player" with: ^(RXMLElement *e) {
       NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"], [e child:@"position"]);
