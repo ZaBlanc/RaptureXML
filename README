@@ -1,0 +1,51 @@
+RaptureXML is a simple, block-based XML library for the iOS platform that provides an expressive API which makes XML processing concise and readable.
+
+
+-----------------------------------
+Why do we need another XML library?
+-----------------------------------
+
+
+To be accurate, RaptureXML does no XML processing of its own.  It leverages TBXML, an already excellent offering from Tom Bradley and can be found at http://www.tbxml.co.uk/TBXML/TBXML_Free.html.
+
+RaptureXML provides a powerful new interface into TBXML.  So, why do we need it?  I'll let you answer it.  Imagine for a minute the code that would be required to process the XML for a list of baseball players, retrieving their number, name, and position.  Now, take a look at how you do it with RaptureXML:
+
+RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+
+[rxml iterate:@"players.player" with: ^(RXMLElement *e) {
+    NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"], [e child:@"position"]);
+}];    
+
+RaptureXML changes the game when it comes to XML processing in Objective-C.  As you can see from the code, it takes only seconds to understand what this code does.  There are no wasted arrays and verbose looping you have to do.  I don't think any more needs to be said.
+
+
+-----------------
+How does it work?
+-----------------
+
+
+TBD
+
+
+---------------------------
+Unit tests as documentation
+---------------------------
+
+
+TBD
+
+
+---------------------------------
+Adding RaptureXML to Your Project
+---------------------------------
+
+
+Simply copy the RaptureXML/RaptureXML/RaptureXML folder into your own project and import "RXMLElement.h".
+
+
+----------------------
+So who created iBoost?
+----------------------
+
+
+RaptureXML was created by John Blanco <john.blanco@raptureinvenice.com> of Rapture In Venice.  If you like this code and/or needs an iOS consultant, get in touch with me via my website, http://raptureinvenice.com. :-)  

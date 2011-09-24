@@ -24,6 +24,8 @@
 		0252B2FC142AE05B0018B75D /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2F9142AE05B0018B75D /* NSDataAdditions.m */; };
 		0252B2FD142AE05B0018B75D /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2FB142AE05B0018B75D /* TBXML.m */; };
 		0252B306142AE3FF0018B75D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
+		02F0AC7C142D373B00FD21CB /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 02F0AC7B142D373B00FD21CB /* players.xml */; };
+		02F0AC83142D40F900FD21CB /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F0AC82142D40F900FD21CB /* RXMLElement.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +61,9 @@
 		0252B2FA142AE05B0018B75D /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
 		0252B2FB142AE05B0018B75D /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		0252B305142AE3FF0018B75D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		02F0AC7B142D373B00FD21CB /* players.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = players.xml; sourceTree = "<group>"; };
+		02F0AC81142D40F900FD21CB /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
+		02F0AC82142D40F900FD21CB /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +129,7 @@
 				0252B2D2142ADFC60018B75D /* RaptureXMLAppDelegate.h */,
 				0252B2D3142ADFC60018B75D /* RaptureXMLAppDelegate.m */,
 				0252B2D5142ADFC60018B75D /* MainWindow.xib */,
+				02F0AC7A142D372E00FD21CB /* Samples */,
 				0252B2F7142AE05B0018B75D /* RaptureXML */,
 				0252B2CA142ADFC60018B75D /* Supporting Files */,
 			);
@@ -167,8 +173,18 @@
 				0252B2F9142AE05B0018B75D /* NSDataAdditions.m */,
 				0252B2FA142AE05B0018B75D /* TBXML.h */,
 				0252B2FB142AE05B0018B75D /* TBXML.m */,
+				02F0AC81142D40F900FD21CB /* RXMLElement.h */,
+				02F0AC82142D40F900FD21CB /* RXMLElement.m */,
 			);
 			path = RaptureXML;
+			sourceTree = "<group>";
+		};
+		02F0AC7A142D372E00FD21CB /* Samples */ = {
+			isa = PBXGroup;
+			children = (
+				02F0AC7B142D373B00FD21CB /* players.xml */,
+			);
+			path = Samples;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -244,6 +260,7 @@
 			files = (
 				0252B2CE142ADFC60018B75D /* InfoPlist.strings in Resources */,
 				0252B2D7142ADFC60018B75D /* MainWindow.xib in Resources */,
+				02F0AC7C142D373B00FD21CB /* players.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,6 +300,7 @@
 				0252B2D4142ADFC60018B75D /* RaptureXMLAppDelegate.m in Sources */,
 				0252B2FC142AE05B0018B75D /* NSDataAdditions.m in Sources */,
 				0252B2FD142AE05B0018B75D /* TBXML.m in Sources */,
+				02F0AC83142D40F900FD21CB /* RXMLElement.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

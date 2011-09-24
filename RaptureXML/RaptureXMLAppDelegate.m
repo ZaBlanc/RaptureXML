@@ -7,59 +7,61 @@
 //
 
 #import "RaptureXMLAppDelegate.h"
+#import "RXMLElement.h"
 
 @implementation RaptureXMLAppDelegate
 
 @synthesize window = _window;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
+- (void)doOldWay {
+    TBXML *tbxml = [TBXML tbxmlWithXMLFile:@"players.xml"];    
+    TBXMLElement *rootElement = tbxml.rootXMLElement;
+    
+    TBXMLElement *playersElement = [TBXML childElementNamed:@"players" parentElement:rootElement];
+    TBXMLElement *playerElement = [TBXML childElementNamed:@"player" parentElement:playersElement];
+    
+    while (playerElement) {
+        TBXMLElement *nameElement = [TBXML childElementNamed:@"name" parentElement:playerElement];
+        TBXMLElement *positionElement = [TBXML childElementNamed:@"position" parentElement:playerElement];
+        
+        NSString *number = [TBXML valueOfAttributeNamed:@"number" forElement:playerElement];
+        NSString *name = [TBXML textForElement:nameElement];
+        NSString *position = [TBXML textForElement:positionElement];
+        
+        NSLog(@"Player #%@: %@ (%@)", number, name, position);
+
+        playerElement = [TBXML nextSiblingNamed:@"player" searchFromElement: playerElement];                
+    }    
+}
+
+- (void)doNewWayWithChildren {
+    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *players = [rxml child:@"players"];
+    NSArray *player = [players children:@"player"];
+    
+    [rxml iterateElements:player with: ^(RXMLElement *e) {
+        NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"], [e child:@"position"]);
+    }];    
+}
+
+- (void)doNewWay {
+    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    
+    [rxml iterate:@"players.player" with: ^(RXMLElement *e) {
+        NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"], [e child:@"position"]);
+    }];    
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [self.window makeKeyAndVisible];
+
+    [self doNewWay];
+    
     return YES;
 }
 
-- (void)applicationWillResignActive:(UIApplication *)application
-{
-    /*
-     Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-     Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-     */
-}
-
-- (void)applicationDidEnterBackground:(UIApplication *)application
-{
-    /*
-     Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later. 
-     If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-     */
-}
-
-- (void)applicationWillEnterForeground:(UIApplication *)application
-{
-    /*
-     Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-     */
-}
-
-- (void)applicationDidBecomeActive:(UIApplication *)application
-{
-    /*
-     Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-     */
-}
-
-- (void)applicationWillTerminate:(UIApplication *)application
-{
-    /*
-     Called when the application is about to terminate.
-     Save data if appropriate.
-     See also applicationDidEnterBackground:.
-     */
-}
-
-- (void)dealloc
-{
+- (void)dealloc {
     [_window release];
     [super dealloc];
 }
