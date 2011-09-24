@@ -154,19 +154,33 @@
 - (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))blk {
     NSArray *components = [query componentsSeparatedByString:@"."];
     TBXMLElement *currTBXMLElement = tbxmlElement_;
-    
+
     // navigate down
     for (NSString *iTagName in components) {
-        currTBXMLElement = [TBXML childElementNamed:iTagName parentElement:currTBXMLElement];
+        if ([iTagName isEqualToString:@"*"]) {
+            currTBXMLElement = [TBXML childElementNamed:nil parentElement:currTBXMLElement];
+        } else {
+            currTBXMLElement = [TBXML childElementNamed:iTagName parentElement:currTBXMLElement];            
+        }
+
+        if (!currTBXMLElement) {
+            break;
+        }
     }
     
-    // enumerate
-    NSString *childTagName = [components lastObject];
-    
-    do {
-        RXMLElement *element = [RXMLElement elementFromTBXMLElement:currTBXMLElement];
-        blk(element);
-    } while ((currTBXMLElement = [TBXML nextSiblingNamed:childTagName searchFromElement:currTBXMLElement]));
+    if (currTBXMLElement) {
+        // enumerate
+        NSString *childTagName = [components lastObject];
+        
+        if ([childTagName isEqualToString:@"*"]) {
+            childTagName = nil;
+        }
+
+        do {
+            RXMLElement *element = [RXMLElement elementFromTBXMLElement:currTBXMLElement];
+            blk(element);
+        } while ((currTBXMLElement = [TBXML nextSiblingNamed:childTagName searchFromElement:currTBXMLElement]));
+    }
 }
 
 - (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))blk {

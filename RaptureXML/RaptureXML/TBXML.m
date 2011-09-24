@@ -197,7 +197,7 @@
 	TBXMLElement * xmlElement = aParentXMLElement->firstChild;
 	const char * name = [aName cStringUsingEncoding:NSUTF8StringEncoding];
 	while (xmlElement) {
-		if (strlen(xmlElement->name) == strlen(name) && memcmp(xmlElement->name,name,strlen(name)) == 0) {
+		if (aName == nil || (strlen(xmlElement->name) == strlen(name) && memcmp(xmlElement->name,name,strlen(name)) == 0)) {
 			return xmlElement;
 		}
 		xmlElement = xmlElement->nextSibling;
@@ -209,7 +209,7 @@
 	TBXMLElement * xmlElement = aXMLElement->nextSibling;
 	const char * name = [aName cStringUsingEncoding:NSUTF8StringEncoding];
 	while (xmlElement) {
-		if (strlen(xmlElement->name) == strlen(name) && memcmp(xmlElement->name,name,strlen(name)) == 0) {
+		if (aName == nil || (strlen(xmlElement->name) == strlen(name) && memcmp(xmlElement->name,name,strlen(name)) == 0)) {
 			return xmlElement;
 		}
 		xmlElement = xmlElement->nextSibling;
