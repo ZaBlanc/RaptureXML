@@ -12,9 +12,9 @@ RaptureXML provides a powerful new interface into TBXML.  So, why do we need it?
 
 RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
 
-[rxml iterate:@"players.player" with: ^(RXMLElement *e) {
-    NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"], [e child:@"position"]);
-}];    
+  [rxml iterate:@"players.player" with: ^(RXMLElement *e) {
+      NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"], [e child:@"position"]);
+  }];    
 
 RaptureXML changes the game when it comes to XML processing in Objective-C.  As you can see from the code, it takes only seconds to understand what this code does.  There are no wasted arrays and verbose looping you have to do.  I don't think any more needs to be said.
 
