@@ -132,6 +132,10 @@
     return [TBXML valueOfAttributeNamed:attName forElement:tbxmlElement_];
 }
 
+- (BOOL)isValid {
+    return (tbxmlElement_ != nil);
+}
+
 #pragma mark -
 
 - (RXMLElement *)child:(NSString *)tagName {
@@ -142,9 +146,11 @@
     NSMutableArray *children = [NSMutableArray array];
     TBXMLElement *currTBXMLElement = [TBXML childElementNamed:tagName parentElement:tbxmlElement_];
     
-    do {
-        [children addObject:[RXMLElement elementFromTBXMLElement:currTBXMLElement]];
-    } while ((currTBXMLElement = [TBXML nextSiblingNamed:tagName searchFromElement:currTBXMLElement]));        
+    if (currTBXMLElement) {
+        do {
+            [children addObject:[RXMLElement elementFromTBXMLElement:currTBXMLElement]];
+        } while ((currTBXMLElement = [TBXML nextSiblingNamed:tagName searchFromElement:currTBXMLElement]));        
+    }
     
     return [[children copy] autorelease];
 }

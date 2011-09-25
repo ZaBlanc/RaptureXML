@@ -60,6 +60,7 @@
 
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly) BOOL isValid;
 
 @end
 

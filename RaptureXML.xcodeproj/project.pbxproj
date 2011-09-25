@@ -19,13 +19,15 @@
 		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
 		0252B2EA142ADFC60018B75D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0252B2E8142ADFC60018B75D /* InfoPlist.strings */; };
-		0252B2EC142ADFC60018B75D /* RaptureXMLTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 0252B2EB142ADFC60018B75D /* RaptureXMLTests.h */; };
-		0252B2EE142ADFC70018B75D /* RaptureXMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2ED142ADFC70018B75D /* RaptureXMLTests.m */; };
 		0252B2FC142AE05B0018B75D /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2F9142AE05B0018B75D /* NSDataAdditions.m */; };
 		0252B2FD142AE05B0018B75D /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2FB142AE05B0018B75D /* TBXML.m */; };
 		0252B306142AE3FF0018B75D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
 		02F0AC7C142D373B00FD21CB /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 02F0AC7B142D373B00FD21CB /* players.xml */; };
 		02F0AC83142D40F900FD21CB /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F0AC82142D40F900FD21CB /* RXMLElement.m */; };
+		02F0AC90142DB0D500FD21CB /* BoundaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F0AC8E142DAF0500FD21CB /* BoundaryTests.m */; };
+		02F85D25142E7C41000271F2 /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D24142E7C41000271F2 /* SimpleTests.m */; };
+		02F85D27142EA012000271F2 /* DeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D26142EA012000271F2 /* DeepTests.m */; };
+		02F85D29142ECAD9000271F2 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D28142ECAD9000271F2 /* DeepChildrenTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,8 +56,6 @@
 		0252B2DE142ADFC60018B75D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0252B2E7142ADFC60018B75D /* RaptureXMLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaptureXMLTests-Info.plist"; sourceTree = "<group>"; };
 		0252B2E9142ADFC60018B75D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0252B2EB142ADFC60018B75D /* RaptureXMLTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaptureXMLTests.h; sourceTree = "<group>"; };
-		0252B2ED142ADFC70018B75D /* RaptureXMLTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaptureXMLTests.m; sourceTree = "<group>"; };
 		0252B2F8142AE05B0018B75D /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
 		0252B2F9142AE05B0018B75D /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		0252B2FA142AE05B0018B75D /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
@@ -64,6 +64,10 @@
 		02F0AC7B142D373B00FD21CB /* players.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = players.xml; sourceTree = "<group>"; };
 		02F0AC81142D40F900FD21CB /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
 		02F0AC82142D40F900FD21CB /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
+		02F0AC8E142DAF0500FD21CB /* BoundaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundaryTests.m; sourceTree = "<group>"; };
+		02F85D24142E7C41000271F2 /* SimpleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTests.m; sourceTree = "<group>"; };
+		02F85D26142EA012000271F2 /* DeepTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeepTests.m; sourceTree = "<group>"; };
+		02F85D28142ECAD9000271F2 /* DeepChildrenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeepChildrenTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,8 +154,10 @@
 		0252B2E5142ADFC60018B75D /* RaptureXMLTests */ = {
 			isa = PBXGroup;
 			children = (
-				0252B2EB142ADFC60018B75D /* RaptureXMLTests.h */,
-				0252B2ED142ADFC70018B75D /* RaptureXMLTests.m */,
+				02F0AC8E142DAF0500FD21CB /* BoundaryTests.m */,
+				02F85D24142E7C41000271F2 /* SimpleTests.m */,
+				02F85D26142EA012000271F2 /* DeepTests.m */,
+				02F85D28142ECAD9000271F2 /* DeepChildrenTests.m */,
 				0252B2E6142ADFC60018B75D /* Supporting Files */,
 			);
 			path = RaptureXMLTests;
@@ -269,7 +275,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0252B2EA142ADFC60018B75D /* InfoPlist.strings in Resources */,
-				0252B2EC142ADFC60018B75D /* RaptureXMLTests.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,7 +313,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0252B2EE142ADFC70018B75D /* RaptureXMLTests.m in Sources */,
+				02F0AC90142DB0D500FD21CB /* BoundaryTests.m in Sources */,
+				02F85D25142E7C41000271F2 /* SimpleTests.m in Sources */,
+				02F85D27142EA012000271F2 /* DeepTests.m in Sources */,
+				02F85D29142ECAD9000271F2 /* DeepChildrenTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,6 +1,11 @@
 
 <team>
     <players>
+        <coach>
+            <name>Terry Collins</name>
+            <year>1</year>
+        </coach>
+        
         <player number="7">
             <name>Jose Reyes</name>
             <position>SS</position>
