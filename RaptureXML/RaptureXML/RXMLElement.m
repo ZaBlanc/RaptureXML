@@ -162,9 +162,22 @@
     TBXMLElement *currTBXMLElement = tbxmlElement_;
 
     // navigate down
-    for (NSString *iTagName in components) {
+    for (NSInteger i=0; i < components.count; ++i) {
+        NSString *iTagName = [components objectAtIndex:i];
+        
         if ([iTagName isEqualToString:@"*"]) {
             currTBXMLElement = [TBXML childElementNamed:nil parentElement:currTBXMLElement];
+
+            // different behavior depending on if this is the end of the query or midstream
+            if (i < (components.count - 1)) {
+                // midstream
+                do {
+                    RXMLElement *element = [RXMLElement elementFromTBXMLElement:currTBXMLElement];
+                    NSString *restOfQuery = [[components subarrayWithRange:NSMakeRange(i + 1, components.count - i - 1)] componentsJoinedByString:@"."];
+                    [element iterate:restOfQuery with:blk];
+                } while ((currTBXMLElement = [TBXML nextSiblingNamed:nil searchFromElement:currTBXMLElement]));
+                    
+            }
         } else {
             currTBXMLElement = [TBXML childElementNamed:iTagName parentElement:currTBXMLElement];            
         }

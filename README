@@ -1,14 +1,12 @@
-RaptureXML is a simple, block-based XML library for the iOS platform that provides an expressive API which makes XML processing concise and readable.
+RaptureXML is a simple, block-based XML library for the iOS platform that provides an expressive API that makes XML processing freakin' fun for once in my life.
 
 
------------------------------------
-Why do we need another XML library?
------------------------------------
+-------------------------------------
+Why do we need *another* XML library?
+-------------------------------------
 
 
-To be accurate, RaptureXML does no XML processing of its own.  It leverages TBXML, an already excellent offering from Tom Bradley and can be found at http://www.tbxml.co.uk/TBXML/TBXML_Free.html.
-
-RaptureXML provides a powerful new interface into TBXML.  So, why do we need it?  I'll let you answer it.  Imagine for a minute the code that would be required to process the XML for a list of baseball players, retrieving their number, name, and position.  Now, take a look at how you do it with RaptureXML:
+You tell me.  Processing XML in Objective-C is an awful, frustrating experience and the resulting code is never readable.  I'm tired of it! RaptureXML solves this by providing a *powerful* new interface on top of TBXML.  Imagine for a minute the code you'd write to process the XML for a list of baseball team members, retrieving their numbers, names, and positions using your favorite XML processing library.  Now, take a look at how you do it with RaptureXML:
 
   RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
 
@@ -16,15 +14,97 @@ RaptureXML provides a powerful new interface into TBXML.  So, why do we need it?
       NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"], [e child:@"position"]);
   }];    
 
-RaptureXML changes the game when it comes to XML processing in Objective-C.  As you can see from the code, it takes only seconds to understand what this code does.  There are no wasted arrays and verbose looping you have to do.  I don't think any more needs to be said.
+RaptureXML changes the game when it comes to XML processing in Objective-C.  As you can see from the code, it takes only seconds to understand what this code does.  There are no wasted arrays and verbose looping you have to do.  The code is a breeze to read and maintain.
+
+I don't think any more needs to be said.
 
 
------------------
-How does it work?
------------------
+---------------
+Getting Started
+---------------
 
 
-TBD
+RaptureXML processes XML in two steps: load and path.  This means that you first load the XML from any source you want such as file, data, string, or even from a URL.  Then, you simply use its query language to find what you need.
+
+You can load the XML with any of the following constructors:
+
+  RXMLElement *rxml = [RXMLElement elementFromXMLString:@"...my xml..."];
+  RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"myfile.xml"];
+  RXMLElement *rxml = [RXMLElement elementFromXMLFilename:@"myfile" elementFromXMLFilename:@"xml"];
+  RXMLElement *rxml = [RXMLElement elementFromURL:[NSURL URLWithString:@"...my url..."]];
+  RXMLElement *rxml = [RXMLElement elementFromXMLData:myData];
+
+These constructors return an RXMLElement object that represents the top-level tags. Now, you can query the data in any number of ways.
+
+Let's pretend your XML looks like this:
+
+  <team>
+      <players>
+          <coach>
+              <name>Terry Collins</name>
+              <year>1</year>
+          </coach>
+        
+          <player number="7">
+              <name>Jose Reyes</name>
+              <position>SS</position>
+          </player>
+        
+          <player number="16">
+              <name>Angel Pagan</name>
+              <position>CF</position>
+          </player>
+        
+          <player number="5">
+              <name>David Wright</name>
+              <position>3B</position>
+          </player>
+
+          ...
+
+      </players>
+  </team>
+
+First, we'd load the XML:
+
+  RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+
+We can immediately query the top-level tag:
+
+  rxml.tag // returns @"team"
+
+If there are attributes, we can get them with:
+
+  [rxml attribute:@"attr1"]
+  [rxml attribute:@"attr2"]
+
+We can get the players tag with:
+
+  RXMLElement *rxmlPlayers = [rxml child:@"players"];
+
+We can get all the individual players with:
+
+  NSArray *rxmlIndividualPlayers = [rxmlPlayers children:@"player"];
+
+From there, we can process the individual players and be happy.  This is already much better than any other XML library we've seen, but RaptureXML can use query paths to make this ridiculously easy.  Let's use query paths to replace all this code:
+
+[rxml iterate:@"players.player" with: ^(RXMLElement *player) {
+    NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
+}];    
+
+Your block is passed an RXMLElement representing each player in just one line!  This works because RXMLElement#description returns the text of the tag. Query paths are even more powerful with wildcards.  Let's say we wanted the name of every person on the team, player or coach.  We use the wildcard to get it:
+
+[rxml iterate:@"players.*.name" with: ^(RXMLElement *name) {
+    NSLog(@"Name: %@", name.text);
+}];
+
+The wildcard processes every tag rather than the one you would've named.  You can also use the wildcard to iterate all the children of an element:
+
+[rxml iterate:@"players.coach.*" with: ^(RXMLElement *e) {
+    NSLog(@"Tag: %@, Text: %@", e.tag, e.text);
+}];
+
+This gives us all the tags for the coach.  Easy enough?
 
 
 ---------------------------
@@ -32,7 +112,7 @@ Unit tests as documentation
 ---------------------------
 
 
-TBD
+You can see the full usage of RaptureXML by reading the unit tests in the project.  Not only does it show you all the code, but you'll know it works! (You can run the unit tests by pressing Command-U in XCode)
 
 
 ---------------------------------
@@ -40,12 +120,16 @@ Adding RaptureXML to Your Project
 ---------------------------------
 
 
-Simply copy the RaptureXML/RaptureXML/RaptureXML folder into your own project and import "RXMLElement.h".
+Two steps:
+
+  * Copy the RaptureXML/RaptureXML/RaptureXML folder (XCode made me do it!) into your own project and import "RXMLElement.h" wherever you like.
+  * Link in libz.dylib to your target.
 
 
-----------------------
-So who created RaptureXML?
-----------------------
+-----------------------
+Who created RaptureXML?
+-----------------------
 
+RaptureXML was created by John Blanco <john.blanco@raptureinvenice.com> of Rapture In Venice because he got sick of using all of the bizarre XML solutions for iPhone development.  If you like this code and/or need an iOS consultant, get in touch with me via my website, http://raptureinvenice.com. :-)  
+TBXML, which RaptureXML currently encapsulates and has modified, was written by Tom Bradley and his original version can be found at http://www.tbxml.co.uk/TBXML/TBXML_Free.html.
 
-RaptureXML was created by John Blanco <john.blanco@raptureinvenice.com> of Rapture In Venice.  If you like this code and/or needs an iOS consultant, get in touch with me via my website, http://raptureinvenice.com. :-)  
