@@ -69,9 +69,9 @@ First, we'd load the XML:
 
   RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
 
-We can immediately query the top-level tag:
+We can immediately query the top-level tag name:
 
-  rxml.tag // returns @"team"
+  rxml.tag
 
 If there are attributes, we can get them with:
 
@@ -88,21 +88,21 @@ We can get all the individual players with:
 
 From there, we can process the individual players and be happy.  This is already much better than any other XML library we've seen, but RaptureXML can use query paths to make this ridiculously easy.  Let's use query paths to replace all this code:
 
-[rxml iterate:@"players.player" with: ^(RXMLElement *player) {
-    NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
-}];    
+  [rxml iterate:@"players.player" with: ^(RXMLElement *player) {
+      NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
+  }];    
 
 Your block is passed an RXMLElement representing each player in just one line!  This works because RXMLElement#description returns the text of the tag. Query paths are even more powerful with wildcards.  Let's say we wanted the name of every person on the team, player or coach.  We use the wildcard to get it:
 
-[rxml iterate:@"players.*.name" with: ^(RXMLElement *name) {
-    NSLog(@"Name: %@", name.text);
-}];
+  [rxml iterate:@"players.*.name" with: ^(RXMLElement *name) {
+      NSLog(@"Name: %@", name.text);
+  }];
 
 The wildcard processes every tag rather than the one you would've named.  You can also use the wildcard to iterate all the children of an element:
 
-[rxml iterate:@"players.coach.*" with: ^(RXMLElement *e) {
-    NSLog(@"Tag: %@, Text: %@", e.tag, e.text);
-}];
+  [rxml iterate:@"players.coach.*" with: ^(RXMLElement *e) {
+      NSLog(@"Tag: %@, Text: %@", e.tag, e.text);
+  }];
 
 This gives us all the tags for the coach.  Easy enough?
 
@@ -122,7 +122,7 @@ Adding RaptureXML to Your Project
 
 Two steps:
 
-  * Copy the RaptureXML/RaptureXML/RaptureXML folder (XCode made me do it!) into your own project and import "RXMLElement.h" wherever you like.
+  * Copy the RaptureXML/RaptureXML/RaptureXML folder into your own project and import "RXMLElement.h" somewheres.
   * Link in libz.dylib to your target.
 
 
@@ -131,5 +131,6 @@ Who created RaptureXML?
 -----------------------
 
 RaptureXML was created by John Blanco <john.blanco@raptureinvenice.com> of Rapture In Venice because he got sick of using all of the bizarre XML solutions for iPhone development.  If you like this code and/or need an iOS consultant, get in touch with me via my website, http://raptureinvenice.com. :-)  
+
 TBXML, which RaptureXML currently encapsulates and has modified, was written by Tom Bradley and his original version can be found at http://www.tbxml.co.uk/TBXML/TBXML_Free.html.
 
