@@ -139,7 +139,18 @@
 #pragma mark -
 
 - (RXMLElement *)child:(NSString *)tagName {
-    return [RXMLElement elementFromTBXMLElement:[TBXML childElementNamed:tagName parentElement:tbxmlElement_]];
+    TBXMLElement *element = nil;
+    if ([tagName isEqualToString:@"*"]) {
+        element = [TBXML childElementNamed:nil parentElement:tbxmlElement_];
+    } else {
+        element = [TBXML childElementNamed:tagName parentElement:tbxmlElement_];
+    }
+    
+    if (element) {
+        return [RXMLElement elementFromTBXMLElement:element];    
+    }
+    
+    return nil;
 }
 
 - (NSArray *)children:(NSString *)tagName {
