@@ -1,9 +1,15 @@
 
-<team>
+<team id="8">
     <players>
         <coach>
             <name>Terry Collins</name>
-            <year>1</year>
+            <experience>
+                <years>1</years>
+                <teams>
+                    <team>53</team>
+                    <team>12</team>
+                </teams>
+            </experience>
         </coach>
         
         <player number="7">

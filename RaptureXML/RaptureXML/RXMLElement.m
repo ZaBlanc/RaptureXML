@@ -128,8 +128,24 @@
     return [TBXML textForElement:tbxmlElement_];
 }
 
+- (NSInteger)textAsInt {
+    return [self.text intValue];
+}
+
+- (double)textAsDouble {
+    return [self.text doubleValue];
+}
+
 - (NSString *)attribute:(NSString *)attName {
     return [TBXML valueOfAttributeNamed:attName forElement:tbxmlElement_];
+}
+
+- (NSInteger)attributeAsInt:(NSString *)attName {
+    return [[self attribute:attName] intValue];
+}
+
+- (double)attributeAsDouble:(NSString *)attName {
+    return [[self attribute:attName] doubleValue];
 }
 
 - (BOOL)isValid {
@@ -139,15 +155,26 @@
 #pragma mark -
 
 - (RXMLElement *)child:(NSString *)tagName {
-    TBXMLElement *element = nil;
-    if ([tagName isEqualToString:@"*"]) {
-        element = [TBXML childElementNamed:nil parentElement:tbxmlElement_];
-    } else {
-        element = [TBXML childElementNamed:tagName parentElement:tbxmlElement_];
+    NSArray *components = [tagName componentsSeparatedByString:@"."];
+    TBXMLElement *currTBXMLElement = tbxmlElement_;
+    
+    // navigate down
+    for (NSInteger i=0; i < components.count; ++i) {
+        NSString *iTagName = [components objectAtIndex:i];
+        
+        if ([iTagName isEqualToString:@"*"]) {
+            currTBXMLElement = [TBXML childElementNamed:nil parentElement:currTBXMLElement];
+        } else {
+            currTBXMLElement = [TBXML childElementNamed:iTagName parentElement:currTBXMLElement];            
+        }
+        
+        if (!currTBXMLElement) {
+            break;
+        }
     }
     
-    if (element) {
-        return [RXMLElement elementFromTBXMLElement:element];    
+    if (currTBXMLElement) {
+        return [RXMLElement elementFromTBXMLElement:currTBXMLElement];
     }
     
     return nil;

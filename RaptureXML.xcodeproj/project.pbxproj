@@ -30,6 +30,7 @@
 		02F85D29142ECAD9000271F2 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D28142ECAD9000271F2 /* DeepChildrenTests.m */; };
 		02F85D2B142ECD66000271F2 /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D2A142ECD66000271F2 /* WildcardTests.m */; };
 		02F85D4F1430D402000271F2 /* ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D4C1430D350000271F2 /* ErrorTests.m */; };
+		02F85D621432109D000271F2 /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D611432109D000271F2 /* TextConversionTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		02F85D28142ECAD9000271F2 /* DeepChildrenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeepChildrenTests.m; sourceTree = "<group>"; };
 		02F85D2A142ECD66000271F2 /* WildcardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WildcardTests.m; sourceTree = "<group>"; };
 		02F85D4C1430D350000271F2 /* ErrorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorTests.m; sourceTree = "<group>"; };
+		02F85D611432109D000271F2 /* TextConversionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextConversionTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +166,7 @@
 				02F85D28142ECAD9000271F2 /* DeepChildrenTests.m */,
 				02F85D2A142ECD66000271F2 /* WildcardTests.m */,
 				02F85D4C1430D350000271F2 /* ErrorTests.m */,
+				02F85D611432109D000271F2 /* TextConversionTests.m */,
 				0252B2E6142ADFC60018B75D /* Supporting Files */,
 			);
 			path = RaptureXMLTests;
@@ -325,6 +328,7 @@
 				02F85D29142ECAD9000271F2 /* DeepChildrenTests.m in Sources */,
 				02F85D2B142ECD66000271F2 /* WildcardTests.m in Sources */,
 				02F85D4F1430D402000271F2 /* ErrorTests.m in Sources */,
+				02F85D621432109D000271F2 /* TextConversionTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

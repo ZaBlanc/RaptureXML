@@ -34,4 +34,23 @@
     STAssertEquals(i, 9, nil);
 }
 
+- (void)testDeepChildQuery {
+    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    
+    // count the players
+    RXMLElement *coachingYears = [rxml child:@"players.coach.experience.years"];
+    
+    STAssertEquals(coachingYears.textAsInt, 1, nil);
+}
+
+- (void)testDeepChildQueryWithWildcard {
+    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    
+    // count the players
+    RXMLElement *coachingYears = [rxml child:@"players.coach.experience.teams.*"];
+    
+    // first team returned
+    STAssertEquals(coachingYears.textAsInt, 53, nil);
+}
+
 @end

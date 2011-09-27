@@ -51,6 +51,8 @@
 + (id)elementFromTBXMLElement:(TBXMLElement *)tbxmlElement;
 
 - (NSString *)attribute:(NSString *)attName;
+- (NSInteger)attributeAsInt:(NSString *)attName;
+- (double)attributeAsDouble:(NSString *)attName;
 
 - (RXMLElement *)child:(NSString *)tagName;
 - (NSArray *)children:(NSString *)tagName;
@@ -60,6 +62,8 @@
 
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly) NSInteger textAsInt;
+@property (nonatomic, readonly) double textAsDouble;
 @property (nonatomic, readonly) BOOL isValid;
 
 @end
