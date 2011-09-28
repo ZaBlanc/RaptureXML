@@ -36,6 +36,17 @@
     STAssertNil(hexagon, nil);
 }
 
+- (void)testMissingTagIteration {
+    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_];
+    __block NSInteger i = 0;
+    
+    [rxml iterate:@"hexagon" with:^(RXMLElement *e) {
+        i++;
+    }];
+     
+    STAssertEquals(i, 0, nil);
+}
+
 - (void)testMissingAttribute {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_];
     NSString *missingName = [rxml attribute:@"name"];
