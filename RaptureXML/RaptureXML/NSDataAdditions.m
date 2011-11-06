@@ -90,6 +90,7 @@ static char encodingTable[64] = {
         NSData *base64Data = nil;
         const unsigned char *base64Bytes = nil;
         
+        memset(inbuf, 0, 4);
         // Convert the string to ASCII data.
         base64Data = [string dataUsingEncoding:NSASCIIStringEncoding];
         base64Bytes = [base64Data bytes];

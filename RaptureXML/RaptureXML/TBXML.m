@@ -361,7 +361,7 @@
 		
 		// is this element opening and closing
 		BOOL selfClosingElement = NO;
-		if (*(elementEnd-1) == '/') {
+		if (elementEnd && *(elementEnd-1) == '/') {
 			selfClosingElement = YES;
 		}
 		
@@ -507,7 +507,7 @@
 		// if tag is not self closing, set parent to current element
 		if (!selfClosingElement) {
 			// set text on element to element end+1
-			if (*(elementEnd+1) != '>')
+			if (elementEnd && *(elementEnd+1) != '>')
 				xmlElement->text = elementEnd+1;
 			
 			parentXMLElement = xmlElement;
