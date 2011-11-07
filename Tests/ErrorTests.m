@@ -6,8 +6,6 @@
 //  Copyright (c) 2011 Rapture In Venice. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-#import <SenTestingKit/SenTestingKit.h>
 #import "RXMLElement.h"
 
 @interface ErrorTests : SenTestCase {
