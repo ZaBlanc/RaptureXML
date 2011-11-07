@@ -123,8 +123,10 @@
 - (id)initWithXMLFile:(NSString*)aXMLFile fileExtension:(NSString*)aFileExtension {
 	self = [self init];
 	if (self != nil) {
-		// Get uncompressed file contents
-		NSData * data = [NSData dataWithUncompressedContentsOfFile:[[NSBundle mainBundle] pathForResource:aXMLFile ofType:aFileExtension]];
+		// Get uncompressed file contents. Can’t simply call [NSBundle
+        // mainBundle] here, because that would return nil in tests.
+        NSBundle * bundle = [NSBundle bundleForClass:[self class]];
+		NSData * data = [NSData dataWithUncompressedContentsOfFile:[bundle pathForResource:aXMLFile ofType:aFileExtension]];
 		
 		// decode data
 		[self decodeData:data];
@@ -138,8 +140,10 @@
 		NSString * filename = [aXMLFile stringByDeletingPathExtension];
 		NSString * extension = [aXMLFile pathExtension];
 		
-		// Get uncompressed file contents
-		NSData * data = [NSData dataWithUncompressedContentsOfFile:[[NSBundle mainBundle] pathForResource:filename ofType:extension]];
+		// Get uncompressed file contents. Can’t simply call [NSBundle
+        // mainBundle] here, because that would return nil in tests.
+        NSBundle * bundle = [NSBundle bundleForClass:[self class]];
+		NSData * data = [NSData dataWithUncompressedContentsOfFile:[bundle pathForResource:filename ofType:extension]];
 		
 		// decode data
 		[self decodeData:data];

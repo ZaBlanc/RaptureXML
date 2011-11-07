@@ -7,95 +7,86 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0252B2C4142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
-		0252B2C6142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
-		0252B2C8142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
-		0252B2CE142ADFC60018B75D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0252B2CC142ADFC60018B75D /* InfoPlist.strings */; };
-		0252B2D0142ADFC60018B75D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2CF142ADFC60018B75D /* main.m */; };
-		0252B2D4142ADFC60018B75D /* RaptureXMLAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2D3142ADFC60018B75D /* RaptureXMLAppDelegate.m */; };
-		0252B2D7142ADFC60018B75D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0252B2D5142ADFC60018B75D /* MainWindow.xib */; };
 		0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2DE142ADFC60018B75D /* SenTestingKit.framework */; };
 		0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
 		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
-		0252B2EA142ADFC60018B75D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 0252B2E8142ADFC60018B75D /* InfoPlist.strings */; };
-		0252B2FC142AE05B0018B75D /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2F9142AE05B0018B75D /* NSDataAdditions.m */; };
-		0252B2FD142AE05B0018B75D /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 0252B2FB142AE05B0018B75D /* TBXML.m */; };
-		0252B306142AE3FF0018B75D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
-		02F0AC7C142D373B00FD21CB /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 02F0AC7B142D373B00FD21CB /* players.xml */; };
-		02F0AC83142D40F900FD21CB /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F0AC82142D40F900FD21CB /* RXMLElement.m */; };
-		02F0AC90142DB0D500FD21CB /* BoundaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F0AC8E142DAF0500FD21CB /* BoundaryTests.m */; };
-		02F85D25142E7C41000271F2 /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D24142E7C41000271F2 /* SimpleTests.m */; };
-		02F85D27142EA012000271F2 /* DeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D26142EA012000271F2 /* DeepTests.m */; };
-		02F85D29142ECAD9000271F2 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D28142ECAD9000271F2 /* DeepChildrenTests.m */; };
-		02F85D2B142ECD66000271F2 /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D2A142ECD66000271F2 /* WildcardTests.m */; };
-		02F85D4F1430D402000271F2 /* ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D4C1430D350000271F2 /* ErrorTests.m */; };
-		02F85D621432109D000271F2 /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F85D611432109D000271F2 /* TextConversionTests.m */; };
+		0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
+		0DEB8ECD1467ED9C00024989 /* BoundaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC61467ED9C00024989 /* BoundaryTests.m */; };
+		0DEB8ECE1467ED9C00024989 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */; };
+		0DEB8ECF1467ED9C00024989 /* DeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC81467ED9C00024989 /* DeepTests.m */; };
+		0DEB8ED01467ED9C00024989 /* ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC91467ED9C00024989 /* ErrorTests.m */; };
+		0DEB8ED11467ED9C00024989 /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECA1467ED9C00024989 /* SimpleTests.m */; };
+		0DEB8ED21467ED9C00024989 /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */; };
+		0DEB8ED31467ED9C00024989 /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECC1467ED9C00024989 /* WildcardTests.m */; };
+		0DEB8EDB1467EE0A00024989 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DEB8ED41467EE0A00024989 /* NSDataAdditions.h */; };
+		0DEB8EDC1467EE0A00024989 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ED51467EE0A00024989 /* NSDataAdditions.m */; };
+		0DEB8EDD1467EE0A00024989 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ED51467EE0A00024989 /* NSDataAdditions.m */; };
+		0DEB8EDE1467EE0A00024989 /* Library-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 0DEB8ED61467EE0A00024989 /* Library-Prefix.pch */; };
+		0DEB8EDF1467EE0A00024989 /* RXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DEB8ED71467EE0A00024989 /* RXMLElement.h */; };
+		0DEB8EE01467EE0A00024989 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ED81467EE0A00024989 /* RXMLElement.m */; };
+		0DEB8EE11467EE0A00024989 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ED81467EE0A00024989 /* RXMLElement.m */; };
+		0DEB8EE21467EE0A00024989 /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DEB8ED91467EE0A00024989 /* TBXML.h */; };
+		0DEB8EE31467EE0A00024989 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EDA1467EE0A00024989 /* TBXML.m */; };
+		0DEB8EE41467EE0A00024989 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EDA1467EE0A00024989 /* TBXML.m */; };
+		0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
+		0DEB8F2E14681BD800024989 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB8F2D14681BD800024989 /* players.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		0252B2E3142ADFC60018B75D /* PBXContainerItemProxy */ = {
+		0DEB8F291468198D00024989 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0252B2B6142ADFC60018B75D /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 0252B2BE142ADFC60018B75D;
-			remoteInfo = RaptureXML;
+			remoteGlobalIDString = 0252B2DC142ADFC60018B75D;
+			remoteInfo = RaptureXMLTests;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0252B2BF142ADFC60018B75D /* RaptureXML.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RaptureXML.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0252B2C3142ADFC60018B75D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0252B2C5142ADFC60018B75D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0252B2C7142ADFC60018B75D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0252B2CB142ADFC60018B75D /* RaptureXML-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaptureXML-Info.plist"; sourceTree = "<group>"; };
-		0252B2CD142ADFC60018B75D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0252B2CF142ADFC60018B75D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0252B2D1142ADFC60018B75D /* RaptureXML-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RaptureXML-Prefix.pch"; sourceTree = "<group>"; };
-		0252B2D2142ADFC60018B75D /* RaptureXMLAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RaptureXMLAppDelegate.h; sourceTree = "<group>"; };
-		0252B2D3142ADFC60018B75D /* RaptureXMLAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RaptureXMLAppDelegate.m; sourceTree = "<group>"; };
-		0252B2D6142ADFC60018B75D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
 		0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0252B2DE142ADFC60018B75D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		0252B2E7142ADFC60018B75D /* RaptureXMLTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RaptureXMLTests-Info.plist"; sourceTree = "<group>"; };
-		0252B2E9142ADFC60018B75D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		0252B2F8142AE05B0018B75D /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
-		0252B2F9142AE05B0018B75D /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
-		0252B2FA142AE05B0018B75D /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
-		0252B2FB142AE05B0018B75D /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		0252B305142AE3FF0018B75D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		02F0AC7B142D373B00FD21CB /* players.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = players.xml; sourceTree = "<group>"; };
-		02F0AC81142D40F900FD21CB /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
-		02F0AC82142D40F900FD21CB /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
-		02F0AC8E142DAF0500FD21CB /* BoundaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BoundaryTests.m; sourceTree = "<group>"; };
-		02F85D24142E7C41000271F2 /* SimpleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleTests.m; sourceTree = "<group>"; };
-		02F85D26142EA012000271F2 /* DeepTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeepTests.m; sourceTree = "<group>"; };
-		02F85D28142ECAD9000271F2 /* DeepChildrenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeepChildrenTests.m; sourceTree = "<group>"; };
-		02F85D2A142ECD66000271F2 /* WildcardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WildcardTests.m; sourceTree = "<group>"; };
-		02F85D4C1430D350000271F2 /* ErrorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ErrorTests.m; sourceTree = "<group>"; };
-		02F85D611432109D000271F2 /* TextConversionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextConversionTests.m; sourceTree = "<group>"; };
+		0DEB8EB41467EC9B00024989 /* libRaptureXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRaptureXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DEB8EC61467ED9C00024989 /* BoundaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoundaryTests.m; path = Tests/BoundaryTests.m; sourceTree = SOURCE_ROOT; };
+		0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeepChildrenTests.m; path = Tests/DeepChildrenTests.m; sourceTree = SOURCE_ROOT; };
+		0DEB8EC81467ED9C00024989 /* DeepTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeepTests.m; path = Tests/DeepTests.m; sourceTree = SOURCE_ROOT; };
+		0DEB8EC91467ED9C00024989 /* ErrorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorTests.m; path = Tests/ErrorTests.m; sourceTree = SOURCE_ROOT; };
+		0DEB8ECA1467ED9C00024989 /* SimpleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleTests.m; path = Tests/SimpleTests.m; sourceTree = SOURCE_ROOT; };
+		0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextConversionTests.m; path = Tests/TextConversionTests.m; sourceTree = SOURCE_ROOT; };
+		0DEB8ECC1467ED9C00024989 /* WildcardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WildcardTests.m; path = Tests/WildcardTests.m; sourceTree = SOURCE_ROOT; };
+		0DEB8ED41467EE0A00024989 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDataAdditions.h; path = Library/NSDataAdditions.h; sourceTree = SOURCE_ROOT; };
+		0DEB8ED51467EE0A00024989 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDataAdditions.m; path = Library/NSDataAdditions.m; sourceTree = SOURCE_ROOT; };
+		0DEB8ED61467EE0A00024989 /* Library-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Library-Prefix.pch"; path = "Library/Library-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		0DEB8ED71467EE0A00024989 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RXMLElement.h; path = Library/RXMLElement.h; sourceTree = SOURCE_ROOT; };
+		0DEB8ED81467EE0A00024989 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RXMLElement.m; path = Library/RXMLElement.m; sourceTree = SOURCE_ROOT; };
+		0DEB8ED91467EE0A00024989 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBXML.h; path = Library/TBXML.h; sourceTree = SOURCE_ROOT; };
+		0DEB8EDA1467EE0A00024989 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBXML.m; path = Library/TBXML.m; sourceTree = SOURCE_ROOT; };
+		0DEB8F2B14681A0800024989 /* Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tests-Prefix.pch"; path = "Tests/Tests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		0DEB8F2D14681BD800024989 /* players.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = players.xml; path = Tests/players.xml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		0252B2BC142ADFC60018B75D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0252B306142AE3FF0018B75D /* libz.dylib in Frameworks */,
-				0252B2C4142ADFC60018B75D /* UIKit.framework in Frameworks */,
-				0252B2C6142ADFC60018B75D /* Foundation.framework in Frameworks */,
-				0252B2C8142ADFC60018B75D /* CoreGraphics.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0252B2D9142ADFC60018B75D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */,
 				0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */,
 				0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */,
 				0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */,
 				0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DEB8EB11467EC9B00024989 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +96,8 @@
 		0252B2B4142ADFC60018B75D = {
 			isa = PBXGroup;
 			children = (
-				0252B2C9142ADFC60018B75D /* RaptureXML */,
-				0252B2E5142ADFC60018B75D /* RaptureXMLTests */,
+				0252B2F7142AE05B0018B75D /* Library */,
+				0252B2E5142ADFC60018B75D /* Tests */,
 				0252B2C2142ADFC60018B75D /* Frameworks */,
 				0252B2C0142ADFC60018B75D /* Products */,
 			);
@@ -115,8 +106,8 @@
 		0252B2C0142ADFC60018B75D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0252B2BF142ADFC60018B75D /* RaptureXML.app */,
 				0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */,
+				0DEB8EB41467EC9B00024989 /* libRaptureXML.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -133,95 +124,55 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0252B2C9142ADFC60018B75D /* RaptureXML */ = {
+		0252B2E5142ADFC60018B75D /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0252B2D2142ADFC60018B75D /* RaptureXMLAppDelegate.h */,
-				0252B2D3142ADFC60018B75D /* RaptureXMLAppDelegate.m */,
-				0252B2D5142ADFC60018B75D /* MainWindow.xib */,
-				02F0AC7A142D372E00FD21CB /* Samples */,
-				0252B2F7142AE05B0018B75D /* RaptureXML */,
-				0252B2CA142ADFC60018B75D /* Supporting Files */,
+				0DEB8F2D14681BD800024989 /* players.xml */,
+				0DEB8F2B14681A0800024989 /* Tests-Prefix.pch */,
+				0DEB8EC61467ED9C00024989 /* BoundaryTests.m */,
+				0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */,
+				0DEB8EC81467ED9C00024989 /* DeepTests.m */,
+				0DEB8EC91467ED9C00024989 /* ErrorTests.m */,
+				0DEB8ECA1467ED9C00024989 /* SimpleTests.m */,
+				0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */,
+				0DEB8ECC1467ED9C00024989 /* WildcardTests.m */,
 			);
-			path = RaptureXML;
-			sourceTree = "<group>";
-		};
-		0252B2CA142ADFC60018B75D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0252B2CB142ADFC60018B75D /* RaptureXML-Info.plist */,
-				0252B2CC142ADFC60018B75D /* InfoPlist.strings */,
-				0252B2CF142ADFC60018B75D /* main.m */,
-				0252B2D1142ADFC60018B75D /* RaptureXML-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0252B2E5142ADFC60018B75D /* RaptureXMLTests */ = {
-			isa = PBXGroup;
-			children = (
-				02F0AC8E142DAF0500FD21CB /* BoundaryTests.m */,
-				02F85D24142E7C41000271F2 /* SimpleTests.m */,
-				02F85D26142EA012000271F2 /* DeepTests.m */,
-				02F85D28142ECAD9000271F2 /* DeepChildrenTests.m */,
-				02F85D2A142ECD66000271F2 /* WildcardTests.m */,
-				02F85D4C1430D350000271F2 /* ErrorTests.m */,
-				02F85D611432109D000271F2 /* TextConversionTests.m */,
-				0252B2E6142ADFC60018B75D /* Supporting Files */,
-			);
+			name = Tests;
 			path = RaptureXMLTests;
 			sourceTree = "<group>";
 		};
-		0252B2E6142ADFC60018B75D /* Supporting Files */ = {
+		0252B2F7142AE05B0018B75D /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				0252B2E7142ADFC60018B75D /* RaptureXMLTests-Info.plist */,
-				0252B2E8142ADFC60018B75D /* InfoPlist.strings */,
+				0DEB8ED61467EE0A00024989 /* Library-Prefix.pch */,
+				0DEB8ED41467EE0A00024989 /* NSDataAdditions.h */,
+				0DEB8ED51467EE0A00024989 /* NSDataAdditions.m */,
+				0DEB8ED71467EE0A00024989 /* RXMLElement.h */,
+				0DEB8ED81467EE0A00024989 /* RXMLElement.m */,
+				0DEB8ED91467EE0A00024989 /* TBXML.h */,
+				0DEB8EDA1467EE0A00024989 /* TBXML.m */,
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0252B2F7142AE05B0018B75D /* RaptureXML */ = {
-			isa = PBXGroup;
-			children = (
-				0252B2F8142AE05B0018B75D /* NSDataAdditions.h */,
-				0252B2F9142AE05B0018B75D /* NSDataAdditions.m */,
-				0252B2FA142AE05B0018B75D /* TBXML.h */,
-				0252B2FB142AE05B0018B75D /* TBXML.m */,
-				02F0AC81142D40F900FD21CB /* RXMLElement.h */,
-				02F0AC82142D40F900FD21CB /* RXMLElement.m */,
-			);
-			path = RaptureXML;
-			sourceTree = "<group>";
-		};
-		02F0AC7A142D372E00FD21CB /* Samples */ = {
-			isa = PBXGroup;
-			children = (
-				02F0AC7B142D373B00FD21CB /* players.xml */,
-			);
-			path = Samples;
+			name = Library;
+			path = RaptureXML/RaptureXML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
-/* Begin PBXNativeTarget section */
-		0252B2BE142ADFC60018B75D /* RaptureXML */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0252B2F1142ADFC70018B75D /* Build configuration list for PBXNativeTarget "RaptureXML" */;
-			buildPhases = (
-				0252B2BB142ADFC60018B75D /* Sources */,
-				0252B2BC142ADFC60018B75D /* Frameworks */,
-				0252B2BD142ADFC60018B75D /* Resources */,
+/* Begin PBXHeadersBuildPhase section */
+		0DEB8EB21467EC9B00024989 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DEB8EDB1467EE0A00024989 /* NSDataAdditions.h in Headers */,
+				0DEB8EDE1467EE0A00024989 /* Library-Prefix.pch in Headers */,
+				0DEB8EDF1467EE0A00024989 /* RXMLElement.h in Headers */,
+				0DEB8EE21467EE0A00024989 /* TBXML.h in Headers */,
 			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = RaptureXML;
-			productName = RaptureXML;
-			productReference = 0252B2BF142ADFC60018B75D /* RaptureXML.app */;
-			productType = "com.apple.product-type.application";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
 		0252B2DC142ADFC60018B75D /* RaptureXMLTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0252B2F4142ADFC70018B75D /* Build configuration list for PBXNativeTarget "RaptureXMLTests" */;
@@ -234,12 +185,29 @@
 			buildRules = (
 			);
 			dependencies = (
-				0252B2E4142ADFC60018B75D /* PBXTargetDependency */,
 			);
 			name = RaptureXMLTests;
 			productName = RaptureXMLTests;
 			productReference = 0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */;
 			productType = "com.apple.product-type.bundle";
+		};
+		0DEB8EB31467EC9B00024989 /* RaptureXML */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DEB8EBC1467EC9B00024989 /* Build configuration list for PBXNativeTarget "RaptureXML" */;
+			buildPhases = (
+				0DEB8EB01467EC9B00024989 /* Sources */,
+				0DEB8EB11467EC9B00024989 /* Frameworks */,
+				0DEB8EB21467EC9B00024989 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0DEB8F2A1468198D00024989 /* PBXTargetDependency */,
+			);
+			name = RaptureXML;
+			productName = RaptureXML;
+			productReference = 0DEB8EB41467EC9B00024989 /* libRaptureXML.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 /* End PBXNativeTarget section */
 
@@ -262,28 +230,18 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0252B2BE142ADFC60018B75D /* RaptureXML */,
+				0DEB8EB31467EC9B00024989 /* RaptureXML */,
 				0252B2DC142ADFC60018B75D /* RaptureXMLTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		0252B2BD142ADFC60018B75D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0252B2CE142ADFC60018B75D /* InfoPlist.strings in Resources */,
-				0252B2D7142ADFC60018B75D /* MainWindow.xib in Resources */,
-				02F0AC7C142D373B00FD21CB /* players.xml in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0252B2DA142ADFC60018B75D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0252B2EA142ADFC60018B75D /* InfoPlist.strings in Resources */,
+				0DEB8F2E14681BD800024989 /* players.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,68 +264,42 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		0252B2BB142ADFC60018B75D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0252B2D0142ADFC60018B75D /* main.m in Sources */,
-				0252B2D4142ADFC60018B75D /* RaptureXMLAppDelegate.m in Sources */,
-				0252B2FC142AE05B0018B75D /* NSDataAdditions.m in Sources */,
-				0252B2FD142AE05B0018B75D /* TBXML.m in Sources */,
-				02F0AC83142D40F900FD21CB /* RXMLElement.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		0252B2D8142ADFC60018B75D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02F0AC90142DB0D500FD21CB /* BoundaryTests.m in Sources */,
-				02F85D25142E7C41000271F2 /* SimpleTests.m in Sources */,
-				02F85D27142EA012000271F2 /* DeepTests.m in Sources */,
-				02F85D29142ECAD9000271F2 /* DeepChildrenTests.m in Sources */,
-				02F85D2B142ECD66000271F2 /* WildcardTests.m in Sources */,
-				02F85D4F1430D402000271F2 /* ErrorTests.m in Sources */,
-				02F85D621432109D000271F2 /* TextConversionTests.m in Sources */,
+				0DEB8ECD1467ED9C00024989 /* BoundaryTests.m in Sources */,
+				0DEB8ECE1467ED9C00024989 /* DeepChildrenTests.m in Sources */,
+				0DEB8ECF1467ED9C00024989 /* DeepTests.m in Sources */,
+				0DEB8ED01467ED9C00024989 /* ErrorTests.m in Sources */,
+				0DEB8ED11467ED9C00024989 /* SimpleTests.m in Sources */,
+				0DEB8ED21467ED9C00024989 /* TextConversionTests.m in Sources */,
+				0DEB8ED31467ED9C00024989 /* WildcardTests.m in Sources */,
+				0DEB8EDD1467EE0A00024989 /* NSDataAdditions.m in Sources */,
+				0DEB8EE11467EE0A00024989 /* RXMLElement.m in Sources */,
+				0DEB8EE41467EE0A00024989 /* TBXML.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DEB8EB01467EC9B00024989 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DEB8EDC1467EE0A00024989 /* NSDataAdditions.m in Sources */,
+				0DEB8EE01467EE0A00024989 /* RXMLElement.m in Sources */,
+				0DEB8EE31467EE0A00024989 /* TBXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0252B2E4142ADFC60018B75D /* PBXTargetDependency */ = {
+		0DEB8F2A1468198D00024989 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 0252B2BE142ADFC60018B75D /* RaptureXML */;
-			targetProxy = 0252B2E3142ADFC60018B75D /* PBXContainerItemProxy */;
+			target = 0252B2DC142ADFC60018B75D /* RaptureXMLTests */;
+			targetProxy = 0DEB8F291468198D00024989 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		0252B2CC142ADFC60018B75D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0252B2CD142ADFC60018B75D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		0252B2D5142ADFC60018B75D /* MainWindow.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0252B2D6142ADFC60018B75D /* en */,
-			);
-			name = MainWindow.xib;
-			sourceTree = "<group>";
-		};
-		0252B2E8142ADFC60018B75D /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0252B2E9142ADFC60018B75D /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0252B2EF142ADFC70018B75D /* Debug */ = {
@@ -385,7 +317,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -402,7 +334,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -413,43 +345,18 @@
 			};
 			name = Release;
 		};
-		0252B2F2142ADFC70018B75D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RaptureXML/RaptureXML-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "RaptureXML/RaptureXML-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Debug;
-		};
-		0252B2F3142ADFC70018B75D /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RaptureXML/RaptureXML-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "RaptureXML/RaptureXML-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
 		0252B2F5142ADFC70018B75D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RaptureXML.app/RaptureXML";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RaptureXML/RaptureXML-Prefix.pch";
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "RaptureXMLTests/RaptureXMLTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
 			};
@@ -458,18 +365,43 @@
 		0252B2F6142ADFC70018B75D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RaptureXML.app/RaptureXML";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "RaptureXML/RaptureXML-Prefix.pch";
+				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
-				INFOPLIST_FILE = "RaptureXMLTests/RaptureXMLTests-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+		0DEB8EBD1467EC9B00024989 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/RaptureXML.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Library/Library-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0DEB8EBE1467EC9B00024989 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/RaptureXML.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Library/Library-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 			};
 			name = Release;
 		};
@@ -485,20 +417,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0252B2F1142ADFC70018B75D /* Build configuration list for PBXNativeTarget "RaptureXML" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0252B2F2142ADFC70018B75D /* Debug */,
-				0252B2F3142ADFC70018B75D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		0252B2F4142ADFC70018B75D /* Build configuration list for PBXNativeTarget "RaptureXMLTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0252B2F5142ADFC70018B75D /* Debug */,
 				0252B2F6142ADFC70018B75D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0DEB8EBC1467EC9B00024989 /* Build configuration list for PBXNativeTarget "RaptureXML" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DEB8EBD1467EC9B00024989 /* Debug */,
+				0DEB8EBE1467EC9B00024989 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
