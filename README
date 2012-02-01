@@ -122,7 +122,7 @@ Adding RaptureXML to Your Project
 
 Two steps:
 
-  * Copy the RaptureXML/RaptureXML/RaptureXML folder into your own project and import "RXMLElement.h" somewheres.
+  * Copy the RaptureXML/Library folder into your own project and import "RXMLElement.h" somewheres.
   * Link in libz.dylib to your target.
 
 
