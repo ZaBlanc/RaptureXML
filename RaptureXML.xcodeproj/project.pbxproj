@@ -11,6 +11,12 @@
 		0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
 		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
+		027DAC3214FBF443001BA563 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2D14FBF443001BA563 /* NSDataAdditions.m */; };
+		027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
+		027DAC3414FBF443001BA563 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC3114FBF443001BA563 /* TBXML.m */; };
+		027DAC3514FBF463001BA563 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2D14FBF443001BA563 /* NSDataAdditions.m */; };
+		027DAC3614FBF465001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
+		027DAC3714FBF468001BA563 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC3114FBF443001BA563 /* TBXML.m */; };
 		0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0DEB8ECD1467ED9C00024989 /* BoundaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC61467ED9C00024989 /* BoundaryTests.m */; };
 		0DEB8ECE1467ED9C00024989 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */; };
@@ -19,29 +25,9 @@
 		0DEB8ED11467ED9C00024989 /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECA1467ED9C00024989 /* SimpleTests.m */; };
 		0DEB8ED21467ED9C00024989 /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */; };
 		0DEB8ED31467ED9C00024989 /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECC1467ED9C00024989 /* WildcardTests.m */; };
-		0DEB8EDB1467EE0A00024989 /* NSDataAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DEB8ED41467EE0A00024989 /* NSDataAdditions.h */; };
-		0DEB8EDC1467EE0A00024989 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ED51467EE0A00024989 /* NSDataAdditions.m */; };
-		0DEB8EDD1467EE0A00024989 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ED51467EE0A00024989 /* NSDataAdditions.m */; };
-		0DEB8EDE1467EE0A00024989 /* Library-Prefix.pch in Headers */ = {isa = PBXBuildFile; fileRef = 0DEB8ED61467EE0A00024989 /* Library-Prefix.pch */; };
-		0DEB8EDF1467EE0A00024989 /* RXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DEB8ED71467EE0A00024989 /* RXMLElement.h */; };
-		0DEB8EE01467EE0A00024989 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ED81467EE0A00024989 /* RXMLElement.m */; };
-		0DEB8EE11467EE0A00024989 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ED81467EE0A00024989 /* RXMLElement.m */; };
-		0DEB8EE21467EE0A00024989 /* TBXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DEB8ED91467EE0A00024989 /* TBXML.h */; };
-		0DEB8EE31467EE0A00024989 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EDA1467EE0A00024989 /* TBXML.m */; };
-		0DEB8EE41467EE0A00024989 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EDA1467EE0A00024989 /* TBXML.m */; };
 		0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
 		0DEB8F2E14681BD800024989 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB8F2D14681BD800024989 /* players.xml */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		0DEB8F291468198D00024989 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0252B2B6142ADFC60018B75D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0252B2DC142ADFC60018B75D;
-			remoteInfo = RaptureXMLTests;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		0252B2C3142ADFC60018B75D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -50,6 +36,13 @@
 		0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0252B2DE142ADFC60018B75D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0252B305142AE3FF0018B75D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		027DAC2C14FBF443001BA563 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
+		027DAC2D14FBF443001BA563 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
+		027DAC2E14FBF443001BA563 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
+		027DAC2F14FBF443001BA563 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
+		027DAC3014FBF443001BA563 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
+		027DAC3114FBF443001BA563 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
+		027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Library-Prefix.pch"; sourceTree = "<group>"; };
 		0DEB8EB41467EC9B00024989 /* libRaptureXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRaptureXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DEB8EC61467ED9C00024989 /* BoundaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoundaryTests.m; path = Tests/BoundaryTests.m; sourceTree = SOURCE_ROOT; };
 		0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeepChildrenTests.m; path = Tests/DeepChildrenTests.m; sourceTree = SOURCE_ROOT; };
@@ -58,13 +51,6 @@
 		0DEB8ECA1467ED9C00024989 /* SimpleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleTests.m; path = Tests/SimpleTests.m; sourceTree = SOURCE_ROOT; };
 		0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextConversionTests.m; path = Tests/TextConversionTests.m; sourceTree = SOURCE_ROOT; };
 		0DEB8ECC1467ED9C00024989 /* WildcardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WildcardTests.m; path = Tests/WildcardTests.m; sourceTree = SOURCE_ROOT; };
-		0DEB8ED41467EE0A00024989 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSDataAdditions.h; path = Library/NSDataAdditions.h; sourceTree = SOURCE_ROOT; };
-		0DEB8ED51467EE0A00024989 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSDataAdditions.m; path = Library/NSDataAdditions.m; sourceTree = SOURCE_ROOT; };
-		0DEB8ED61467EE0A00024989 /* Library-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Library-Prefix.pch"; path = "Library/Library-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		0DEB8ED71467EE0A00024989 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RXMLElement.h; path = Library/RXMLElement.h; sourceTree = SOURCE_ROOT; };
-		0DEB8ED81467EE0A00024989 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RXMLElement.m; path = Library/RXMLElement.m; sourceTree = SOURCE_ROOT; };
-		0DEB8ED91467EE0A00024989 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TBXML.h; path = Library/TBXML.h; sourceTree = SOURCE_ROOT; };
-		0DEB8EDA1467EE0A00024989 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TBXML.m; path = Library/TBXML.m; sourceTree = SOURCE_ROOT; };
 		0DEB8F2B14681A0800024989 /* Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tests-Prefix.pch"; path = "Tests/Tests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		0DEB8F2D14681BD800024989 /* players.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = players.xml; path = Tests/players.xml; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -96,7 +82,8 @@
 		0252B2B4142ADFC60018B75D = {
 			isa = PBXGroup;
 			children = (
-				0252B2F7142AE05B0018B75D /* Library */,
+				027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */,
+				027DAC2B14FBF443001BA563 /* RaptureXML */,
 				0252B2E5142ADFC60018B75D /* Tests */,
 				0252B2C2142ADFC60018B75D /* Frameworks */,
 				0252B2C0142ADFC60018B75D /* Products */,
@@ -141,19 +128,17 @@
 			path = RaptureXMLTests;
 			sourceTree = "<group>";
 		};
-		0252B2F7142AE05B0018B75D /* Library */ = {
+		027DAC2B14FBF443001BA563 /* RaptureXML */ = {
 			isa = PBXGroup;
 			children = (
-				0DEB8ED61467EE0A00024989 /* Library-Prefix.pch */,
-				0DEB8ED41467EE0A00024989 /* NSDataAdditions.h */,
-				0DEB8ED51467EE0A00024989 /* NSDataAdditions.m */,
-				0DEB8ED71467EE0A00024989 /* RXMLElement.h */,
-				0DEB8ED81467EE0A00024989 /* RXMLElement.m */,
-				0DEB8ED91467EE0A00024989 /* TBXML.h */,
-				0DEB8EDA1467EE0A00024989 /* TBXML.m */,
+				027DAC2C14FBF443001BA563 /* NSDataAdditions.h */,
+				027DAC2D14FBF443001BA563 /* NSDataAdditions.m */,
+				027DAC2E14FBF443001BA563 /* RXMLElement.h */,
+				027DAC2F14FBF443001BA563 /* RXMLElement.m */,
+				027DAC3014FBF443001BA563 /* TBXML.h */,
+				027DAC3114FBF443001BA563 /* TBXML.m */,
 			);
-			name = Library;
-			path = RaptureXML/RaptureXML;
+			path = RaptureXML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -163,10 +148,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DEB8EDB1467EE0A00024989 /* NSDataAdditions.h in Headers */,
-				0DEB8EDE1467EE0A00024989 /* Library-Prefix.pch in Headers */,
-				0DEB8EDF1467EE0A00024989 /* RXMLElement.h in Headers */,
-				0DEB8EE21467EE0A00024989 /* TBXML.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,7 +183,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0DEB8F2A1468198D00024989 /* PBXTargetDependency */,
 			);
 			name = RaptureXML;
 			productName = RaptureXML;
@@ -275,9 +255,9 @@
 				0DEB8ED11467ED9C00024989 /* SimpleTests.m in Sources */,
 				0DEB8ED21467ED9C00024989 /* TextConversionTests.m in Sources */,
 				0DEB8ED31467ED9C00024989 /* WildcardTests.m in Sources */,
-				0DEB8EDD1467EE0A00024989 /* NSDataAdditions.m in Sources */,
-				0DEB8EE11467EE0A00024989 /* RXMLElement.m in Sources */,
-				0DEB8EE41467EE0A00024989 /* TBXML.m in Sources */,
+				027DAC3214FBF443001BA563 /* NSDataAdditions.m in Sources */,
+				027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */,
+				027DAC3414FBF443001BA563 /* TBXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,21 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DEB8EDC1467EE0A00024989 /* NSDataAdditions.m in Sources */,
-				0DEB8EE01467EE0A00024989 /* RXMLElement.m in Sources */,
-				0DEB8EE31467EE0A00024989 /* TBXML.m in Sources */,
+				027DAC3514FBF463001BA563 /* NSDataAdditions.m in Sources */,
+				027DAC3614FBF465001BA563 /* RXMLElement.m in Sources */,
+				027DAC3714FBF468001BA563 /* TBXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		0DEB8F2A1468198D00024989 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0252B2DC142ADFC60018B75D /* RaptureXMLTests */;
-			targetProxy = 0DEB8F291468198D00024989 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0252B2EF142ADFC70018B75D /* Debug */ = {
@@ -354,7 +326,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -371,7 +343,7 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -384,8 +356,8 @@
 			buildSettings = {
 				DSTROOT = /tmp/RaptureXML.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Library/Library-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_PREFIX_HEADER = "Library-Prefix.pch";
+				GCC_VERSION = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -397,8 +369,8 @@
 			buildSettings = {
 				DSTROOT = /tmp/RaptureXML.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Library/Library-Prefix.pch";
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_PREFIX_HEADER = "Library-Prefix.pch";
+				GCC_VERSION = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
