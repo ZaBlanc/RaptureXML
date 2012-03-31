@@ -115,6 +115,10 @@ The wildcard processes every tag rather than the one you would've named.  You ca
 
 This gives us all the tags for the coach.  Easy enough?
 
+# Namespaces #
+
+Namespaces are currently not supported.  If you are searching for a tag with a namespace, just provide the tag name.
+
 # Unit Tests as Documentation #
 
 You can see the full usage of RaptureXML by reading the unit tests in the project.  Not only does it show you all the code, but you'll know it works! (You can run the unit tests by pressing Command-U in XCode)
