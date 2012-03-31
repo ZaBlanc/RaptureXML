@@ -52,11 +52,19 @@
 + (id)elementFromXMLNode:(xmlNodePtr)node;
 
 - (NSString *)attribute:(NSString *)attName;
+- (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)namespace;
+
 - (NSInteger)attributeAsInt:(NSString *)attName;
+- (NSInteger)attributeAsInt:(NSString *)attName inNamespace:(NSString *)namespace;
+
 - (double)attributeAsDouble:(NSString *)attName;
+- (double)attributeAsDouble:(NSString *)attName inNamespace:(NSString *)namespace;
 
 - (RXMLElement *)child:(NSString *)tagName;
+- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)namespace;
+
 - (NSArray *)children:(NSString *)tagName;
+- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)namespace;
 
 - (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))blk;
 - (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))blk;

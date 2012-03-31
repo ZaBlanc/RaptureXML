@@ -7,7 +7,7 @@ You tell me.  Processing XML in Objective-C is an awful, frustrating experience 
 	RXMLElement *rootXML = [RXMLElement elementFromXMLFile:@"players.xml"];
 	
 	[rootXML iterate:@"players.player" with: ^(RXMLElement *e) {
-		NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"].text, [e child:@"name"].text);
+		NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"].text);
 	}];    
 
 RaptureXML changes the game when it comes to XML processing in Objective-C.  As you can see from the code, it takes only seconds to understand what this code does.  There are no wasted arrays and verbose looping you have to do.  The code is a breeze to read and maintain.
@@ -92,7 +92,7 @@ If we like, we can get all the individual player tags with:
 From there, we can process the individual players and be happy.  Now, this is already much better than any other XML library we've seen, but RaptureXML can use query paths to make this ridiculously easy.  Let's use query paths to improve the conciseness our code:
 
 	[rootXML iterate:@"players.player" with: ^(RXMLElement *player) {
-		NSLog(@"Player: %@ (#%@)", [player child:@"name"].text, [player attribute:@"number"].text);
+		NSLog(@"Player: %@ (#%@)", [player child:@"name"].text, [player attribute:@"number"]);
 	}];    
 
 Your block is passed an RXMLElement representing each player in just one line!  Alternatively, you could have shortened it with:
@@ -117,7 +117,15 @@ This gives us all the tags for the coach.  Easy enough?
 
 # Namespaces #
 
-Namespaces are currently not supported.  If you are searching for a tag with a namespace, just provide the tag name.
+Namespaces are supported for most methods, however not for iterations.  If you want to use namespaces for that kind of thing, use the -children method manually.  When specifying namespaces, be sure to specify the namespace URI and *not* the prefix.  For example, if your XML looked like:
+
+	<team xmlns:sport="*" sport:year="2011" sport:name="New York Mets">
+		...
+	</team>
+
+You would access the attributes with:
+
+	NSLog(@"Team Name: %@", [e attribute:@"name" inNamespace:@"*"]);
 
 # Unit Tests as Documentation #
 
