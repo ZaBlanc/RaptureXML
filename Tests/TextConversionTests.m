@@ -44,7 +44,7 @@
 }
 
 - (void)testIntTags {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_];
+    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ withEncoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
     [rxml iterate:@"*" with:^(RXMLElement *e) {
@@ -59,7 +59,7 @@
 }
 
 - (void)testIntAttributes {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_];
+    RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ withEncoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
     [rxml iterate:@"*" with:^(RXMLElement *e) {

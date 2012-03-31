@@ -11,6 +11,8 @@
 @interface SimpleTests : SenTestCase {
     NSString *simplifiedXML_;
     NSString *attributedXML_;
+    NSString *interruptedTextXML_;
+    NSString *cdataXML_;
 }
 
 @end
@@ -33,10 +35,22 @@
             <triangle name=\"Triangle\" />\
             <circle name=\"Circle\" />\
         </shapes>";
+    interruptedTextXML_ = @"<top><a>this</a>is<a>interrupted</a>text<a></a></top>";
+    cdataXML_ = @"<top><![CDATA[this]]><![CDATA[is]]><![CDATA[cdata]]></top>";
+}
+
+- (void)testInterruptedText {
+    RXMLElement *rxml = [RXMLElement elementFromXMLString:interruptedTextXML_ withEncoding:NSUTF8StringEncoding];
+    STAssertEqualObjects(rxml.text, @"thisisinterruptedtext", nil);
+}
+
+- (void)testCDataText {
+    RXMLElement *rxml = [RXMLElement elementFromXMLString:cdataXML_ withEncoding:NSUTF8StringEncoding];
+    STAssertEqualObjects(rxml.text, @"thisiscdata", nil);
 }
 
 - (void)testTags {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_];
+    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ withEncoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
     [rxml iterate:@"*" with:^(RXMLElement *e) {
@@ -58,7 +72,7 @@
 }
 
 - (void)testAttributes {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_];
+    RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ withEncoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
     [rxml iterate:@"*" with:^(RXMLElement *e) {

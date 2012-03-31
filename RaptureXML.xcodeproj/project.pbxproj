@@ -7,42 +7,40 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		02041DB81526A71200D1F36A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02041DB71526A71200D1F36A /* libxml2.dylib */; };
+		02041DBA1526B0DE00D1F36A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02041DB71526A71200D1F36A /* libxml2.dylib */; };
+		02041DBD1526BF2A00D1F36A /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECA1467ED9C00024989 /* SimpleTests.m */; };
+		02041DBF1526CACD00D1F36A /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */; };
+		02041DC01526CB0000D1F36A /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECC1467ED9C00024989 /* WildcardTests.m */; };
 		0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2DE142ADFC60018B75D /* SenTestingKit.framework */; };
 		0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
 		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
-		027DAC3214FBF443001BA563 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2D14FBF443001BA563 /* NSDataAdditions.m */; };
 		027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
-		027DAC3414FBF443001BA563 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC3114FBF443001BA563 /* TBXML.m */; };
-		027DAC3514FBF463001BA563 /* NSDataAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2D14FBF443001BA563 /* NSDataAdditions.m */; };
 		027DAC3614FBF465001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
-		027DAC3714FBF468001BA563 /* TBXML.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC3114FBF443001BA563 /* TBXML.m */; };
+		02F3A3FF1526D22600E8C822 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB8F2D14681BD800024989 /* players.xml */; };
+		02F3A4001526D39000E8C822 /* DeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC81467ED9C00024989 /* DeepTests.m */; };
+		02F3A4011526D39800E8C822 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */; };
+		02F3A4021526D45B00E8C822 /* ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC91467ED9C00024989 /* ErrorTests.m */; };
+		02F3A4051526D7BC00E8C822 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F3A4041526D7BC00E8C822 /* EncodingTests.m */; };
 		0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0DEB8ECD1467ED9C00024989 /* BoundaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC61467ED9C00024989 /* BoundaryTests.m */; };
-		0DEB8ECE1467ED9C00024989 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */; };
-		0DEB8ECF1467ED9C00024989 /* DeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC81467ED9C00024989 /* DeepTests.m */; };
-		0DEB8ED01467ED9C00024989 /* ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC91467ED9C00024989 /* ErrorTests.m */; };
-		0DEB8ED11467ED9C00024989 /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECA1467ED9C00024989 /* SimpleTests.m */; };
-		0DEB8ED21467ED9C00024989 /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */; };
-		0DEB8ED31467ED9C00024989 /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECC1467ED9C00024989 /* WildcardTests.m */; };
 		0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
-		0DEB8F2E14681BD800024989 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB8F2D14681BD800024989 /* players.xml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		02041DB71526A71200D1F36A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		02041DC21526D03A00D1F36A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		0252B2C3142ADFC60018B75D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0252B2C5142ADFC60018B75D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0252B2C7142ADFC60018B75D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0252B2DE142ADFC60018B75D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0252B305142AE3FF0018B75D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		027DAC2C14FBF443001BA563 /* NSDataAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDataAdditions.h; sourceTree = "<group>"; };
-		027DAC2D14FBF443001BA563 /* NSDataAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDataAdditions.m; sourceTree = "<group>"; };
 		027DAC2E14FBF443001BA563 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
 		027DAC2F14FBF443001BA563 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
-		027DAC3014FBF443001BA563 /* TBXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TBXML.h; sourceTree = "<group>"; };
-		027DAC3114FBF443001BA563 /* TBXML.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TBXML.m; sourceTree = "<group>"; };
 		027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Library-Prefix.pch"; sourceTree = "<group>"; };
+		02F3A4041526D7BC00E8C822 /* EncodingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodingTests.m; sourceTree = SOURCE_ROOT; };
 		0DEB8EB41467EC9B00024989 /* libRaptureXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRaptureXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DEB8EC61467ED9C00024989 /* BoundaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoundaryTests.m; path = Tests/BoundaryTests.m; sourceTree = SOURCE_ROOT; };
 		0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeepChildrenTests.m; path = Tests/DeepChildrenTests.m; sourceTree = SOURCE_ROOT; };
@@ -60,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02041DBA1526B0DE00D1F36A /* libxml2.dylib in Frameworks */,
 				0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */,
 				0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */,
 				0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */,
@@ -72,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				02041DB81526A71200D1F36A /* libxml2.dylib in Frameworks */,
 				0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -82,6 +82,7 @@
 		0252B2B4142ADFC60018B75D = {
 			isa = PBXGroup;
 			children = (
+				02041DC21526D03A00D1F36A /* MediaPlayer.framework */,
 				027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */,
 				027DAC2B14FBF443001BA563 /* RaptureXML */,
 				0252B2E5142ADFC60018B75D /* Tests */,
@@ -102,6 +103,7 @@
 		0252B2C2142ADFC60018B75D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02041DB71526A71200D1F36A /* libxml2.dylib */,
 				0252B305142AE3FF0018B75D /* libz.dylib */,
 				0252B2C3142ADFC60018B75D /* UIKit.framework */,
 				0252B2C5142ADFC60018B75D /* Foundation.framework */,
@@ -123,6 +125,7 @@
 				0DEB8ECA1467ED9C00024989 /* SimpleTests.m */,
 				0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */,
 				0DEB8ECC1467ED9C00024989 /* WildcardTests.m */,
+				02F3A4041526D7BC00E8C822 /* EncodingTests.m */,
 			);
 			name = Tests;
 			path = RaptureXMLTests;
@@ -131,12 +134,8 @@
 		027DAC2B14FBF443001BA563 /* RaptureXML */ = {
 			isa = PBXGroup;
 			children = (
-				027DAC2C14FBF443001BA563 /* NSDataAdditions.h */,
-				027DAC2D14FBF443001BA563 /* NSDataAdditions.m */,
 				027DAC2E14FBF443001BA563 /* RXMLElement.h */,
 				027DAC2F14FBF443001BA563 /* RXMLElement.m */,
-				027DAC3014FBF443001BA563 /* TBXML.h */,
-				027DAC3114FBF443001BA563 /* TBXML.m */,
 			);
 			path = RaptureXML;
 			sourceTree = "<group>";
@@ -195,7 +194,7 @@
 		0252B2B6142ADFC60018B75D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 				ORGANIZATIONNAME = "Rapture In Venice";
 			};
 			buildConfigurationList = 0252B2B9142ADFC60018B75D /* Build configuration list for PBXProject "RaptureXML" */;
@@ -221,7 +220,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DEB8F2E14681BD800024989 /* players.xml in Resources */,
+				02F3A3FF1526D22600E8C822 /* players.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -249,15 +248,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DEB8ECD1467ED9C00024989 /* BoundaryTests.m in Sources */,
-				0DEB8ECE1467ED9C00024989 /* DeepChildrenTests.m in Sources */,
-				0DEB8ECF1467ED9C00024989 /* DeepTests.m in Sources */,
-				0DEB8ED01467ED9C00024989 /* ErrorTests.m in Sources */,
-				0DEB8ED11467ED9C00024989 /* SimpleTests.m in Sources */,
-				0DEB8ED21467ED9C00024989 /* TextConversionTests.m in Sources */,
-				0DEB8ED31467ED9C00024989 /* WildcardTests.m in Sources */,
-				027DAC3214FBF443001BA563 /* NSDataAdditions.m in Sources */,
 				027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */,
-				027DAC3414FBF443001BA563 /* TBXML.m in Sources */,
+				02041DBD1526BF2A00D1F36A /* SimpleTests.m in Sources */,
+				02041DBF1526CACD00D1F36A /* TextConversionTests.m in Sources */,
+				02041DC01526CB0000D1F36A /* WildcardTests.m in Sources */,
+				02F3A4001526D39000E8C822 /* DeepTests.m in Sources */,
+				02F3A4011526D39800E8C822 /* DeepChildrenTests.m in Sources */,
+				02F3A4021526D45B00E8C822 /* ErrorTests.m in Sources */,
+				02F3A4051526D7BC00E8C822 /* EncodingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027DAC3514FBF463001BA563 /* NSDataAdditions.m in Sources */,
 				027DAC3614FBF465001BA563 /* RXMLElement.m in Sources */,
-				027DAC3714FBF468001BA563 /* TBXML.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -327,6 +323,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -344,6 +341,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
@@ -358,6 +356,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library-Prefix.pch";
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -371,6 +370,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library-Prefix.pch";
 				GCC_VERSION = "";
+				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;

@@ -29,26 +29,27 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "TBXML.h"
+#import <libxml2/libxml/xmlreader.h>
+#import <libxml2/libxml/xmlmemory.h>
 
 @interface RXMLElement : NSObject {
-    TBXML *xml_;
-    TBXMLElement *tbxmlElement_;
+    xmlDocPtr doc_;
+    xmlNodePtr node_;
 }
 
-- (id)initFromXMLString:(NSString *)xmlString;
+- (id)initFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding;
 - (id)initFromXMLFile:(NSString *)filename;
 - (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString*)extension;
 - (id)initFromURL:(NSURL *)url;
 - (id)initFromXMLData:(NSData *)data;
-- (id)initFromTBXMLElement:(TBXMLElement *)tbxmlElement;
+- (id)initFromXMLNode:(xmlNodePtr)node;
 
-+ (id)elementFromXMLString:(NSString *)filename;
++ (id)elementFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding;
 + (id)elementFromXMLFile:(NSString *)filename;
 + (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension;
 + (id)elementFromURL:(NSURL *)url;
 + (id)elementFromXMLData:(NSData *)data;
-+ (id)elementFromTBXMLElement:(TBXMLElement *)tbxmlElement;
++ (id)elementFromXMLNode:(xmlNodePtr)node;
 
 - (NSString *)attribute:(NSString *)attName;
 - (NSInteger)attributeAsInt:(NSString *)attName;

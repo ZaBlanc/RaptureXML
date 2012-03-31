@@ -6,7 +6,7 @@ Why do we need *another* XML library?
 -------------------------------------
 
 
-You tell me.  Processing XML in Objective-C is an awful, frustrating experience and the resulting code is never readable.  I'm tired of it! RaptureXML solves this by providing a *powerful* new interface on top of TBXML.  Imagine for a minute the code you'd write to process the XML for a list of baseball team members, retrieving their numbers, names, and positions using your favorite XML processing library.  Now, take a look at how you do it with RaptureXML:
+You tell me.  Processing XML in Objective-C is an awful, frustrating experience and the resulting code is never readable.  I'm tired of it! RaptureXML solves this by providing a *powerful* new interface on top of the native libxml2.  Imagine for a minute the code you'd write to process the XML for a list of baseball team members, retrieving their numbers, names, and positions using your favorite XML processing library.  Now, take a look at how you do it with RaptureXML:
 
   RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
 
@@ -28,7 +28,7 @@ RaptureXML processes XML in two steps: load and path.  This means that you first
 
 You can load the XML with any of the following constructors:
 
-  RXMLElement *rxml = [RXMLElement elementFromXMLString:@"...my xml..."];
+  RXMLElement *rxml = [RXMLElement elementFromXMLString:@"...my xml..." withEncoding:NSUTF8StringEncoding];
   RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"myfile.xml"];
   RXMLElement *rxml = [RXMLElement elementFromXMLFilename:@"myfile" elementFromXMLFilename:@"xml"];
   RXMLElement *rxml = [RXMLElement elementFromURL:[NSURL URLWithString:@"...my url..."]];
@@ -120,10 +120,12 @@ Adding RaptureXML to Your Project
 ---------------------------------
 
 
-Two steps:
+Just a few easy steps:
 
   * Copy the RaptureXML/Library folder into your own project and import "RXMLElement.h" somewheres.
   * Link in libz.dylib to your target.
+  * Link in libxml2.dylib to your target.
+  * In your build settings, for the key "Header Search Paths", add "$(SDK_DIR)"/usr/include/libxml2
 
 
 -----------------------
@@ -131,6 +133,4 @@ Who created RaptureXML?
 -----------------------
 
 RaptureXML was created by John Blanco <john.blanco@raptureinvenice.com> of Rapture In Venice because he got sick of using all of the bizarre XML solutions for iPhone development.  If you like this code and/or need an iOS consultant, get in touch with me via my website, http://raptureinvenice.com. :-)  
-
-TBXML, which RaptureXML currently encapsulates and has modified, was written by Tom Bradley and his original version can be found at http://www.tbxml.co.uk/TBXML/TBXML_Free.html.
 

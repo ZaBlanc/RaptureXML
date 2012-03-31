@@ -32,10 +32,19 @@
 
 @implementation RXMLElement
 
-- (id)initFromXMLString:(NSString *)xmlString {
+- (id)initFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding {
     if ((self = [super init])) {
-        xml_ = [[TBXML alloc] initWithXMLString:xmlString];
-        tbxmlElement_ = xml_.rootXMLElement;
+        NSData *data = [xmlString dataUsingEncoding:encoding];
+
+        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        
+        if ([self isValid]) {
+            node_ = xmlDocGetRootElement(doc_);
+            
+            if (!node_) {
+                xmlFreeDoc(doc_); doc_ = nil;
+            }
+        }
     }
     
     return self;    
@@ -43,17 +52,37 @@
 
 - (id)initFromXMLFile:(NSString *)filename {
     if ((self = [super init])) {
-        xml_ = [[TBXML alloc] initWithXMLFile:filename];
-        tbxmlElement_ = xml_.rootXMLElement;
+        NSString *fullPath = [[[NSBundle bundleForClass:self.class] bundlePath] stringByAppendingPathComponent:filename];
+        NSData *data = [NSData dataWithContentsOfFile:fullPath];
+
+        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        
+        if ([self isValid]) {
+            node_ = xmlDocGetRootElement(doc_);
+            
+            if (!node_) {
+                xmlFreeDoc(doc_); doc_ = nil;
+            }
+        }
     }
     
     return self;    
 }
 
-- (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString*)extension {
+- (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString *)extension {
     if ((self = [super init])) {
-        xml_ = [[TBXML alloc] initWithXMLFile:filename fileExtension:extension];
-        tbxmlElement_ = xml_.rootXMLElement;
+        NSString *fullPath = [[NSBundle bundleForClass:[self class]] pathForResource:filename ofType:extension];
+        NSData *data = [NSData dataWithContentsOfFile:fullPath];
+        
+        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        
+        if ([self isValid]) {
+            node_ = xmlDocGetRootElement(doc_);
+            
+            if (!node_) {
+                xmlFreeDoc(doc_); doc_ = nil;
+            }
+        }
     }
     
     return self;    
@@ -61,8 +90,17 @@
 
 - (id)initFromURL:(NSURL *)url {
     if ((self = [super init])) {
-        xml_ = [[TBXML alloc] initWithURL:url];
-        tbxmlElement_ = xml_.rootXMLElement;
+        NSData *data = [NSData dataWithContentsOfURL:url];
+        
+        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        
+        if ([self isValid]) {
+            node_ = xmlDocGetRootElement(doc_);
+            
+            if (!node_) {
+                xmlFreeDoc(doc_); doc_ = nil;
+            }
+        }
     }
     
     return self;    
@@ -70,23 +108,31 @@
 
 - (id)initFromXMLData:(NSData *)data {
     if ((self = [super init])) {
-        xml_ = [[TBXML alloc] initWithXMLData:data];
-        tbxmlElement_ = xml_.rootXMLElement;
+        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        
+        if ([self isValid]) {
+            node_ = xmlDocGetRootElement(doc_);
+            
+            if (!node_) {
+                xmlFreeDoc(doc_); doc_ = nil;
+            }
+        }
     }
     
     return self;    
 }
 
-- (id)initFromTBXMLElement:(TBXMLElement *)tbxmlElement {
+- (id)initFromXMLNode:(xmlNodePtr)node {
     if ((self = [super init])) {
-        tbxmlElement_ = tbxmlElement;
+        doc_ = nil;
+        node_ = node;
     }
     
-    return self;
+    return self;        
 }
 
-+ (id)elementFromXMLString:(NSString *)filename {
-    return [[[RXMLElement alloc] initFromXMLString:filename] autorelease];    
++ (id)elementFromXMLString:(NSString *)attributeXML_ withEncoding:(NSStringEncoding)encoding {
+    return [[[RXMLElement alloc] initFromXMLString:attributeXML_ withEncoding:encoding] autorelease];    
 }
 
 + (id)elementFromXMLFile:(NSString *)filename {
@@ -105,8 +151,8 @@
     return [[[RXMLElement alloc] initFromXMLData:data] autorelease];
 }
 
-+ (id)elementFromTBXMLElement:(TBXMLElement *)tbxmlElement {
-    return [[[RXMLElement alloc] initFromTBXMLElement:tbxmlElement] autorelease];
++ (id)elementFromXMLNode:(xmlNodePtr)node {
+    return [[[RXMLElement alloc] initFromXMLNode:node] autorelease];
 }
 
 - (NSString *)description {
@@ -114,18 +160,23 @@
 }
 
 - (void)dealloc {
-    [xml_ release];
+    if (doc_ != nil) xmlFreeDoc(doc_);
+    
     [super dealloc];
 }
 
 #pragma mark -
 
 - (NSString *)tag {
-    return [TBXML elementName:tbxmlElement_];
+    return [NSString stringWithUTF8String:(const char *)node_->name];
 }
 
 - (NSString *)text {
-    return [TBXML textForElement:tbxmlElement_];
+    xmlChar *key = xmlNodeGetContent(node_);
+    NSString *text = (key ? [NSString stringWithUTF8String:(const char *)key] : @"");
+    xmlFree(key);
+
+    return text;
 }
 
 - (NSInteger)textAsInt {
@@ -137,7 +188,13 @@
 }
 
 - (NSString *)attribute:(NSString *)attName {
-    return [TBXML valueOfAttributeNamed:attName forElement:tbxmlElement_];
+    const unsigned char *attCStr = xmlGetProp(node_, (const xmlChar *)[attName cStringUsingEncoding:NSUTF8StringEncoding]);
+    
+    if (attCStr) {
+        return [NSString stringWithUTF8String:(const char *)attCStr];
+    }
+    
+    return nil;
 }
 
 - (NSInteger)attributeAsInt:(NSString *)attName {
@@ -149,45 +206,60 @@
 }
 
 - (BOOL)isValid {
-    return (tbxmlElement_ != nil);
+    return (doc_ != nil);
 }
 
 #pragma mark -
 
 - (RXMLElement *)child:(NSString *)tagName {
     NSArray *components = [tagName componentsSeparatedByString:@"."];
-    TBXMLElement *currTBXMLElement = tbxmlElement_;
+    xmlNodePtr cur = node_;
     
     // navigate down
     for (NSInteger i=0; i < components.count; ++i) {
         NSString *iTagName = [components objectAtIndex:i];
-        
+        const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
+
         if ([iTagName isEqualToString:@"*"]) {
-            currTBXMLElement = [TBXML childElementNamed:nil parentElement:currTBXMLElement];
+            cur = cur->children;
+            
+            while (cur != nil && cur->type != XML_ELEMENT_NODE) {
+                cur = cur->next;
+            }
         } else {
-            currTBXMLElement = [TBXML childElementNamed:iTagName parentElement:currTBXMLElement];            
+            cur = cur->children;
+            while (cur != nil) {
+                if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC)) {
+                    break;
+                }
+                
+                cur = cur->next;
+            }
         }
         
-        if (!currTBXMLElement) {
+        if (!cur) {
             break;
         }
     }
     
-    if (currTBXMLElement) {
-        return [RXMLElement elementFromTBXMLElement:currTBXMLElement];
+    if (cur) {
+        return [RXMLElement elementFromXMLNode:cur];
     }
-    
+  
     return nil;
 }
 
 - (NSArray *)children:(NSString *)tagName {
+    const xmlChar *tagNameC = (const xmlChar *)[tagName cStringUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *children = [NSMutableArray array];
-    TBXMLElement *currTBXMLElement = [TBXML childElementNamed:tagName parentElement:tbxmlElement_];
-    
-    if (currTBXMLElement) {
-        do {
-            [children addObject:[RXMLElement elementFromTBXMLElement:currTBXMLElement]];
-        } while ((currTBXMLElement = [TBXML nextSiblingNamed:tagName searchFromElement:currTBXMLElement]));        
+    xmlNodePtr cur = node_->children;
+
+    while (cur != nil) {
+        if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC)) {
+            [children addObject:[RXMLElement elementFromXMLNode:cur]];
+        }
+        
+        cur = cur->next;
     }
     
     return [[children copy] autorelease];
@@ -197,46 +269,69 @@
 
 - (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))blk {
     NSArray *components = [query componentsSeparatedByString:@"."];
-    TBXMLElement *currTBXMLElement = tbxmlElement_;
+    xmlNodePtr cur = node_;
 
     // navigate down
     for (NSInteger i=0; i < components.count; ++i) {
         NSString *iTagName = [components objectAtIndex:i];
         
         if ([iTagName isEqualToString:@"*"]) {
-            currTBXMLElement = [TBXML childElementNamed:nil parentElement:currTBXMLElement];
+            cur = cur->children;
 
             // different behavior depending on if this is the end of the query or midstream
             if (i < (components.count - 1)) {
                 // midstream
                 do {
-                    RXMLElement *element = [RXMLElement elementFromTBXMLElement:currTBXMLElement];
-                    NSString *restOfQuery = [[components subarrayWithRange:NSMakeRange(i + 1, components.count - i - 1)] componentsJoinedByString:@"."];
-                    [element iterate:restOfQuery with:blk];
-                } while ((currTBXMLElement = [TBXML nextSiblingNamed:nil searchFromElement:currTBXMLElement]));
+                    if (cur->type == XML_ELEMENT_NODE) {
+                        RXMLElement *element = [RXMLElement elementFromXMLNode:cur];
+                        NSString *restOfQuery = [[components subarrayWithRange:NSMakeRange(i + 1, components.count - i - 1)] componentsJoinedByString:@"."];
+                        [element iterate:restOfQuery with:blk];
+                    }
+                    
+                    cur = cur->next;
+                } while (cur != nil);
                     
             }
         } else {
-            currTBXMLElement = [TBXML childElementNamed:iTagName parentElement:currTBXMLElement];            
+            const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
+
+            cur = cur->children;
+            while (cur != nil) {
+                if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC)) {
+                    break;
+                }
+                
+                cur = cur->next;
+            }
         }
 
-        if (!currTBXMLElement) {
+        if (!cur) {
             break;
         }
     }
-    
-    if (currTBXMLElement) {
+
+    if (cur) {
         // enumerate
         NSString *childTagName = [components lastObject];
         
-        if ([childTagName isEqualToString:@"*"]) {
-            childTagName = nil;
-        }
-
         do {
-            RXMLElement *element = [RXMLElement elementFromTBXMLElement:currTBXMLElement];
-            blk(element);
-        } while ((currTBXMLElement = [TBXML nextSiblingNamed:childTagName searchFromElement:currTBXMLElement]));
+            if (cur->type == XML_ELEMENT_NODE) {
+                RXMLElement *element = [RXMLElement elementFromXMLNode:cur];
+                blk(element);
+            }
+            
+            if ([childTagName isEqualToString:@"*"]) {
+                cur = cur->next;
+            } else {
+                const xmlChar *tagNameC = (const xmlChar *)[childTagName cStringUsingEncoding:NSUTF8StringEncoding];
+
+                while ((cur = cur->next)) {
+                    if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC)) {
+                        break;
+                    }                    
+                }
+            }
+        } while (cur);
     }
 }
 
