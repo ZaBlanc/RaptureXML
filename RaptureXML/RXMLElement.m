@@ -217,11 +217,10 @@
     xmlNodePtr currentNode = node_;
     
     // navigate down
-    for (NSUInteger i=0; i < components.count; ++i) {
-        NSString *iTagName = [components objectAtIndex:i];
-        const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
+    for (NSString *currentTagName in components) {
+        const xmlChar *tagNameC = (const xmlChar *)[currentTagName cStringUsingEncoding:NSUTF8StringEncoding];
         
-        if ([iTagName isEqualToString:@"*"]) {
+        if ([currentTagName isEqualToString:@"*"]) {
             currentNode = currentNode->children;
             
             while (currentNode != NULL && currentNode->type != XML_ELEMENT_NODE) {
@@ -256,11 +255,10 @@
     const xmlChar *namespaceC = (const xmlChar *)[xmlNamespace cStringUsingEncoding:NSUTF8StringEncoding];
     
     // navigate down
-    for (NSUInteger i=0; i < components.count; ++i) {
-        NSString *iTagName = [components objectAtIndex:i];
-        const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
+    for (NSString *currentTagName in components) {
+        const xmlChar *tagNameC = (const xmlChar *)[currentTagName cStringUsingEncoding:NSUTF8StringEncoding];
         
-        if ([iTagName isEqualToString:@"*"]) {
+        if ([currentTagName isEqualToString:@"*"]) {
             currentNode = currentNode->children;
             
             while (currentNode != NULL && currentNode->type != XML_ELEMENT_NODE && xmlStrcmp(currentNode->ns->href, namespaceC) == 0) {
@@ -332,9 +330,9 @@
     
     // navigate down
     for (NSUInteger i=0; i < components.count; ++i) {
-        NSString *iTagName = [components objectAtIndex:i];
+        NSString *currentTagName = [components objectAtIndex:i];
         
-        if ([iTagName isEqualToString:@"*"]) {
+        if ([currentTagName isEqualToString:@"*"]) {
             currentNode = currentNode->children;
             
             // different behavior depending on if this is the end of the query or midstream
@@ -353,7 +351,7 @@
                 
             }
         } else {
-            const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
+            const xmlChar *tagNameC = (const xmlChar *)[currentTagName cStringUsingEncoding:NSUTF8StringEncoding];
             
             currentNode = currentNode->children;
             while (currentNode != NULL) {
