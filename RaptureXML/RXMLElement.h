@@ -48,14 +48,14 @@
 + (id)elementFromXMLData:(NSData *)data;
 + (id)elementFromXMLNode:(xmlNodePtr)node;
 
-- (NSString *)attribute:(NSString *)attName;
-- (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)namespace;
+- (NSString *)attribute:(NSString *)attributeName;
+- (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)namespace;
 
-- (NSInteger)attributeAsInteger:(NSString *)attName;
-- (NSInteger)attributeAsInteger:(NSString *)attName inNamespace:(NSString *)namespace;
+- (NSInteger)attributeAsInteger:(NSString *)attributeName;
+- (NSInteger)attributeAsInteger:(NSString *)attributeName inNamespace:(NSString *)namespace;
 
-- (double)attributeAsDouble:(NSString *)attName;
-- (double)attributeAsDouble:(NSString *)attName inNamespace:(NSString *)namespace;
+- (double)attributeAsDouble:(NSString *)attributeName;
+- (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)namespace;
 
 - (RXMLElement *)child:(NSString *)tagName;
 - (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)namespace;
@@ -63,8 +63,8 @@
 - (NSArray *)children:(NSString *)tagName;
 - (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)namespace;
 
-- (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))blk;
-- (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))blk;
+- (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))block;
+- (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))block;
 
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;

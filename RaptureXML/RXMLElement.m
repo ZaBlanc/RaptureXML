@@ -31,7 +31,7 @@
 #import "RXMLElement.h"
 
 @implementation RXMLElement {
-    xmlDocPtr doc_;
+    xmlDocPtr document_;
     xmlNodePtr node_;
 }
 
@@ -39,13 +39,13 @@
     if ((self = [super init])) {
         NSData *data = [xmlString dataUsingEncoding:encoding];
 
-        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
+        document_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
+            node_ = xmlDocGetRootElement(document_);
             
             if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
+                xmlFreeDoc(document_); document_ = nil;
             }
         }
     }
@@ -58,13 +58,13 @@
         NSString *fullPath = [[[NSBundle bundleForClass:self.class] bundlePath] stringByAppendingPathComponent:filename];
         NSData *data = [NSData dataWithContentsOfFile:fullPath];
 
-        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
+        document_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
+            node_ = xmlDocGetRootElement(document_);
             
             if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
+                xmlFreeDoc(document_); document_ = nil;
             }
         }
     }
@@ -77,13 +77,13 @@
         NSString *fullPath = [[NSBundle bundleForClass:[self class]] pathForResource:filename ofType:extension];
         NSData *data = [NSData dataWithContentsOfFile:fullPath];
         
-        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
+        document_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
+            node_ = xmlDocGetRootElement(document_);
             
             if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
+                xmlFreeDoc(document_); document_ = nil;
             }
         }
     }
@@ -95,13 +95,13 @@
     if ((self = [super init])) {
         NSData *data = [NSData dataWithContentsOfURL:url];
         
-        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
+        document_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
+            node_ = xmlDocGetRootElement(document_);
             
             if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
+                xmlFreeDoc(document_); document_ = nil;
             }
         }
     }
@@ -111,13 +111,13 @@
 
 - (id)initFromXMLData:(NSData *)data {
     if ((self = [super init])) {
-        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
+        document_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
+            node_ = xmlDocGetRootElement(document_);
             
             if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
+                xmlFreeDoc(document_); document_ = nil;
             }
         }
     }
@@ -127,7 +127,7 @@
 
 - (id)initFromXMLNode:(xmlNodePtr)node {
     if ((self = [super init])) {
-        doc_ = nil;
+        document_ = nil;
         node_ = node;
     }
     
@@ -163,7 +163,7 @@
 }
 
 - (void)dealloc {
-    if (doc_ != nil) xmlFreeDoc(doc_);
+    if (document_ != nil) xmlFreeDoc(document_);
     
     [super dealloc];
 }
@@ -190,51 +190,51 @@
     return [self.text doubleValue];
 }
 
-- (NSString *)attribute:(NSString *)attName {
-    const unsigned char *attCStr = xmlGetProp(node_, (const xmlChar *)[attName cStringUsingEncoding:NSUTF8StringEncoding]);        
+- (NSString *)attribute:(NSString *)attributeName {
+    const unsigned char *attributeValueC = xmlGetProp(node_, (const xmlChar *)[attributeName cStringUsingEncoding:NSUTF8StringEncoding]);        
 
-    if (attCStr) {
-        return [NSString stringWithUTF8String:(const char *)attCStr];
+    if (attributeValueC) {
+        return [NSString stringWithUTF8String:(const char *)attributeValueC];
     }
     
     return nil;
 }
 
-- (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)namespace {
-    const unsigned char *attCStr = xmlGetNsProp(node_, (const xmlChar *)[attName cStringUsingEncoding:NSUTF8StringEncoding], (const xmlChar *)[namespace cStringUsingEncoding:NSUTF8StringEncoding]);
+- (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)namespace {
+    const unsigned char *attributeValueC = xmlGetNsProp(node_, (const xmlChar *)[attributeName cStringUsingEncoding:NSUTF8StringEncoding], (const xmlChar *)[namespace cStringUsingEncoding:NSUTF8StringEncoding]);
 
-    if (attCStr) {
-        return [NSString stringWithUTF8String:(const char *)attCStr];
+    if (attributeValueC) {
+        return [NSString stringWithUTF8String:(const char *)attributeValueC];
     }
     
     return nil;
 }
 
-- (NSInteger)attributeAsInteger:(NSString *)attName {
-    return [[self attribute:attName] intValue];
+- (NSInteger)attributeAsInteger:(NSString *)attributeName {
+    return [[self attribute:attributeName] intValue];
 }
 
-- (NSInteger)attributeAsInteger:(NSString *)attName inNamespace:(NSString *)namespace {
-    return [[self attribute:attName inNamespace:namespace] intValue];
+- (NSInteger)attributeAsInteger:(NSString *)attributeName inNamespace:(NSString *)namespace {
+    return [[self attribute:attributeName inNamespace:namespace] intValue];
 }
 
-- (double)attributeAsDouble:(NSString *)attName {
-    return [[self attribute:attName] doubleValue];
+- (double)attributeAsDouble:(NSString *)attributeName {
+    return [[self attribute:attributeName] doubleValue];
 }
 
-- (double)attributeAsDouble:(NSString *)attName inNamespace:(NSString *)namespace {
-    return [[self attribute:attName inNamespace:namespace] doubleValue];
+- (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)namespace {
+    return [[self attribute:attributeName inNamespace:namespace] doubleValue];
 }
 
 - (BOOL)isValid {
-    return (doc_ != nil);
+    return document_ != nil;
 }
 
 #pragma mark -
 
 - (RXMLElement *)child:(NSString *)tagName {
     NSArray *components = [tagName componentsSeparatedByString:@"."];
-    xmlNodePtr cur = node_;
+    xmlNodePtr currentNode = node_;
     
     // navigate down
     for (NSUInteger i=0; i < components.count; ++i) {
@@ -242,29 +242,29 @@
         const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
 
         if ([iTagName isEqualToString:@"*"]) {
-            cur = cur->children;
+            currentNode = currentNode->children;
             
-            while (cur != nil && cur->type != XML_ELEMENT_NODE) {
-                cur = cur->next;
+            while (currentNode != nil && currentNode->type != XML_ELEMENT_NODE) {
+                currentNode = currentNode->next;
             }
         } else {
-            cur = cur->children;
-            while (cur != nil) {
-                if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC)) {
+            currentNode = currentNode->children;
+            while (currentNode != nil) {
+                if (currentNode->type == XML_ELEMENT_NODE && !xmlStrcmp(currentNode->name, tagNameC)) {
                     break;
                 }
                 
-                cur = cur->next;
+                currentNode = currentNode->next;
             }
         }
         
-        if (!cur) {
+        if (!currentNode) {
             break;
         }
     }
     
-    if (cur) {
-        return [RXMLElement elementFromXMLNode:cur];
+    if (currentNode) {
+        return [RXMLElement elementFromXMLNode:currentNode];
     }
   
     return nil;
@@ -272,7 +272,7 @@
 
 - (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)namespace {
     NSArray *components = [tagName componentsSeparatedByString:@"."];
-    xmlNodePtr cur = node_;
+    xmlNodePtr currentNode = node_;
     const xmlChar *namespaceC = (const xmlChar *)[namespace cStringUsingEncoding:NSUTF8StringEncoding];
     
     // navigate down
@@ -281,29 +281,29 @@
         const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
         
         if ([iTagName isEqualToString:@"*"]) {
-            cur = cur->children;
+            currentNode = currentNode->children;
             
-            while (cur != nil && cur->type != XML_ELEMENT_NODE && !xmlStrcmp(cur->ns->href, namespaceC)) {
-                cur = cur->next;
+            while (currentNode != nil && currentNode->type != XML_ELEMENT_NODE && !xmlStrcmp(currentNode->ns->href, namespaceC)) {
+                currentNode = currentNode->next;
             }
         } else {
-            cur = cur->children;
-            while (cur != nil) {
-                if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC) && !xmlStrcmp(cur->ns->href, namespaceC)) {
+            currentNode = currentNode->children;
+            while (currentNode != nil) {
+                if (currentNode->type == XML_ELEMENT_NODE && !xmlStrcmp(currentNode->name, tagNameC) && !xmlStrcmp(currentNode->ns->href, namespaceC)) {
                     break;
                 }
                 
-                cur = cur->next;
+                currentNode = currentNode->next;
             }
         }
         
-        if (!cur) {
+        if (!currentNode) {
             break;
         }
     }
     
-    if (cur) {
-        return [RXMLElement elementFromXMLNode:cur];
+    if (currentNode) {
+        return [RXMLElement elementFromXMLNode:currentNode];
     }
     
     return nil;
@@ -312,14 +312,14 @@
 - (NSArray *)children:(NSString *)tagName {
     const xmlChar *tagNameC = (const xmlChar *)[tagName cStringUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *children = [NSMutableArray array];
-    xmlNodePtr cur = node_->children;
+    xmlNodePtr currentNode = node_->children;
 
-    while (cur != nil) {
-        if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC)) {
-            [children addObject:[RXMLElement elementFromXMLNode:cur]];
+    while (currentNode != nil) {
+        if (currentNode->type == XML_ELEMENT_NODE && !xmlStrcmp(currentNode->name, tagNameC)) {
+            [children addObject:[RXMLElement elementFromXMLNode:currentNode]];
         }
         
-        cur = cur->next;
+        currentNode = currentNode->next;
     }
     
     return [[children copy] autorelease];
@@ -329,14 +329,14 @@
     const xmlChar *tagNameC = (const xmlChar *)[tagName cStringUsingEncoding:NSUTF8StringEncoding];
     const xmlChar *namespaceC = (const xmlChar *)[namespace cStringUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *children = [NSMutableArray array];
-    xmlNodePtr cur = node_->children;
+    xmlNodePtr currentNode = node_->children;
     
-    while (cur != nil) {
-        if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC) && !xmlStrcmp(cur->ns->href, namespaceC)) {
-            [children addObject:[RXMLElement elementFromXMLNode:cur]];
+    while (currentNode != nil) {
+        if (currentNode->type == XML_ELEMENT_NODE && !xmlStrcmp(currentNode->name, tagNameC) && !xmlStrcmp(currentNode->ns->href, namespaceC)) {
+            [children addObject:[RXMLElement elementFromXMLNode:currentNode]];
         }
         
-        cur = cur->next;
+        currentNode = currentNode->next;
     }
     
     return [[children copy] autorelease];
@@ -344,77 +344,77 @@
 
 #pragma mark -
 
-- (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))blk {
+- (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))block {
     NSArray *components = [query componentsSeparatedByString:@"."];
-    xmlNodePtr cur = node_;
+    xmlNodePtr currentNode = node_;
 
     // navigate down
     for (NSUInteger i=0; i < components.count; ++i) {
         NSString *iTagName = [components objectAtIndex:i];
         
         if ([iTagName isEqualToString:@"*"]) {
-            cur = cur->children;
+            currentNode = currentNode->children;
 
             // different behavior depending on if this is the end of the query or midstream
             if (i < (components.count - 1)) {
                 // midstream
                 do {
-                    if (cur->type == XML_ELEMENT_NODE) {
-                        RXMLElement *element = [RXMLElement elementFromXMLNode:cur];
+                    if (currentNode->type == XML_ELEMENT_NODE) {
+                        RXMLElement *element = [RXMLElement elementFromXMLNode:currentNode];
                         NSString *restOfQuery = [[components subarrayWithRange:NSMakeRange(i + 1, components.count - i - 1)] componentsJoinedByString:@"."];
-                        [element iterate:restOfQuery with:blk];
+                        [element iterate:restOfQuery with:block];
                     }
                     
-                    cur = cur->next;
-                } while (cur != nil);
+                    currentNode = currentNode->next;
+                } while (currentNode != nil);
                     
             }
         } else {
             const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
 
-            cur = cur->children;
-            while (cur != nil) {
-                if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC)) {
+            currentNode = currentNode->children;
+            while (currentNode != nil) {
+                if (currentNode->type == XML_ELEMENT_NODE && !xmlStrcmp(currentNode->name, tagNameC)) {
                     break;
                 }
                 
-                cur = cur->next;
+                currentNode = currentNode->next;
             }
         }
 
-        if (!cur) {
+        if (!currentNode) {
             break;
         }
     }
 
-    if (cur) {
+    if (currentNode) {
         // enumerate
         NSString *childTagName = [components lastObject];
         
         do {
-            if (cur->type == XML_ELEMENT_NODE) {
-                RXMLElement *element = [RXMLElement elementFromXMLNode:cur];
-                blk(element);
+            if (currentNode->type == XML_ELEMENT_NODE) {
+                RXMLElement *element = [RXMLElement elementFromXMLNode:currentNode];
+                block(element);
             }
             
             if ([childTagName isEqualToString:@"*"]) {
-                cur = cur->next;
+                currentNode = currentNode->next;
             } else {
                 const xmlChar *tagNameC = (const xmlChar *)[childTagName cStringUsingEncoding:NSUTF8StringEncoding];
 
-                while ((cur = cur->next)) {
-                    if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagNameC)) {
+                while ((currentNode = currentNode->next)) {
+                    if (currentNode->type == XML_ELEMENT_NODE && !xmlStrcmp(currentNode->name, tagNameC)) {
                         break;
                     }                    
                 }
             }
-        } while (cur);
+        } while (currentNode);
     }
 }
 
-- (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))blk {
+- (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))block {
     for (RXMLElement *iElement in elements) {
-        blk(iElement);
+        block(iElement);
     }
 }
 
