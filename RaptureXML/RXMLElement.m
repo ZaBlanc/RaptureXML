@@ -41,6 +41,10 @@
 
 @implementation RXMLElement 
 
+////////////////////////////////////////////////////////////////////////
+#pragma mark - Lifecycle
+////////////////////////////////////////////////////////////////////////
+
 - (id)initFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding {
     if ((self = [super init])) {
         NSData *data = [xmlString dataUsingEncoding:encoding];
@@ -124,10 +128,6 @@
     return [[[RXMLElement alloc] initFromXMLNode:node] autorelease];
 }
 
-- (NSString *)description {
-    return [self text];
-}
-
 - (void)dealloc {
     if (document_ != nil) {
         xmlFreeDoc(document_);
@@ -136,7 +136,17 @@
     [super dealloc];
 }
 
-#pragma mark -
+////////////////////////////////////////////////////////////////////////
+#pragma mark - NSObject
+////////////////////////////////////////////////////////////////////////
+
+- (NSString *)description {
+    return [self text];
+}
+
+////////////////////////////////////////////////////////////////////////
+#pragma mark - Getter
+////////////////////////////////////////////////////////////////////////
 
 - (NSString *)tag {
     return [NSString stringWithUTF8String:(const char *)node_->name];
@@ -198,7 +208,9 @@
     return document_ != nil;
 }
 
-#pragma mark -
+////////////////////////////////////////////////////////////////////////
+#pragma mark - Child Nodes
+////////////////////////////////////////////////////////////////////////
 
 - (RXMLElement *)child:(NSString *)tagName {
     NSArray *components = [tagName componentsSeparatedByString:@"."];
@@ -310,7 +322,9 @@
     return [[children copy] autorelease];
 }
 
-#pragma mark -
+////////////////////////////////////////////////////////////////////////
+#pragma mark - Block Iterations
+////////////////////////////////////////////////////////////////////////
 
 - (void)iterate:(NSString *)query with:(RXMLBlock)block {
     NSArray *components = [query componentsSeparatedByString:@"."];
@@ -387,7 +401,9 @@
     }
 }
 
-#pragma mark -
+////////////////////////////////////////////////////////////////////////
+#pragma mark - Private
+////////////////////////////////////////////////////////////////////////
 
 - (void)setupWithData:(NSData *)data {
     document_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
