@@ -312,7 +312,7 @@
 
 #pragma mark -
 
-- (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))block {
+- (void)iterate:(NSString *)query with:(RXMLBlock)block {
     NSArray *components = [query componentsSeparatedByString:@"."];
     xmlNodePtr currentNode = node_;
     
@@ -381,9 +381,9 @@
     }
 }
 
-- (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))block {
-    for (RXMLElement *iElement in elements) {
-        block(iElement);
+- (void)iterateElements:(NSArray *)elements with:(RXMLBlock)block {
+    for (RXMLElement *element in elements) {
+        block(element);
     }
 }
 

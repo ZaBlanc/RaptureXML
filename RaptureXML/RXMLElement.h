@@ -32,6 +32,10 @@
 #import <libxml2/libxml/xmlreader.h>
 #import <libxml2/libxml/xmlmemory.h>
 
+@class RXMLElement;
+
+typedef void (^RXMLBlock)(RXMLElement *);
+
 @interface RXMLElement : NSObject 
 
 - (id)initFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding;
@@ -63,8 +67,8 @@
 - (NSArray *)children:(NSString *)tagName;
 - (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
 
-- (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))block;
-- (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))block;
+- (void)iterate:(NSString *)query with:(RXMLBlock)block;
+- (void)iterateElements:(NSArray *)elements with:(RXMLBlock)block;
 
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;
@@ -73,6 +77,3 @@
 @property (nonatomic, readonly, getter = isValid) BOOL valid;
 
 @end
-
-typedef void (^RXMLBlock)(RXMLElement *);
-
