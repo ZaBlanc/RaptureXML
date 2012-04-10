@@ -212,7 +212,7 @@
 #pragma mark - Child Nodes
 ////////////////////////////////////////////////////////////////////////
 
-- (RXMLElement *)child:(NSString *)tagName {
+- (RXMLElement *)childWithTagName:(NSString *)tagName {
     NSArray *components = [tagName componentsSeparatedByString:@"."];
     xmlNodePtr currentNode = node_;
     
@@ -250,7 +250,7 @@
     return nil;
 }
 
-- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)xmlNamespace {
+- (RXMLElement *)childWithTagName:(NSString *)tagName inNamespace:(NSString *)xmlNamespace {
     NSArray *components = [tagName componentsSeparatedByString:@"."];
     xmlNodePtr currentNode = node_;
     const xmlChar *namespaceC = (const xmlChar *)[xmlNamespace cStringUsingEncoding:NSUTF8StringEncoding];
@@ -289,7 +289,7 @@
     return nil;
 }
 
-- (NSArray *)children:(NSString *)tagName {
+- (NSArray *)childrenWithTagName:(NSString *)tagName {
     const xmlChar *tagNameC = (const xmlChar *)[tagName cStringUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *children = [NSMutableArray array];
     xmlNodePtr currentNode = node_->children;
@@ -305,7 +305,7 @@
     return [[children copy] autorelease];
 }
 
-- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)xmlNamespace {
+- (NSArray *)childrenWithTagName:(NSString *)tagName inNamespace:(NSString *)xmlNamespace {
     const xmlChar *tagNameC = (const xmlChar *)[tagName cStringUsingEncoding:NSUTF8StringEncoding];
     const xmlChar *namespaceC = (const xmlChar *)[xmlNamespace cStringUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *children = [NSMutableArray array];

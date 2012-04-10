@@ -49,9 +49,9 @@
     
     [rxml iterate:@"*" with:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEquals([e child:@"id"].textAsInteger, 1, nil);
+            STAssertEquals([e childWithTagName:@"id"].textAsInteger, 1, nil);
         } else if (i == 1) {
-            STAssertEqualsWithAccuracy([e child:@"id"].textAsDouble, 2.5, 0.01, nil);
+            STAssertEqualsWithAccuracy([e childWithTagName:@"id"].textAsDouble, 2.5, 0.01, nil);
         }
         
         i++;

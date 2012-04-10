@@ -34,7 +34,7 @@
 
 @class RXMLElement;
 
-typedef void (^RXMLBlock)(RXMLElement *);
+typedef void (^RXMLBlock)(RXMLElement *element);
 
 @interface RXMLElement : NSObject 
 
@@ -61,11 +61,11 @@ typedef void (^RXMLBlock)(RXMLElement *);
 - (double)attributeAsDouble:(NSString *)attributeName;
 - (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace;
 
-- (RXMLElement *)child:(NSString *)tagName;
-- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
+- (RXMLElement *)childWithTagName:(NSString *)tagName;
+- (RXMLElement *)childWithTagName:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
 
-- (NSArray *)children:(NSString *)tagName;
-- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
+- (NSArray *)childrenWithTagName:(NSString *)tagName;
+- (NSArray *)childrenWithTagName:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
 
 - (void)iterate:(NSString *)query with:(RXMLBlock)block;
 - (void)iterateElements:(NSArray *)elements with:(RXMLBlock)block;
