@@ -45,7 +45,7 @@
 #pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
-- (id)initFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding {
+- (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding {
     if ((self = [super init])) {
         NSData *data = [xmlString dataUsingEncoding:encoding];
         
@@ -104,8 +104,8 @@
     return self;        
 }
 
-+ (id)elementFromXMLString:(NSString *)attributeXML_ withEncoding:(NSStringEncoding)encoding {
-    return [[[RXMLElement alloc] initFromXMLString:attributeXML_ withEncoding:encoding] autorelease];    
++ (id)elementFromXMLString:(NSString *)attributeXML_ encoding:(NSStringEncoding)encoding {
+    return [[[RXMLElement alloc] initFromXMLString:attributeXML_ encoding:encoding] autorelease];    
 }
 
 + (id)elementFromXMLFile:(NSString *)filename {
