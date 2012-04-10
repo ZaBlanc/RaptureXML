@@ -49,19 +49,19 @@
 + (id)elementFromXMLNode:(xmlNodePtr)node;
 
 - (NSString *)attribute:(NSString *)attributeName;
-- (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)namespace;
+- (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace;
 
 - (NSInteger)attributeAsInteger:(NSString *)attributeName;
-- (NSInteger)attributeAsInteger:(NSString *)attributeName inNamespace:(NSString *)namespace;
+- (NSInteger)attributeAsInteger:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace;
 
 - (double)attributeAsDouble:(NSString *)attributeName;
-- (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)namespace;
+- (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace;
 
 - (RXMLElement *)child:(NSString *)tagName;
-- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)namespace;
+- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
 
 - (NSArray *)children:(NSString *)tagName;
-- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)namespace;
+- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
 
 - (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))block;
 - (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))block;

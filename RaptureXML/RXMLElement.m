@@ -168,8 +168,8 @@
     return nil;
 }
 
-- (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)namespace {
-    const unsigned char *attributeValueC = xmlGetNsProp(node_, (const xmlChar *)[attributeName cStringUsingEncoding:NSUTF8StringEncoding], (const xmlChar *)[namespace cStringUsingEncoding:NSUTF8StringEncoding]);
+- (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace {
+    const unsigned char *attributeValueC = xmlGetNsProp(node_, (const xmlChar *)[attributeName cStringUsingEncoding:NSUTF8StringEncoding], (const xmlChar *)[xmlNamespace cStringUsingEncoding:NSUTF8StringEncoding]);
     
     if (attributeValueC != NULL) {
         return [NSString stringWithUTF8String:(const char *)attributeValueC];
@@ -182,16 +182,16 @@
     return [[self attribute:attributeName] integerValue];
 }
 
-- (NSInteger)attributeAsInteger:(NSString *)attributeName inNamespace:(NSString *)namespace {
-    return [[self attribute:attributeName inNamespace:namespace] integerValue];
+- (NSInteger)attributeAsInteger:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace {
+    return [[self attribute:attributeName inNamespace:xmlNamespace] integerValue];
 }
 
 - (double)attributeAsDouble:(NSString *)attributeName {
     return [[self attribute:attributeName] doubleValue];
 }
 
-- (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)namespace {
-    return [[self attribute:attributeName inNamespace:namespace] doubleValue];
+- (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace {
+    return [[self attribute:attributeName inNamespace:xmlNamespace] doubleValue];
 }
 
 - (BOOL)isValid {
@@ -238,10 +238,10 @@
     return nil;
 }
 
-- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)namespace {
+- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)xmlNamespace {
     NSArray *components = [tagName componentsSeparatedByString:@"."];
     xmlNodePtr currentNode = node_;
-    const xmlChar *namespaceC = (const xmlChar *)[namespace cStringUsingEncoding:NSUTF8StringEncoding];
+    const xmlChar *namespaceC = (const xmlChar *)[xmlNamespace cStringUsingEncoding:NSUTF8StringEncoding];
     
     // navigate down
     for (NSUInteger i=0; i < components.count; ++i) {
@@ -293,9 +293,9 @@
     return [[children copy] autorelease];
 }
 
-- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)namespace {
+- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)xmlNamespace {
     const xmlChar *tagNameC = (const xmlChar *)[tagName cStringUsingEncoding:NSUTF8StringEncoding];
-    const xmlChar *namespaceC = (const xmlChar *)[namespace cStringUsingEncoding:NSUTF8StringEncoding];
+    const xmlChar *namespaceC = (const xmlChar *)[xmlNamespace cStringUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *children = [NSMutableArray array];
     xmlNodePtr currentNode = node_->children;
     
