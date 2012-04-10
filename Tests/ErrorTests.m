@@ -45,7 +45,7 @@
     RXMLElement *rxml = [RXMLElement elementWithString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"hexagon" with:^(RXMLElement *e) {
+    [rxml iteratePath:@"hexagon" usingBlock:^(RXMLElement *e) {
         i++;
     }];
      

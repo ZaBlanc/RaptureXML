@@ -67,8 +67,8 @@ typedef void (^RXMLBlock)(RXMLElement *element);
 - (NSArray *)childrenWithTagName:(NSString *)tagName;
 - (NSArray *)childrenWithTagName:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
 
-- (void)iterate:(NSString *)query with:(RXMLBlock)block;
-- (void)iterateElements:(NSArray *)elements with:(RXMLBlock)block;
+- (void)iteratePath:(NSString *)query usingBlock:(RXMLBlock)block;
+- (void)iterateElements:(NSArray *)elements usingBlock:(RXMLBlock)block;
 
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;

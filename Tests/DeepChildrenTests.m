@@ -25,7 +25,7 @@
     RXMLElement *players = [rxml childWithTagName:@"players"];
     NSArray *children = [players childrenWithTagName:@"player"];
     
-    [rxml iterateElements:children with: ^(RXMLElement *e) {
+    [rxml iterateElements:children usingBlock: ^(RXMLElement *e) {
         i++;
     }];    
     

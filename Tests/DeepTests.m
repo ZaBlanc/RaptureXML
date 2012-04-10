@@ -24,7 +24,7 @@
     // count the players
     i = 0;
     
-    [rxml iterate:@"players.player" with: ^(RXMLElement *e) {
+    [rxml iteratePath:@"players.player" usingBlock: ^(RXMLElement *e) {
         i++;
     }];    
     
@@ -33,7 +33,7 @@
     // count the first players' names
     i = 0;
     
-    [rxml iterate:@"players.player.name" with: ^(RXMLElement *e) {
+    [rxml iteratePath:@"players.player.name" usingBlock: ^(RXMLElement *e) {
         i++;
     }];    
     
@@ -42,7 +42,7 @@
     // count the coaches
     i = 0;
     
-    [rxml iterate:@"players.coach" with: ^(RXMLElement *e) {
+    [rxml iteratePath:@"players.coach" usingBlock: ^(RXMLElement *e) {
         i++;
     }];    
     

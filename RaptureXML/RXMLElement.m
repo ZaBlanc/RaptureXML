@@ -326,7 +326,7 @@
 #pragma mark - Block Iterations
 ////////////////////////////////////////////////////////////////////////
 
-- (void)iterate:(NSString *)query with:(RXMLBlock)block {
+- (void)iteratePath:(NSString *)query usingBlock:(RXMLBlock)block {
     NSArray *components = [query componentsSeparatedByString:@"."];
     xmlNodePtr currentNode = node_;
     
@@ -345,7 +345,7 @@
                         RXMLElement *element = [RXMLElement elementWithNode:currentNode];
                         NSString *restOfQuery = [[components subarrayWithRange:NSMakeRange(i + 1, components.count - i - 1)] componentsJoinedByString:@"."];
                         
-                        [element iterate:restOfQuery with:block];
+                        [element iteratePath:restOfQuery usingBlock:block];
                     }
                     
                     currentNode = currentNode->next;
@@ -395,7 +395,7 @@
     }
 }
 
-- (void)iterateElements:(NSArray *)elements with:(RXMLBlock)block {
+- (void)iterateElements:(NSArray *)elements usingBlock:(RXMLBlock)block {
     for (RXMLElement *element in elements) {
         block(element);
     }

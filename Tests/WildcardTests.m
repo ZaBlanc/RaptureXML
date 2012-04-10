@@ -24,7 +24,7 @@
     // count the players and coaches
     i = 0;
 
-    [rxml iterate:@"players.*" with: ^(RXMLElement *e) {
+    [rxml iteratePath:@"players.*" usingBlock: ^(RXMLElement *e) {
         i++;
     }];    
     
@@ -38,7 +38,7 @@
     // count the tags that have a name
     i = 0;
     
-    [rxml iterate:@"players.*.name" with: ^(RXMLElement *e) {
+    [rxml iteratePath:@"players.*.name" usingBlock: ^(RXMLElement *e) {
         i++;
     }];    
     
@@ -47,7 +47,7 @@
     // count the tags that have a position
     i = 0;
     
-    [rxml iterate:@"players.*.position" with: ^(RXMLElement *e) {
+    [rxml iteratePath:@"players.*.position" usingBlock: ^(RXMLElement *e) {
         i++;
     }];    
     
