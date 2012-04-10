@@ -18,7 +18,7 @@
 @implementation DeepTests
 
 - (void)testQuery {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *rxml = [RXMLElement elementWithFilepath:@"players.xml"];
     __block NSInteger i;
     
     // count the players

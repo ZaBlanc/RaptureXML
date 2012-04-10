@@ -40,17 +40,17 @@
 }
 
 - (void)testInterruptedText {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:interruptedTextXML_ encoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:interruptedTextXML_ encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(rxml.text, @"thisisinterruptedtext", nil);
 }
 
 - (void)testCDataText {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:cdataXML_ encoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:cdataXML_ encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(rxml.text, @"thisiscdata", nil);
 }
 
 - (void)testTags {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
     [rxml iterate:@"*" with:^(RXMLElement *e) {
@@ -72,7 +72,7 @@
 }
 
 - (void)testAttributes {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ encoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:attributedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
     [rxml iterate:@"*" with:^(RXMLElement *e) {

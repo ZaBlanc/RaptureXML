@@ -18,7 +18,7 @@
 @implementation WildcardTests
 
 - (void)testEndingWildcard {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *rxml = [RXMLElement elementWithFilepath:@"players.xml"];
     __block NSInteger i;
     
     // count the players and coaches
@@ -32,7 +32,7 @@
 }
 
 - (void)testMidstreamWildcard {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *rxml = [RXMLElement elementWithFilepath:@"players.xml"];
     __block NSInteger i;
     
     // count the tags that have a name

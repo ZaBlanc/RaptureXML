@@ -38,19 +38,19 @@ typedef void (^RXMLBlock)(RXMLElement *);
 
 @interface RXMLElement : NSObject 
 
-- (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
-- (id)initFromXMLFile:(NSString *)filename;
-- (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString*)extension;
-- (id)initFromURL:(NSURL *)url;
-- (id)initFromXMLData:(NSData *)data;
-- (id)initFromXMLNode:(xmlNodePtr)node;
+- (id)initWithString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
+- (id)initWithFilepath:(NSString *)filename;
+- (id)initWithFilename:(NSString *)filename extension:(NSString *)extension;
+- (id)initWithURL:(NSURL *)url;
+- (id)initWithData:(NSData *)data;
+- (id)initWithNode:(xmlNodePtr)node;
 
-+ (id)elementFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
-+ (id)elementFromXMLFile:(NSString *)filename;
-+ (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension;
-+ (id)elementFromURL:(NSURL *)url;
-+ (id)elementFromXMLData:(NSData *)data;
-+ (id)elementFromXMLNode:(xmlNodePtr)node;
++ (id)elementWithString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
++ (id)elementWithFilepath:(NSString *)filename;
++ (id)elementWithFilename:(NSString *)filename extension:(NSString *)extension;
++ (id)elementWithURL:(NSURL *)url;
++ (id)elementWithData:(NSData *)data;
++ (id)elementWithNode:(xmlNodePtr)node;
 
 - (NSString *)attribute:(NSString *)attributeName;
 - (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace;

@@ -23,7 +23,7 @@
 }
 
 - (void)testChinese {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:chineseXML_ encoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:chineseXML_ encoding:NSUTF8StringEncoding];
     STAssertEqualObjects([rxml attribute:@"data"], @"以晴为主", nil);
 }
 

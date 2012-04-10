@@ -45,7 +45,7 @@
 #pragma mark - Lifecycle
 ////////////////////////////////////////////////////////////////////////
 
-- (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding {
+- (id)initWithString:(NSString *)xmlString encoding:(NSStringEncoding)encoding {
     if ((self = [super init])) {
         NSData *data = [xmlString dataUsingEncoding:encoding];
         
@@ -55,7 +55,7 @@
     return self;    
 }
 
-- (id)initFromXMLFile:(NSString *)filename {
+- (id)initWithFilepath:(NSString *)filename {
     if ((self = [super init])) {
         NSString *fullPath = [[[NSBundle bundleForClass:self.class] bundlePath] stringByAppendingPathComponent:filename];
         NSData *data = [NSData dataWithContentsOfFile:fullPath];
@@ -66,7 +66,7 @@
     return self;    
 }
 
-- (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString *)extension {
+- (id)initWithFilename:(NSString *)filename extension:(NSString *)extension {
     if ((self = [super init])) {
         NSString *fullPath = [[NSBundle bundleForClass:[self class]] pathForResource:filename ofType:extension];
         NSData *data = [NSData dataWithContentsOfFile:fullPath];
@@ -77,7 +77,7 @@
     return self;    
 }
 
-- (id)initFromURL:(NSURL *)url {
+- (id)initWithURL:(NSURL *)url {
     if ((self = [super init])) {
         NSData *data = [NSData dataWithContentsOfURL:url];
         
@@ -87,7 +87,7 @@
     return self;    
 }
 
-- (id)initFromXMLData:(NSData *)data {
+- (id)initWithData:(NSData *)data {
     if ((self = [super init])) {
         [self setupWithData:data];
     }
@@ -95,7 +95,7 @@
     return self;    
 }
 
-- (id)initFromXMLNode:(xmlNodePtr)node {
+- (id)initWithNode:(xmlNodePtr)node {
     if ((self = [super init])) {
         document_ = nil;
         node_ = node;
@@ -104,28 +104,28 @@
     return self;        
 }
 
-+ (id)elementFromXMLString:(NSString *)attributeXML_ encoding:(NSStringEncoding)encoding {
-    return [[[RXMLElement alloc] initFromXMLString:attributeXML_ encoding:encoding] autorelease];    
++ (id)elementWithString:(NSString *)attributeXML_ encoding:(NSStringEncoding)encoding {
+    return [[[RXMLElement alloc] initWithString:attributeXML_ encoding:encoding] autorelease];    
 }
 
-+ (id)elementFromXMLFile:(NSString *)filename {
-    return [[[RXMLElement alloc] initFromXMLFile:filename] autorelease];    
++ (id)elementWithFilepath:(NSString *)filename {
+    return [[[RXMLElement alloc] initWithFilepath:filename] autorelease];    
 }
 
-+ (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension {
-    return [[[RXMLElement alloc] initFromXMLFile:filename fileExtension:extension] autorelease];
++ (id)elementWithFilename:(NSString *)filename extension:(NSString *)extension {
+    return [[[RXMLElement alloc] initWithFilename:filename extension:extension] autorelease];
 }
 
-+ (id)elementFromURL:(NSURL *)url {
-    return [[[RXMLElement alloc] initFromURL:url] autorelease];
++ (id)elementWithURL:(NSURL *)url {
+    return [[[RXMLElement alloc] initWithURL:url] autorelease];
 }
 
-+ (id)elementFromXMLData:(NSData *)data {
-    return [[[RXMLElement alloc] initFromXMLData:data] autorelease];
++ (id)elementWithData:(NSData *)data {
+    return [[[RXMLElement alloc] initWithData:data] autorelease];
 }
 
-+ (id)elementFromXMLNode:(xmlNodePtr)node {
-    return [[[RXMLElement alloc] initFromXMLNode:node] autorelease];
++ (id)elementWithNode:(xmlNodePtr)node {
+    return [[[RXMLElement alloc] initWithNode:node] autorelease];
 }
 
 - (void)dealloc {
@@ -244,7 +244,7 @@
     }
     
     if (currentNode != NULL) {
-        return [RXMLElement elementFromXMLNode:currentNode];
+        return [RXMLElement elementWithNode:currentNode];
     }
     
     return nil;
@@ -283,7 +283,7 @@
     }
     
     if (currentNode != NULL) {
-        return [RXMLElement elementFromXMLNode:currentNode];
+        return [RXMLElement elementWithNode:currentNode];
     }
     
     return nil;
@@ -296,7 +296,7 @@
     
     while (currentNode != NULL) {
         if (currentNode->type == XML_ELEMENT_NODE && xmlStrcmp(currentNode->name, tagNameC) == 0) {
-            [children addObject:[RXMLElement elementFromXMLNode:currentNode]];
+            [children addObject:[RXMLElement elementWithNode:currentNode]];
         }
         
         currentNode = currentNode->next;
@@ -313,7 +313,7 @@
     
     while (currentNode != NULL) {
         if (currentNode->type == XML_ELEMENT_NODE && xmlStrcmp(currentNode->name, tagNameC) == 0 && xmlStrcmp(currentNode->ns->href, namespaceC) == 0) {
-            [children addObject:[RXMLElement elementFromXMLNode:currentNode]];
+            [children addObject:[RXMLElement elementWithNode:currentNode]];
         }
         
         currentNode = currentNode->next;
@@ -342,7 +342,7 @@
                 // midstream
                 do {
                     if (currentNode->type == XML_ELEMENT_NODE) {
-                        RXMLElement *element = [RXMLElement elementFromXMLNode:currentNode];
+                        RXMLElement *element = [RXMLElement elementWithNode:currentNode];
                         NSString *restOfQuery = [[components subarrayWithRange:NSMakeRange(i + 1, components.count - i - 1)] componentsJoinedByString:@"."];
                         
                         [element iterate:restOfQuery with:block];
@@ -376,7 +376,7 @@
         
         do {
             if (currentNode->type == XML_ELEMENT_NODE) {
-                RXMLElement *element = [RXMLElement elementFromXMLNode:currentNode];
+                RXMLElement *element = [RXMLElement elementWithNode:currentNode];
                 block(element);
             }
             

@@ -30,19 +30,19 @@
 }
 
 - (void)testBadXML {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:badXML_ encoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:badXML_ encoding:NSUTF8StringEncoding];
     STAssertFalse([rxml isValid], nil);
 }
 
 - (void)testMissingTag {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     RXMLElement *hexagon = [rxml child:@"hexagon"];
     
     STAssertNil(hexagon, nil);
 }
 
 - (void)testMissingTagIteration {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
     [rxml iterate:@"hexagon" with:^(RXMLElement *e) {
@@ -53,7 +53,7 @@
 }
 
 - (void)testMissingAttribute {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     NSString *missingName = [rxml attribute:@"name"];
     
     STAssertNil(missingName, nil);

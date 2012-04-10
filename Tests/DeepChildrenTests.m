@@ -18,7 +18,7 @@
 @implementation DeepChildrenTests
 
 - (void)testQuery {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *rxml = [RXMLElement elementWithFilepath:@"players.xml"];
     __block NSInteger i = 0;
     
     // count the players
@@ -33,7 +33,7 @@
 }
 
 - (void)testDeepChildQuery {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *rxml = [RXMLElement elementWithFilepath:@"players.xml"];
     
     // count the players
     RXMLElement *coachingYears = [rxml child:@"players.coach.experience.years"];
@@ -42,7 +42,7 @@
 }
 
 - (void)testDeepChildQueryWithWildcard {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *rxml = [RXMLElement elementWithFilepath:@"players.xml"];
     
     // count the players
     RXMLElement *coachingYears = [rxml child:@"players.coach.experience.teams.*"];
