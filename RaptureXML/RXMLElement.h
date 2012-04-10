@@ -32,10 +32,7 @@
 #import <libxml2/libxml/xmlreader.h>
 #import <libxml2/libxml/xmlmemory.h>
 
-@interface RXMLElement : NSObject {
-    xmlDocPtr doc_;
-    xmlNodePtr node_;
-}
+@interface RXMLElement : NSObject 
 
 - (id)initFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding;
 - (id)initFromXMLFile:(NSString *)filename;

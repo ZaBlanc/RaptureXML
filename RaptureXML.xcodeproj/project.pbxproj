@@ -82,7 +82,6 @@
 		0252B2B4142ADFC60018B75D = {
 			isa = PBXGroup;
 			children = (
-				02041DC21526D03A00D1F36A /* MediaPlayer.framework */,
 				027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */,
 				027DAC2B14FBF443001BA563 /* RaptureXML */,
 				0252B2E5142ADFC60018B75D /* Tests */,
@@ -105,6 +104,7 @@
 			children = (
 				02041DB71526A71200D1F36A /* libxml2.dylib */,
 				0252B305142AE3FF0018B75D /* libz.dylib */,
+				02041DC21526D03A00D1F36A /* MediaPlayer.framework */,
 				0252B2C3142ADFC60018B75D /* UIKit.framework */,
 				0252B2C5142ADFC60018B75D /* Foundation.framework */,
 				0252B2C7142ADFC60018B75D /* CoreGraphics.framework */,

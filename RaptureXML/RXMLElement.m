@@ -30,7 +30,10 @@
 
 #import "RXMLElement.h"
 
-@implementation RXMLElement
+@implementation RXMLElement {
+    xmlDocPtr doc_;
+    xmlNodePtr node_;
+}
 
 - (id)initFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding {
     if ((self = [super init])) {
