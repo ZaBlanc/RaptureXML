@@ -324,8 +324,8 @@
 #pragma mark - Block Iterations
 ////////////////////////////////////////////////////////////////////////
 
-- (void)iteratePath:(NSString *)query usingBlock:(RXMLBlock)block {
-    NSArray *components = [query componentsSeparatedByString:@"."];
+- (void)iteratePath:(NSString *)path usingBlock:(RXMLBlock)block {
+    NSArray *components = [path componentsSeparatedByString:@"."];
     xmlNodePtr currentNode = node_;
     
     // navigate down
