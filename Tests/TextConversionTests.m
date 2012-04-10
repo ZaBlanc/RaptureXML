@@ -44,14 +44,14 @@
 }
 
 - (void)testIntTags {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ withEncoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" with:^(RXMLElement *e) {
+    [rxml iteratePath:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEquals([e child:@"id"].textAsInt, 1, nil);
+            STAssertEquals([e childWithTagName:@"id"].textAsInteger, 1, nil);
         } else if (i == 1) {
-            STAssertEqualsWithAccuracy([e child:@"id"].textAsDouble, 2.5, 0.01, nil);
+            STAssertEqualsWithAccuracy([e childWithTagName:@"id"].textAsDouble, 2.5, 0.01, nil);
         }
         
         i++;
@@ -59,16 +59,16 @@
 }
 
 - (void)testIntAttributes {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ withEncoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:attributedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" with:^(RXMLElement *e) {
+    [rxml iteratePath:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEquals([e attributeAsInt:@"id"], 1, nil);
+            STAssertEquals([e attributeAsInteger:@"id"], 1, nil);
         } else if (i == 1) {
             STAssertEqualsWithAccuracy([e attributeAsDouble:@"id"], 2.5, 0.01, nil);
         } else if (i == 2) {
-            STAssertEquals([e attributeAsInt:@"id"], 3, nil);
+            STAssertEquals([e attributeAsInteger:@"id"], 3, nil);
         }
         
         i++;

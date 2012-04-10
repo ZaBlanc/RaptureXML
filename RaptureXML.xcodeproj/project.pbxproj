@@ -37,8 +37,8 @@
 		0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0252B2DE142ADFC60018B75D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0252B305142AE3FF0018B75D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		027DAC2E14FBF443001BA563 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
-		027DAC2F14FBF443001BA563 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
+		027DAC2E14FBF443001BA563 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = RXMLElement.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		027DAC2F14FBF443001BA563 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = RXMLElement.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Library-Prefix.pch"; sourceTree = "<group>"; };
 		02F3A4041526D7BC00E8C822 /* EncodingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodingTests.m; sourceTree = SOURCE_ROOT; };
 		0DEB8EB41467EC9B00024989 /* libRaptureXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRaptureXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +82,6 @@
 		0252B2B4142ADFC60018B75D = {
 			isa = PBXGroup;
 			children = (
-				02041DC21526D03A00D1F36A /* MediaPlayer.framework */,
 				027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */,
 				027DAC2B14FBF443001BA563 /* RaptureXML */,
 				0252B2E5142ADFC60018B75D /* Tests */,
@@ -105,6 +104,7 @@
 			children = (
 				02041DB71526A71200D1F36A /* libxml2.dylib */,
 				0252B305142AE3FF0018B75D /* libz.dylib */,
+				02041DC21526D03A00D1F36A /* MediaPlayer.framework */,
 				0252B2C3142ADFC60018B75D /* UIKit.framework */,
 				0252B2C5142ADFC60018B75D /* Foundation.framework */,
 				0252B2C7142ADFC60018B75D /* CoreGraphics.framework */,
@@ -352,10 +352,16 @@
 		0DEB8EBD1467EC9B00024989 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				DSTROOT = /tmp/RaptureXML.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library-Prefix.pch";
 				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -366,10 +372,16 @@
 		0DEB8EBE1467EC9B00024989 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = YES;
 				DSTROOT = /tmp/RaptureXML.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library-Prefix.pch";
 				GCC_VERSION = "";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_INITIALIZER_NOT_FULLY_BRACKETED = YES;
+				GCC_WARN_SHADOW = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";

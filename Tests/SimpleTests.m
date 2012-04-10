@@ -40,20 +40,20 @@
 }
 
 - (void)testInterruptedText {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:interruptedTextXML_ withEncoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:interruptedTextXML_ encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(rxml.text, @"thisisinterruptedtext", nil);
 }
 
 - (void)testCDataText {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:cdataXML_ withEncoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:cdataXML_ encoding:NSUTF8StringEncoding];
     STAssertEqualObjects(rxml.text, @"thisiscdata", nil);
 }
 
 - (void)testTags {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ withEncoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" with:^(RXMLElement *e) {
+    [rxml iteratePath:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
             STAssertEqualObjects(e.tag, @"square", nil);
             STAssertEqualObjects(e.text, @"Square", nil);
@@ -72,10 +72,10 @@
 }
 
 - (void)testAttributes {
-    RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ withEncoding:NSUTF8StringEncoding];
+    RXMLElement *rxml = [RXMLElement elementWithString:attributedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" with:^(RXMLElement *e) {
+    [rxml iteratePath:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
             STAssertEqualObjects([e attribute:@"name"], @"Square", nil);
         } else if (i == 1) {

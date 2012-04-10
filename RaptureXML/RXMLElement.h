@@ -32,50 +32,48 @@
 #import <libxml2/libxml/xmlreader.h>
 #import <libxml2/libxml/xmlmemory.h>
 
-@interface RXMLElement : NSObject {
-    xmlDocPtr doc_;
-    xmlNodePtr node_;
-}
+@class RXMLElement;
 
-- (id)initFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding;
-- (id)initFromXMLFile:(NSString *)filename;
-- (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString*)extension;
-- (id)initFromURL:(NSURL *)url;
-- (id)initFromXMLData:(NSData *)data;
-- (id)initFromXMLNode:(xmlNodePtr)node;
+typedef void (^RXMLBlock)(RXMLElement *element);
 
-+ (id)elementFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding;
-+ (id)elementFromXMLFile:(NSString *)filename;
-+ (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension;
-+ (id)elementFromURL:(NSURL *)url;
-+ (id)elementFromXMLData:(NSData *)data;
-+ (id)elementFromXMLNode:(xmlNodePtr)node;
+@interface RXMLElement : NSObject 
 
-- (NSString *)attribute:(NSString *)attName;
-- (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)namespace;
+- (id)initWithString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
+- (id)initWithFilepath:(NSString *)filename;
+- (id)initWithFilename:(NSString *)filename extension:(NSString *)extension;
+- (id)initWithURL:(NSURL *)url;
+- (id)initWithData:(NSData *)data;
+- (id)initWithNode:(xmlNodePtr)node;
 
-- (NSInteger)attributeAsInt:(NSString *)attName;
-- (NSInteger)attributeAsInt:(NSString *)attName inNamespace:(NSString *)namespace;
++ (id)elementWithString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
++ (id)elementWithFilepath:(NSString *)filename;
++ (id)elementWithFilename:(NSString *)filename extension:(NSString *)extension;
++ (id)elementWithURL:(NSURL *)url;
++ (id)elementWithData:(NSData *)data;
++ (id)elementWithNode:(xmlNodePtr)node;
 
-- (double)attributeAsDouble:(NSString *)attName;
-- (double)attributeAsDouble:(NSString *)attName inNamespace:(NSString *)namespace;
+- (NSString *)attribute:(NSString *)attributeName;
+- (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace;
 
-- (RXMLElement *)child:(NSString *)tagName;
-- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)namespace;
+- (NSInteger)attributeAsInteger:(NSString *)attributeName;
+- (NSInteger)attributeAsInteger:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace;
 
-- (NSArray *)children:(NSString *)tagName;
-- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)namespace;
+- (double)attributeAsDouble:(NSString *)attributeName;
+- (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)xmlNamespace;
 
-- (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))blk;
-- (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))blk;
+- (RXMLElement *)childWithTagName:(NSString *)tagName;
+- (RXMLElement *)childWithTagName:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
+
+- (NSArray *)childrenWithTagName:(NSString *)tagName;
+- (NSArray *)childrenWithTagName:(NSString *)tagName inNamespace:(NSString *)xmlNamespace;
+
+- (void)iteratePath:(NSString *)path usingBlock:(RXMLBlock)block;
+- (void)iterateElements:(NSArray *)elements usingBlock:(RXMLBlock)block;
 
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;
-@property (nonatomic, readonly) NSInteger textAsInt;
+@property (nonatomic, readonly) NSInteger textAsInteger;
 @property (nonatomic, readonly) double textAsDouble;
-@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly, getter = isValid) BOOL valid;
 
 @end
-
-typedef void (^RXMLBlock)(RXMLElement *);
-
