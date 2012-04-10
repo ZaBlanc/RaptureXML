@@ -49,7 +49,7 @@
     
     [rxml iterate:@"*" with:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEquals([e child:@"id"].textAsInt, 1, nil);
+            STAssertEquals([e child:@"id"].textAsInteger, 1, nil);
         } else if (i == 1) {
             STAssertEqualsWithAccuracy([e child:@"id"].textAsDouble, 2.5, 0.01, nil);
         }
@@ -64,11 +64,11 @@
     
     [rxml iterate:@"*" with:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEquals([e attributeAsInt:@"id"], 1, nil);
+            STAssertEquals([e attributeAsInteger:@"id"], 1, nil);
         } else if (i == 1) {
             STAssertEqualsWithAccuracy([e attributeAsDouble:@"id"], 2.5, 0.01, nil);
         } else if (i == 2) {
-            STAssertEquals([e attributeAsInt:@"id"], 3, nil);
+            STAssertEquals([e attributeAsInteger:@"id"], 3, nil);
         }
         
         i++;

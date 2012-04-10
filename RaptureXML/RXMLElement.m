@@ -39,7 +39,7 @@
     if ((self = [super init])) {
         NSData *data = [xmlString dataUsingEncoding:encoding];
 
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
             node_ = xmlDocGetRootElement(doc_);
@@ -58,7 +58,7 @@
         NSString *fullPath = [[[NSBundle bundleForClass:self.class] bundlePath] stringByAppendingPathComponent:filename];
         NSData *data = [NSData dataWithContentsOfFile:fullPath];
 
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
             node_ = xmlDocGetRootElement(doc_);
@@ -77,7 +77,7 @@
         NSString *fullPath = [[NSBundle bundleForClass:[self class]] pathForResource:filename ofType:extension];
         NSData *data = [NSData dataWithContentsOfFile:fullPath];
         
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
             node_ = xmlDocGetRootElement(doc_);
@@ -95,7 +95,7 @@
     if ((self = [super init])) {
         NSData *data = [NSData dataWithContentsOfURL:url];
         
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
             node_ = xmlDocGetRootElement(doc_);
@@ -111,7 +111,7 @@
 
 - (id)initFromXMLData:(NSData *)data {
     if ((self = [super init])) {
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        doc_ = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         
         if ([self isValid]) {
             node_ = xmlDocGetRootElement(doc_);
@@ -182,8 +182,8 @@
     return text;
 }
 
-- (NSInteger)textAsInt {
-    return [self.text intValue];
+- (NSInteger)textAsInteger {
+    return [self.text integerValue];
 }
 
 - (double)textAsDouble {
@@ -210,11 +210,11 @@
     return nil;
 }
 
-- (NSInteger)attributeAsInt:(NSString *)attName {
+- (NSInteger)attributeAsInteger:(NSString *)attName {
     return [[self attribute:attName] intValue];
 }
 
-- (NSInteger)attributeAsInt:(NSString *)attName inNamespace:(NSString *)namespace {
+- (NSInteger)attributeAsInteger:(NSString *)attName inNamespace:(NSString *)namespace {
     return [[self attribute:attName inNamespace:namespace] intValue];
 }
 
@@ -237,7 +237,7 @@
     xmlNodePtr cur = node_;
     
     // navigate down
-    for (NSInteger i=0; i < components.count; ++i) {
+    for (NSUInteger i=0; i < components.count; ++i) {
         NSString *iTagName = [components objectAtIndex:i];
         const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
 
@@ -276,7 +276,7 @@
     const xmlChar *namespaceC = (const xmlChar *)[namespace cStringUsingEncoding:NSUTF8StringEncoding];
     
     // navigate down
-    for (NSInteger i=0; i < components.count; ++i) {
+    for (NSUInteger i=0; i < components.count; ++i) {
         NSString *iTagName = [components objectAtIndex:i];
         const xmlChar *tagNameC = (const xmlChar *)[iTagName cStringUsingEncoding:NSUTF8StringEncoding];
         
@@ -349,7 +349,7 @@
     xmlNodePtr cur = node_;
 
     // navigate down
-    for (NSInteger i=0; i < components.count; ++i) {
+    for (NSUInteger i=0; i < components.count; ++i) {
         NSString *iTagName = [components objectAtIndex:i];
         
         if ([iTagName isEqualToString:@"*"]) {

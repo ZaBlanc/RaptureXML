@@ -51,8 +51,8 @@
 - (NSString *)attribute:(NSString *)attName;
 - (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)namespace;
 
-- (NSInteger)attributeAsInt:(NSString *)attName;
-- (NSInteger)attributeAsInt:(NSString *)attName inNamespace:(NSString *)namespace;
+- (NSInteger)attributeAsInteger:(NSString *)attName;
+- (NSInteger)attributeAsInteger:(NSString *)attName inNamespace:(NSString *)namespace;
 
 - (double)attributeAsDouble:(NSString *)attName;
 - (double)attributeAsDouble:(NSString *)attName inNamespace:(NSString *)namespace;
@@ -68,9 +68,9 @@
 
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;
-@property (nonatomic, readonly) NSInteger textAsInt;
+@property (nonatomic, readonly) NSInteger textAsInteger;
 @property (nonatomic, readonly) double textAsDouble;
-@property (nonatomic, readonly) BOOL isValid;
+@property (nonatomic, readonly, getter = isValid) BOOL valid;
 
 @end
 
