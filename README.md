@@ -78,7 +78,7 @@ We can immediately query the top-level tag name:
 
 We can read attributes with:
 
-	[rootXML attribute:@"team"] --> @"2011"
+	[rootXML attribute:@"year"] --> @"2011"
 	[rootXML attribute:@"name"] --> @"New York Mets"
 
 We can get the players tag with:
