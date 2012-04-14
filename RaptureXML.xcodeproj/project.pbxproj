@@ -12,6 +12,7 @@
 		02041DBD1526BF2A00D1F36A /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECA1467ED9C00024989 /* SimpleTests.m */; };
 		02041DBF1526CACD00D1F36A /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */; };
 		02041DC01526CB0000D1F36A /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECC1467ED9C00024989 /* WildcardTests.m */; };
+		0213E4411539CE1B00B42A2D /* XPathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213E43D1539CDDF00B42A2D /* XPathTests.m */; };
 		0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2DE142ADFC60018B75D /* SenTestingKit.framework */; };
 		0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
 		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
@@ -31,6 +32,7 @@
 /* Begin PBXFileReference section */
 		02041DB71526A71200D1F36A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		02041DC21526D03A00D1F36A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		0213E43D1539CDDF00B42A2D /* XPathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathTests.m; sourceTree = SOURCE_ROOT; };
 		0252B2C3142ADFC60018B75D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0252B2C5142ADFC60018B75D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0252B2C7142ADFC60018B75D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -82,7 +84,6 @@
 		0252B2B4142ADFC60018B75D = {
 			isa = PBXGroup;
 			children = (
-				02041DC21526D03A00D1F36A /* MediaPlayer.framework */,
 				027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */,
 				027DAC2B14FBF443001BA563 /* RaptureXML */,
 				0252B2E5142ADFC60018B75D /* Tests */,
@@ -103,6 +104,7 @@
 		0252B2C2142ADFC60018B75D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				02041DC21526D03A00D1F36A /* MediaPlayer.framework */,
 				02041DB71526A71200D1F36A /* libxml2.dylib */,
 				0252B305142AE3FF0018B75D /* libz.dylib */,
 				0252B2C3142ADFC60018B75D /* UIKit.framework */,
@@ -126,6 +128,7 @@
 				0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */,
 				0DEB8ECC1467ED9C00024989 /* WildcardTests.m */,
 				02F3A4041526D7BC00E8C822 /* EncodingTests.m */,
+				0213E43D1539CDDF00B42A2D /* XPathTests.m */,
 			);
 			name = Tests;
 			path = RaptureXMLTests;
@@ -256,6 +259,7 @@
 				02F3A4011526D39800E8C822 /* DeepChildrenTests.m in Sources */,
 				02F3A4021526D45B00E8C822 /* ErrorTests.m in Sources */,
 				02F3A4051526D7BC00E8C822 /* EncodingTests.m in Sources */,
+				0213E4411539CE1B00B42A2D /* XPathTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

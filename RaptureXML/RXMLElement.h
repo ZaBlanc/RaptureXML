@@ -31,20 +31,22 @@
 #import <Foundation/Foundation.h>
 #import <libxml2/libxml/xmlreader.h>
 #import <libxml2/libxml/xmlmemory.h>
+#import <libxml/xpath.h>
+#import <libxml/xpathInternals.h>
 
 @interface RXMLElement : NSObject {
     xmlDocPtr doc_;
     xmlNodePtr node_;
 }
 
-- (id)initFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding;
+- (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
 - (id)initFromXMLFile:(NSString *)filename;
 - (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString*)extension;
 - (id)initFromURL:(NSURL *)url;
 - (id)initFromXMLData:(NSData *)data;
 - (id)initFromXMLNode:(xmlNodePtr)node;
 
-+ (id)elementFromXMLString:(NSString *)xmlString withEncoding:(NSStringEncoding)encoding;
++ (id)elementFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
 + (id)elementFromXMLFile:(NSString *)filename;
 + (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension;
 + (id)elementFromURL:(NSURL *)url;
@@ -52,21 +54,23 @@
 + (id)elementFromXMLNode:(xmlNodePtr)node;
 
 - (NSString *)attribute:(NSString *)attName;
-- (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)namespace;
+- (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)ns;
 
 - (NSInteger)attributeAsInt:(NSString *)attName;
-- (NSInteger)attributeAsInt:(NSString *)attName inNamespace:(NSString *)namespace;
+- (NSInteger)attributeAsInt:(NSString *)attName inNamespace:(NSString *)ns;
 
 - (double)attributeAsDouble:(NSString *)attName;
-- (double)attributeAsDouble:(NSString *)attName inNamespace:(NSString *)namespace;
+- (double)attributeAsDouble:(NSString *)attName inNamespace:(NSString *)ns;
 
 - (RXMLElement *)child:(NSString *)tagName;
-- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)namespace;
+- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)ns;
 
 - (NSArray *)children:(NSString *)tagName;
-- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)namespace;
+- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)ns;
+- (NSArray *)childrenInXPath:(NSString *)query;
 
 - (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))blk;
+- (void)iterateXPath:(NSString *)query with:(void (^)(RXMLElement *))blk;
 - (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))blk;
 
 @property (nonatomic, readonly) NSString *tag;
@@ -77,5 +81,5 @@
 
 @end
 
-typedef void (^RXMLBlock)(RXMLElement *);
+typedef void (^RXMLBlock)(RXMLElement *element);
 

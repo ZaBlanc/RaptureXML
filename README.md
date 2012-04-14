@@ -31,7 +31,7 @@ RaptureXML processes XML in two steps: load and path.  This means that you first
 
 You can load the XML with any of the following constructors:
 
-	RXMLElement *rootXML = [RXMLElement elementFromXMLString:@"...my xml..." withEncoding:NSUTF8StringEncoding];
+	RXMLElement *rootXML = [RXMLElement elementFromXMLString:@"...my xml..." encoding:NSUTF8StringEncoding];
 	RXMLElement *rootXML = [RXMLElement elementFromXMLFile:@"myfile.xml"];
 	RXMLElement *rootXML = [RXMLElement elementFromXMLFilename:@"myfile" elementFromXMLFilename:@"xml"];
 	RXMLElement *rootXML = [RXMLElement elementFromURL:[NSURL URLWithString:@"...my url..."]];
@@ -114,6 +114,22 @@ The wildcard processes every tag rather than the one you would've named.  You ca
 	}];
 
 This gives us all the tags for the coach.  Easy enough?
+
+# XPath #
+
+If you don't want to use the custom RaptureXML iteration query syntax, you can use the standard XPath query language as well.  Here's how you query all players with XPath:
+
+	[rootXML iterate:@"//player" with: ^(RXMLElement *player) {
+		NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
+	}];    
+
+And remember, you can also test attributes using XPath as well. Here's how you can find the player with #5:
+
+	[rootXML iterate:@"//player[number='5']" with: ^(RXMLElement *player) {
+		NSLog(@"Player #5: %@", [player child:@"name"]);
+	}];    
+
+In the near future, the custom query language for RaptureXML will be deprecated and XPath will fully replace it. If you're not familiar with XPath, you can use this [handy guide](http://www.w3schools.com/xpath/xpath_syntax.asp).
 
 # Namespaces #
 
