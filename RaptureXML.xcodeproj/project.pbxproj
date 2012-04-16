@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		02041DB81526A71200D1F36A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02041DB71526A71200D1F36A /* libxml2.dylib */; };
 		02041DBA1526B0DE00D1F36A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02041DB71526A71200D1F36A /* libxml2.dylib */; };
-		02041DBD1526BF2A00D1F36A /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECA1467ED9C00024989 /* SimpleTests.m */; };
-		02041DBF1526CACD00D1F36A /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */; };
-		02041DC01526CB0000D1F36A /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECC1467ED9C00024989 /* WildcardTests.m */; };
-		0213E4411539CE1B00B42A2D /* XPathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0213E43D1539CDDF00B42A2D /* XPathTests.m */; };
 		0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2DE142ADFC60018B75D /* SenTestingKit.framework */; };
 		0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
 		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
+		027B3571153C624700A4EDF2 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */; };
+		027B3572153C625600A4EDF2 /* DeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC81467ED9C00024989 /* DeepTests.m */; };
+		027B3573153C638B00A4EDF2 /* ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC91467ED9C00024989 /* ErrorTests.m */; };
+		027B3574153C63A000A4EDF2 /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECA1467ED9C00024989 /* SimpleTests.m */; };
+		027B3575153C63B400A4EDF2 /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */; };
+		027B3576153C63D100A4EDF2 /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECC1467ED9C00024989 /* WildcardTests.m */; };
+		027B3577153C63E500A4EDF2 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F3A4041526D7BC00E8C822 /* EncodingTests.m */; };
+		027B6BD1153C653C00A4EDF2 /* XPathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B6BCF153C652E00A4EDF2 /* XPathTests.m */; };
 		027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
 		027DAC3614FBF465001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
 		02F3A3FF1526D22600E8C822 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB8F2D14681BD800024989 /* players.xml */; };
-		02F3A4001526D39000E8C822 /* DeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC81467ED9C00024989 /* DeepTests.m */; };
-		02F3A4011526D39800E8C822 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */; };
-		02F3A4021526D45B00E8C822 /* ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC91467ED9C00024989 /* ErrorTests.m */; };
-		02F3A4051526D7BC00E8C822 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F3A4041526D7BC00E8C822 /* EncodingTests.m */; };
 		0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0DEB8ECD1467ED9C00024989 /* BoundaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC61467ED9C00024989 /* BoundaryTests.m */; };
 		0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
@@ -32,13 +32,13 @@
 /* Begin PBXFileReference section */
 		02041DB71526A71200D1F36A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		02041DC21526D03A00D1F36A /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		0213E43D1539CDDF00B42A2D /* XPathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathTests.m; sourceTree = SOURCE_ROOT; };
 		0252B2C3142ADFC60018B75D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0252B2C5142ADFC60018B75D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0252B2C7142ADFC60018B75D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0252B2DE142ADFC60018B75D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		0252B305142AE3FF0018B75D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		027B6BCF153C652E00A4EDF2 /* XPathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathTests.m; path = Tests/XPathTests.m; sourceTree = SOURCE_ROOT; };
 		027DAC2E14FBF443001BA563 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
 		027DAC2F14FBF443001BA563 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
 		027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Library-Prefix.pch"; sourceTree = "<group>"; };
@@ -128,7 +128,7 @@
 				0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */,
 				0DEB8ECC1467ED9C00024989 /* WildcardTests.m */,
 				02F3A4041526D7BC00E8C822 /* EncodingTests.m */,
-				0213E43D1539CDDF00B42A2D /* XPathTests.m */,
+				027B6BCF153C652E00A4EDF2 /* XPathTests.m */,
 			);
 			name = Tests;
 			path = RaptureXMLTests;
@@ -206,6 +206,13 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				English,
+				de,
+				el,
+				es,
+				fr,
+				it,
+				ru,
 			);
 			mainGroup = 0252B2B4142ADFC60018B75D;
 			productRefGroup = 0252B2C0142ADFC60018B75D /* Products */;
@@ -252,14 +259,14 @@
 			files = (
 				0DEB8ECD1467ED9C00024989 /* BoundaryTests.m in Sources */,
 				027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */,
-				02041DBD1526BF2A00D1F36A /* SimpleTests.m in Sources */,
-				02041DBF1526CACD00D1F36A /* TextConversionTests.m in Sources */,
-				02041DC01526CB0000D1F36A /* WildcardTests.m in Sources */,
-				02F3A4001526D39000E8C822 /* DeepTests.m in Sources */,
-				02F3A4011526D39800E8C822 /* DeepChildrenTests.m in Sources */,
-				02F3A4021526D45B00E8C822 /* ErrorTests.m in Sources */,
-				02F3A4051526D7BC00E8C822 /* EncodingTests.m in Sources */,
-				0213E4411539CE1B00B42A2D /* XPathTests.m in Sources */,
+				027B3571153C624700A4EDF2 /* DeepChildrenTests.m in Sources */,
+				027B3572153C625600A4EDF2 /* DeepTests.m in Sources */,
+				027B3573153C638B00A4EDF2 /* ErrorTests.m in Sources */,
+				027B3574153C63A000A4EDF2 /* SimpleTests.m in Sources */,
+				027B3575153C63B400A4EDF2 /* TextConversionTests.m in Sources */,
+				027B3576153C63D100A4EDF2 /* WildcardTests.m in Sources */,
+				027B3577153C63E500A4EDF2 /* EncodingTests.m in Sources */,
+				027B6BD1153C653C00A4EDF2 /* XPathTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,11 +364,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/RaptureXML.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../.metadata/.plugins/org.eclipse.debug.core/.launches/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/../Cognitive\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library-Prefix.pch";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../FuzzAlert/AdMob\"",
+					"\"$(SRCROOT)/../FuzzAlert/FlurryLibWithLocation\"",
+					"\"$(SRCROOT)/../FuzzAlert/libGHUnitIPhone4_0-0.4.21\"",
+					"\"$(SRCROOT)/../FuzzAlert/three20/Build/Products/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../FuzzAlert/three20/Build/Products/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/../InnerBand/libGHUnitIPhone4_0-0.4.22\"",
+					"\"$(SRCROOT)/../TaskList/FlurryLib\"",
+					"\"$(SRCROOT)/../WordsWithPractice/WordsWithPractice/GoogleAdMobAdsSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -371,11 +394,27 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/RaptureXML.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../.metadata/.plugins/org.eclipse.debug.core/.launches/System/Library/Frameworks\"",
+					"\"$(SRCROOT)/../Cognitive\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Library-Prefix.pch";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/../FuzzAlert/AdMob\"",
+					"\"$(SRCROOT)/../FuzzAlert/FlurryLibWithLocation\"",
+					"\"$(SRCROOT)/../FuzzAlert/libGHUnitIPhone4_0-0.4.21\"",
+					"\"$(SRCROOT)/../FuzzAlert/three20/Build/Products/Debug-iphonesimulator\"",
+					"\"$(SRCROOT)/../FuzzAlert/three20/Build/Products/Release-iphonesimulator\"",
+					"\"$(SRCROOT)/../InnerBand/libGHUnitIPhone4_0-0.4.22\"",
+					"\"$(SRCROOT)/../TaskList/FlurryLib\"",
+					"\"$(SRCROOT)/../WordsWithPractice/WordsWithPractice/GoogleAdMobAdsSDK\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

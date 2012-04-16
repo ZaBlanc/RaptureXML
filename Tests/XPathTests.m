@@ -44,7 +44,7 @@
 
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     
-    [rxml iterateXPath:@"//circle" with:^(RXMLElement *element) {
+    [rxml iterateWithRootXPath:@"//circle" usingBlock:^(RXMLElement *element) {
         STAssertEqualObjects(element.text, @"Circle", nil);
         i++;
     }];
@@ -57,7 +57,7 @@
     
     RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ encoding:NSUTF8StringEncoding];
     
-    [rxml iterateXPath:@"//circle[@name='Circle']" with:^(RXMLElement *element) {
+    [rxml iterateWithRootXPath:@"//circle[@name='Circle']" usingBlock:^(RXMLElement *element) {
         STAssertEqualObjects([element attribute:@"name"], @"Circle", nil);
         i++;
     }];

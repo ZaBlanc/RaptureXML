@@ -53,25 +53,25 @@
 + (id)elementFromXMLData:(NSData *)data;
 + (id)elementFromXMLNode:(xmlNodePtr)node;
 
-- (NSString *)attribute:(NSString *)attName;
-- (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)ns;
+- (NSString *)attribute:(NSString *)attributeName;
+- (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)ns;
 
-- (NSInteger)attributeAsInt:(NSString *)attName;
-- (NSInteger)attributeAsInt:(NSString *)attName inNamespace:(NSString *)ns;
+- (NSInteger)attributeAsInt:(NSString *)attributeName;
+- (NSInteger)attributeAsInt:(NSString *)attributeName inNamespace:(NSString *)ns;
 
-- (double)attributeAsDouble:(NSString *)attName;
-- (double)attributeAsDouble:(NSString *)attName inNamespace:(NSString *)ns;
+- (double)attributeAsDouble:(NSString *)attributeName;
+- (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)ns;
 
-- (RXMLElement *)child:(NSString *)tagName;
-- (RXMLElement *)child:(NSString *)tagName inNamespace:(NSString *)ns;
+- (RXMLElement *)child:(NSString *)tag;
+- (RXMLElement *)child:(NSString *)tag inNamespace:(NSString *)ns;
 
-- (NSArray *)children:(NSString *)tagName;
-- (NSArray *)children:(NSString *)tagName inNamespace:(NSString *)ns;
-- (NSArray *)childrenInXPath:(NSString *)query;
+- (NSArray *)children:(NSString *)tag;
+- (NSArray *)children:(NSString *)tag inNamespace:(NSString *)ns;
+- (NSArray *)childrenWithRootXPath:(NSString *)xpath;
 
-- (void)iterate:(NSString *)query with:(void (^)(RXMLElement *))blk;
-- (void)iterateXPath:(NSString *)query with:(void (^)(RXMLElement *))blk;
-- (void)iterateElements:(NSArray *)elements with:(void (^)(RXMLElement *))blk;
+- (void)iterate:(NSString *)query usingBlock:(void (^)(RXMLElement *))blk;
+- (void)iterateWithRootXPath:(NSString *)xpath usingBlock:(void (^)(RXMLElement *))blk;
+- (void)iterateElements:(NSArray *)elements usingBlock:(void (^)(RXMLElement *))blk;
 
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;

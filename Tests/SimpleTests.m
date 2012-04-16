@@ -53,7 +53,7 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" with:^(RXMLElement *e) {
+    [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
             STAssertEqualObjects(e.tag, @"square", nil);
             STAssertEqualObjects(e.text, @"Square", nil);
@@ -75,7 +75,7 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" with:^(RXMLElement *e) {
+    [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
             STAssertEqualObjects([e attribute:@"name"], @"Square", nil);
         } else if (i == 1) {

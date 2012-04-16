@@ -6,7 +6,7 @@ You tell me.  Processing XML in Objective-C is an awful, frustrating experience 
 
 	RXMLElement *rootXML = [RXMLElement elementFromXMLFile:@"players.xml"];
 	
-	[rootXML iterate:@"players.player" with: ^(RXMLElement *e) {
+	[rootXML iterate:@"players.player" usingBlock: ^(RXMLElement *e) {
 		NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"].text);
 	}];    
 
@@ -23,7 +23,7 @@ There's just a few simple steps:
   * Link in libxml2.dylib to your target.
   * In your build settings, for the key "Header Search Paths", add "$(SDK_DIR)"/usr/include/libxml2
 
-Currently, RaptureXML doesn't support ARC.  If you'd like to use it in your ARC project, please flag its three source files with _-fno_objc_arc_.  For more information on how to do that, see [Transitioning to ARC Release Notes](https://developer.apple.com/library/ios/#releasenotes/ObjectiveC/RN-TransitioningToARC/Introduction/Introduction.html).
+RaptureXML supports ARC.  In fact, it does so without a branch.  The code automatically detects if ARC is being used in your project and compiles accordingly.  You are free to use any version of LLVM or gcc as well! (Though you should be using LLVM by now.)
 
 # Getting Started #
 
@@ -91,25 +91,25 @@ If we like, we can get all the individual player tags with:
 
 From there, we can process the individual players and be happy.  Now, this is already much better than any other XML library we've seen, but RaptureXML can use query paths to make this ridiculously easy.  Let's use query paths to improve the conciseness our code:
 
-	[rootXML iterate:@"players.player" with: ^(RXMLElement *player) {
+	[rootXML iterate:@"players.player" usingBlock: ^(RXMLElement *player) {
 		NSLog(@"Player: %@ (#%@)", [player child:@"name"].text, [player attribute:@"number"]);
 	}];    
 
 Your block is passed an RXMLElement representing each player in just one line!  Alternatively, you could have shortened it with:
 
-[rootXML iterate:@"players.player" with: ^(RXMLElement *player) {
+[rootXML iterate:@"players.player" usingBlock: ^(RXMLElement *player) {
 	NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
 }];    
 
 This also works because RXMLElement#description returns the text of the tag. Query paths are even more powerful with wildcards.  Let's say we wanted the name of every person on the team, player or coach.  We use the wildcard to get it:
 
-	[rootXML iterate:@"players.*.name" with: ^(RXMLElement *name) {
+	[rootXML iterate:@"players.*.name" usingBlock: ^(RXMLElement *name) {
 		NSLog(@"Name: %@", name.text);
 	}];
 
 The wildcard processes every tag rather than the one you would've named.  You can also use the wildcard to iterate all the children of an element:
 
-	[rootXML iterate:@"players.coach.*" with: ^(RXMLElement *e) {
+	[rootXML iterate:@"players.coach.*" usingBlock: ^(RXMLElement *e) {
 		NSLog(@"Tag: %@, Text: %@", e.tag, e.text);
 	}];
 
@@ -119,17 +119,17 @@ This gives us all the tags for the coach.  Easy enough?
 
 If you don't want to use the custom RaptureXML iteration query syntax, you can use the standard XPath query language as well.  Here's how you query all players with XPath:
 
-	[rootXML iterate:@"//player" with: ^(RXMLElement *player) {
+	[rootXML iterateWithRootXPath:@"//player" usingBlock: ^(RXMLElement *player) {
 		NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
 	}];    
 
 And remember, you can also test attributes using XPath as well. Here's how you can find the player with #5:
 
-	[rootXML iterate:@"//player[number='5']" with: ^(RXMLElement *player) {
+	[rootXML iterateWithRootXPath:@"//player[number='5']" usingBlock: ^(RXMLElement *player) {
 		NSLog(@"Player #5: %@", [player child:@"name"]);
 	}];    
 
-In the near future, the custom query language for RaptureXML will be deprecated and XPath will fully replace it. If you're not familiar with XPath, you can use this [handy guide](http://www.w3schools.com/xpath/xpath_syntax.asp).
+Note that you can only use XPath from the document root and it won't matter what RXMLElement you have.  If you have a derived RXMLElement, you can still build from the document root. If you're not familiar with XPath, you can use this [handy guide](http://www.w3schools.com/xpath/xpath_syntax.asp).
 
 # Namespaces #
 

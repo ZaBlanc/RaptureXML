@@ -41,7 +41,7 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:emptyTopTagXML_ encoding:NSUTF8StringEncoding];
     STAssertTrue(rxml.isValid, nil);
     STAssertEqualObjects(rxml.text, @"", nil);
-    STAssertEqualObjects([rxml children:@"*"], [NSArray array], nil);
+    STAssertEqualObjects([rxml childrenWithRootXPath:@"*"], [NSArray array], nil);
 }
 
 - (void)testAttribute {
