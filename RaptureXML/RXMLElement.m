@@ -199,13 +199,15 @@
 }
 
 - (NSString *)attribute:(NSString *)attName {
+    NSString *ret = nil;
     const unsigned char *attCStr = xmlGetProp(node_, (const xmlChar *)[attName cStringUsingEncoding:NSUTF8StringEncoding]);        
-
+    
     if (attCStr) {
-        return [NSString stringWithUTF8String:(const char *)attCStr];
+        ret = [NSString stringWithUTF8String:(const char *)attCStr];
+        xmlFree((void *)attCStr);
     }
     
-    return nil;
+    return ret;
 }
 
 - (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)ns {
