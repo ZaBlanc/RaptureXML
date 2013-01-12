@@ -42,14 +42,14 @@
 - (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
 - (id)initFromXMLFile:(NSString *)filename;
 - (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString*)extension;
-- (id)initFromURL:(NSURL *)url;
+- (id)initFromURL:(NSURL *)url __attribute__((deprecated));
 - (id)initFromXMLData:(NSData *)data;
 - (id)initFromXMLNode:(xmlNodePtr)node;
 
 + (id)elementFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
 + (id)elementFromXMLFile:(NSString *)filename;
 + (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension;
-+ (id)elementFromURL:(NSURL *)url;
++ (id)elementFromURL:(NSURL *)url __attribute__((deprecated));
 + (id)elementFromXMLData:(NSData *)data;
 + (id)elementFromXMLNode:(xmlNodePtr)node;
 
