@@ -56,6 +56,8 @@
 - (NSString *)attribute:(NSString *)attributeName;
 - (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)ns;
 
+- (NSArray *)attributeNames;
+
 - (NSInteger)attributeAsInt:(NSString *)attributeName;
 - (NSInteger)attributeAsInt:(NSString *)attributeName inNamespace:(NSString *)ns;
 
