@@ -42,6 +42,7 @@
 - (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
 - (id)initFromXMLFile:(NSString *)filename;
 - (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString*)extension;
+- (id)initFromXMLFilePath:(NSString *)fullPath;
 - (id)initFromURL:(NSURL *)url __attribute__((deprecated));
 - (id)initFromXMLData:(NSData *)data;
 - (id)initFromXMLNode:(xmlNodePtr)node;
