@@ -91,6 +91,15 @@
     return self;        
 }
 
+// Copy the RaptureXML element
+// (calling copy will call this method automatically with the default zone)
+-(id)copyWithZone:(NSZone *)zone{
+    RXMLElement* new_element = [[RXMLElement alloc] init];
+    new_element->node_ = node_;
+    new_element->doc_ = doc_;
+    return new_element;
+}
+
 + (id)elementFromXMLString:(NSString *)attributeXML_ encoding:(NSStringEncoding)encoding {
     return SAFE_ARC_AUTORELEASE([[RXMLElement alloc] initFromXMLString:attributeXML_ encoding:encoding]);    
 }
