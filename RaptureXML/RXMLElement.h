@@ -34,7 +34,7 @@
 #import <libxml/xpath.h>
 #import <libxml/xpathInternals.h>
 
-@interface RXMLElement : NSObject {
+@interface RXMLElement : NSObject<NSCopying> {
     xmlDocPtr doc_;
     xmlNodePtr node_;
 }
