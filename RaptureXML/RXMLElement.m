@@ -33,77 +33,25 @@
 @implementation RXMLElement
 
 - (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding {
-    if ((self = [super init])) {
-        NSData *data = [xmlString dataUsingEncoding:encoding];
+    return [self initFromXMLData:[xmlString dataUsingEncoding:encoding]];
+}
 
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
-        
-        if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
-            
-            if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
-            }
-        }
-    }
-    
-    return self;    
+- (id)initFromXMLFilePath:(NSString *)fullPath {
+    return [self initFromXMLData:[NSData dataWithContentsOfFile:fullPath]];
 }
 
 - (id)initFromXMLFile:(NSString *)filename {
-    if ((self = [super init])) {
-        NSString *fullPath = [[[NSBundle bundleForClass:self.class] bundlePath] stringByAppendingPathComponent:filename];
-        NSData *data = [NSData dataWithContentsOfFile:fullPath];
-
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
-        
-        if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
-            
-            if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
-            }
-        }
-    }
-    
-    return self;    
+    NSString *fullPath = [[[NSBundle bundleForClass:self.class] bundlePath] stringByAppendingPathComponent:filename];
+    return [self initFromXMLFilePath:fullPath];
 }
 
 - (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString *)extension {
-    if ((self = [super init])) {
-        NSString *fullPath = [[NSBundle bundleForClass:[self class]] pathForResource:filename ofType:extension];
-        NSData *data = [NSData dataWithContentsOfFile:fullPath];
-        
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
-        
-        if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
-            
-            if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
-            }
-        }
-    }
-    
-    return self;    
+    NSString *fullPath = [[NSBundle bundleForClass:[self class]] pathForResource:filename ofType:extension];
+    return [self initFromXMLData:[NSData dataWithContentsOfFile:fullPath]];
 }
 
 - (id)initFromURL:(NSURL *)url {
-    if ((self = [super init])) {
-        NSData *data = [NSData dataWithContentsOfURL:url];
-        
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
-        
-        if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
-            
-            if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
-            }
-        }
-    }
-    
-    return self;    
+    return [self initFromXMLData:[NSData dataWithContentsOfURL:url]];
 }
 
 - (id)initFromXMLData:(NSData *)data {
@@ -129,6 +77,15 @@
     }
     
     return self;        
+}
+
+// Copy the RaptureXML element
+// (calling copy will call this method automatically with the default zone)
+-(id)copyWithZone:(NSZone *)zone{
+    RXMLElement* new_element = [[RXMLElement alloc] init];
+    new_element->node_ = node_;
+    new_element->doc_ = doc_;
+    return new_element;
 }
 
 + (id)elementFromXMLString:(NSString *)attributeXML_ encoding:(NSStringEncoding)encoding {

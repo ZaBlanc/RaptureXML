@@ -143,6 +143,10 @@ You would access the attributes with:
 
 	NSLog(@"Team Name: %@", [e attribute:@"name" inNamespace:@"*"]);
 
+# RubyMotion Support #
+
+RaptureXML is easily integrated into RubyMotion!  [Here's how.](http://raptureinvenice.com/797/)
+
 # Unit Tests as Documentation #
 
 You can see the full usage of RaptureXML by reading the unit tests in the project.  Not only does it show you all the code, but you'll know it works! (You can run the unit tests by pressing Command-U in XCode)
