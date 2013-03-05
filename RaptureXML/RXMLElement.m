@@ -30,18 +30,6 @@
 
 #import "RXMLElement.h"
 
-// macros for supporting ARC/NON-ARC without need for a branch
-
-#if __has_feature(objc_arc)
-    #define SAFE_ARC_RELEASE(x)
-    #define SAFE_ARC_AUTORELEASE(x) (x)
-    #define SAFE_ARC_SUPER_DEALLOC()
-#else
-    #define SAFE_ARC_RELEASE(x) ([(x) release])
-    #define SAFE_ARC_AUTORELEASE(x) ([(x) autorelease])
-    #define SAFE_ARC_SUPER_DEALLOC() ([super dealloc])
-#endif
-
 @implementation RXMLElement
 
 - (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding {
@@ -144,27 +132,27 @@
 }
 
 + (id)elementFromXMLString:(NSString *)attributeXML_ encoding:(NSStringEncoding)encoding {
-    return SAFE_ARC_AUTORELEASE([[RXMLElement alloc] initFromXMLString:attributeXML_ encoding:encoding]);    
+    return [[RXMLElement alloc] initFromXMLString:attributeXML_ encoding:encoding];    
 }
 
 + (id)elementFromXMLFile:(NSString *)filename {
-    return SAFE_ARC_AUTORELEASE([[RXMLElement alloc] initFromXMLFile:filename]);    
+    return [[RXMLElement alloc] initFromXMLFile:filename];    
 }
 
 + (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension {
-    return SAFE_ARC_AUTORELEASE([[RXMLElement alloc] initFromXMLFile:filename fileExtension:extension]);
+    return [[RXMLElement alloc] initFromXMLFile:filename fileExtension:extension];
 }
 
 + (id)elementFromURL:(NSURL *)url {
-    return SAFE_ARC_AUTORELEASE([[RXMLElement alloc] initFromURL:url]);
+    return [[RXMLElement alloc] initFromURL:url];
 }
 
 + (id)elementFromXMLData:(NSData *)data {
-    return SAFE_ARC_AUTORELEASE([[RXMLElement alloc] initFromXMLData:data]);
+    return [[RXMLElement alloc] initFromXMLData:data];
 }
 
 + (id)elementFromXMLNode:(xmlNodePtr)node {
-    return SAFE_ARC_AUTORELEASE([[RXMLElement alloc] initFromXMLNode:node]);
+    return [[RXMLElement alloc] initFromXMLNode:node];
 }
 
 - (NSString *)description {
@@ -173,7 +161,6 @@
 
 - (void)dealloc {
     if (doc_ != nil) xmlFreeDoc(doc_);
-    SAFE_ARC_SUPER_DEALLOC();
 }
 
 #pragma mark -
@@ -340,7 +327,7 @@
         cur = cur->next;
     }
     
-    return SAFE_ARC_AUTORELEASE([children copy]);
+    return [children copy];
 }
 
 - (NSArray *)children:(NSString *)tag inNamespace:(NSString *)ns {
@@ -357,7 +344,7 @@
         cur = cur->next;
     }
     
-    return SAFE_ARC_AUTORELEASE([children copy]);
+    return [children copy];
 }
 
 - (NSArray *)childrenWithRootXPath:(NSString *)xpath {
