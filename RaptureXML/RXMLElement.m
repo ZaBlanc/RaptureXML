@@ -30,6 +30,28 @@
 
 #import "RXMLElement.h"
 
+@implementation RXMLDocHolder
+
+- (id)initWithDocPtr:(xmlDocPtr)doc {
+    if ((self = [super init])) {
+        doc_ = doc;
+    }
+
+    return self;
+}
+
+- (void)dealloc {
+    if (doc_ != nil) {
+        xmlFreeDoc(doc_);
+    }
+}
+
+- (xmlDocPtr)doc {
+    return doc_;
+}
+
+@end
+
 @implementation RXMLElement
 
 - (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding {
@@ -56,13 +78,14 @@
 
 - (id)initFromXMLData:(NSData *)data {
     if ((self = [super init])) {
-        doc_ = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        xmlDocPtr doc = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        self.xmlDoc = [[RXMLDocHolder alloc] initWithDocPtr:doc];
         
         if ([self isValid]) {
-            node_ = xmlDocGetRootElement(doc_);
+            node_ = xmlDocGetRootElement(doc);
             
             if (!node_) {
-                xmlFreeDoc(doc_); doc_ = nil;
+                self.xmlDoc = nil;
             }
         }
     }
@@ -70,9 +93,9 @@
     return self;    
 }
 
-- (id)initFromXMLNode:(xmlNodePtr)node {
+- (id)initFromXMLDoc:(RXMLDocHolder *)doc node:(xmlNodePtr)node {
     if ((self = [super init])) {
-        doc_ = nil;
+        self.xmlDoc = doc;
         node_ = node;
     }
     
@@ -84,7 +107,7 @@
 -(id)copyWithZone:(NSZone *)zone{
     RXMLElement* new_element = [[RXMLElement alloc] init];
     new_element->node_ = node_;
-    new_element->doc_ = doc_;
+    new_element.xmlDoc = self.xmlDoc;
     return new_element;
 }
 
@@ -108,16 +131,12 @@
     return [[RXMLElement alloc] initFromXMLData:data];
 }
 
-+ (id)elementFromXMLNode:(xmlNodePtr)node {
-    return [[RXMLElement alloc] initFromXMLNode:node];
++ (id)elementFromXMLDoc:(RXMLDocHolder *)doc node:(xmlNodePtr)node {
+    return [[RXMLElement alloc] initFromXMLDoc:doc node:node];
 }
 
 - (NSString *)description {
     return [self text];
-}
-
-- (void)dealloc {
-    if (doc_ != nil) xmlFreeDoc(doc_);
 }
 
 #pragma mark -
@@ -191,7 +210,7 @@
 }
 
 - (BOOL)isValid {
-    return (doc_ != nil);
+    return (self.xmlDoc != nil);
 }
 
 #pragma mark -
@@ -227,7 +246,7 @@
     }
     
     if (cur) {
-        return [RXMLElement elementFromXMLNode:cur];
+        return [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur];
     }
   
     return nil;
@@ -265,7 +284,7 @@
     }
     
     if (cur) {
-        return [RXMLElement elementFromXMLNode:cur];
+        return [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur];
     }
     
     return nil;
@@ -278,7 +297,7 @@
 
     while (cur != nil) {
         if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagC)) {
-            [children addObject:[RXMLElement elementFromXMLNode:cur]];
+            [children addObject:[RXMLElement elementFromXMLDoc:self.xmlDoc node:cur]];
         }
         
         cur = cur->next;
@@ -295,7 +314,7 @@
     
     while (cur != nil) {
         if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagC) && !xmlStrcmp(cur->ns->href, namespaceC)) {
-            [children addObject:[RXMLElement elementFromXMLNode:cur]];
+            [children addObject:[RXMLElement elementFromXMLDoc:self.xmlDoc node:cur]];
         }
         
         cur = cur->next;
@@ -310,7 +329,7 @@
         return [NSArray array];
     }
 
-    xmlXPathContextPtr context = xmlXPathNewContext(doc_);
+    xmlXPathContextPtr context = xmlXPathNewContext([self.xmlDoc doc]);
     
     if (context == NULL) {
 		return nil;
@@ -329,7 +348,7 @@
 	NSMutableArray *resultNodes = [NSMutableArray array];
     
     for (NSInteger i = 0; i < nodes->nodeNr; i++) {
-		RXMLElement *element = [RXMLElement elementFromXMLNode:nodes->nodeTab[i]];
+		RXMLElement *element = [RXMLElement elementFromXMLDoc:self.xmlDoc node:nodes->nodeTab[i]];
         
 		if (element != NULL) {
 			[resultNodes addObject:element];
@@ -365,7 +384,7 @@
                 // midstream
                 do {
                     if (cur->type == XML_ELEMENT_NODE) {
-                        RXMLElement *element = [RXMLElement elementFromXMLNode:cur];
+                        RXMLElement *element = [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur];
                         NSString *restOfQuery = [[components subarrayWithRange:NSMakeRange(i + 1, components.count - i - 1)] componentsJoinedByString:@"."];
                         [element iterate:restOfQuery usingBlock:blk];
                     }
@@ -398,7 +417,7 @@
         
         do {
             if (cur->type == XML_ELEMENT_NODE) {
-                RXMLElement *element = [RXMLElement elementFromXMLNode:cur];
+                RXMLElement *element = [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur];
                 blk(element);
             }
             

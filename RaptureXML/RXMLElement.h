@@ -34,8 +34,16 @@
 #import <libxml/xpath.h>
 #import <libxml/xpathInternals.h>
 
-@interface RXMLElement : NSObject<NSCopying> {
+@interface RXMLDocHolder : NSObject {
     xmlDocPtr doc_;
+}
+
+- (id)initWithDocPtr:(xmlDocPtr)doc;
+- (xmlDocPtr)doc;
+
+@end
+
+@interface RXMLElement : NSObject<NSCopying> {
     xmlNodePtr node_;
 }
 
@@ -45,14 +53,14 @@
 - (id)initFromXMLFilePath:(NSString *)fullPath;
 - (id)initFromURL:(NSURL *)url __attribute__((deprecated));
 - (id)initFromXMLData:(NSData *)data;
-- (id)initFromXMLNode:(xmlNodePtr)node;
+- (id)initFromXMLDoc:(RXMLDocHolder *)doc node:(xmlNodePtr)node;
 
 + (id)elementFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
 + (id)elementFromXMLFile:(NSString *)filename;
 + (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension;
 + (id)elementFromURL:(NSURL *)url __attribute__((deprecated));
 + (id)elementFromXMLData:(NSData *)data;
-+ (id)elementFromXMLNode:(xmlNodePtr)node;
++ (id)elementFromXMLDoc:(RXMLDocHolder *)doc node:(xmlNodePtr)node;
 
 - (NSString *)attribute:(NSString *)attributeName;
 - (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)ns;
@@ -76,6 +84,7 @@
 - (void)iterateWithRootXPath:(NSString *)xpath usingBlock:(void (^)(RXMLElement *))blk;
 - (void)iterateElements:(NSArray *)elements usingBlock:(void (^)(RXMLElement *))blk;
 
+@property (nonatomic, strong) RXMLDocHolder *xmlDoc;
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;
 @property (nonatomic, readonly) NSInteger textAsInt;

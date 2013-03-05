@@ -29,6 +29,7 @@
 		0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
 		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
+		02565F9916E6320700A882F9 /* CopyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1413670716D9BEC700501ABB /* CopyTests.m */; };
 		027B3571153C624700A4EDF2 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */; };
 		027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
 		027DAC3614FBF465001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
@@ -44,7 +45,6 @@
 		02F3A3FF1526D22600E8C822 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB8F2D14681BD800024989 /* players.xml */; };
 		0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
-		1413670916D9BF0D00501ABB /* CopyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1413670716D9BEC700501ABB /* CopyTests.m */; };
 		6BD1BDA91558B91400F1D055 /* RXMLElement.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = 027DAC2E14FBF443001BA563 /* RXMLElement.h */; };
 /* End PBXBuildFile section */
 
@@ -341,7 +341,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1413670916D9BF0D00501ABB /* CopyTests.m in Sources */,
 				027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */,
 				027B3571153C624700A4EDF2 /* DeepChildrenTests.m in Sources */,
 				02ADE6A216A0E33A008643D5 /* AttributeTests.m in Sources */,
@@ -353,6 +352,7 @@
 				02ADE6A816A0E491008643D5 /* WildcardTests.m in Sources */,
 				02ADE6A916A0E491008643D5 /* EncodingTests.m in Sources */,
 				02ADE6AA16A0E491008643D5 /* XPathTests.m in Sources */,
+				02565F9916E6320700A882F9 /* CopyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
