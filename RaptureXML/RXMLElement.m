@@ -78,7 +78,7 @@
 
 - (id)initFromXMLData:(NSData *)data {
     if ((self = [super init])) {
-        xmlDocPtr doc = xmlReadMemory([data bytes], [data length], "", nil, XML_PARSE_RECOVER);
+        xmlDocPtr doc = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
         self.xmlDoc = [[RXMLDocHolder alloc] initWithDocPtr:doc];
         
         if ([self isValid]) {
