@@ -27,14 +27,13 @@ RaptureXML supports ARC.  In fact, it does so without a branch.  The code automa
 
 # Getting Started #
 
-RaptureXML processes XML in two steps: load and path.  This means that you first load the XML from any source you want such as file, data, string, or even from a URL.  Then, you simply use its query language to find what you need.
+RaptureXML processes XML in two steps: load and path.  This means that you first load the XML from any source you want such as file, data, or string.  Then, you simply use its query language to find what you need.
 
 You can load the XML with any of the following constructors:
 
 	RXMLElement *rootXML = [RXMLElement elementFromXMLString:@"...my xml..." encoding:NSUTF8StringEncoding];
 	RXMLElement *rootXML = [RXMLElement elementFromXMLFile:@"myfile.xml"];
 	RXMLElement *rootXML = [RXMLElement elementFromXMLFilename:@"myfile" elementFromXMLFilename:@"xml"];
-	RXMLElement *rootXML = [RXMLElement elementFromURL:[NSURL URLWithString:@"...my url..."]];
 	RXMLElement *rootXML = [RXMLElement elementFromXMLData:myData];
 
 These constructors return an RXMLElement object that represents the top-level tags. Now, you can query the data in any number of ways.
