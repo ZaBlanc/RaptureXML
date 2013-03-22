@@ -95,7 +95,7 @@
 -(void) testInnerXml {    
     treeXML_ = @"<data>\
     <shapes><circle>Circle</circle></shapes>\
-    <colors><rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb></colors>\
+    <colors>TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb></colors>\
 </data>";
 
     RXMLElement *rxml = [RXMLElement elementFromXMLString:treeXML_ encoding:NSUTF8StringEncoding];
@@ -104,8 +104,8 @@
     STAssertEqualObjects(shapes.innerXML, @"<circle>Circle</circle>", nil);
 
     RXMLElement* colors = [rxml child:@"colors"];
-    STAssertEqualObjects(colors.xml, @"<colors><rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb></colors>", nil);
-    STAssertEqualObjects(colors.innerXML, @"<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb>", nil);
+    STAssertEqualObjects(colors.xml, @"<colors>TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb></colors>", nil);
+    STAssertEqualObjects(colors.innerXML, @"TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb>", nil);
 }
 
 @end

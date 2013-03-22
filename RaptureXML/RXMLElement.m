@@ -156,8 +156,8 @@
 - (NSString *)xml {
     xmlBufferPtr buffer = xmlBufferCreate();
     xmlNodeDump(buffer, node_->doc, node_, 0, false);
-    xmlBufferFree(buffer);
     NSString *text = [NSString stringWithUTF8String:(const char *)xmlBufferContent(buffer)];
+    xmlBufferFree(buffer);
     return text;
 }
 
@@ -169,8 +169,13 @@
         if (cur->type == XML_ELEMENT_NODE) {
             xmlBufferPtr buffer = xmlBufferCreate();
             xmlNodeDump(buffer, node_->doc, cur, 0, false);
-            xmlBufferFree(buffer);
             NSString *text = [NSString stringWithUTF8String:(const char *)xmlBufferContent(buffer)];
+            xmlBufferFree(buffer);
+            [innerXML appendString:text];
+        } else if (cur->type == XML_TEXT_NODE) {
+            xmlChar *key = xmlNodeGetContent(cur);
+            NSString *text = (key ? [NSString stringWithUTF8String:(const char *)key] : @"");
+            xmlFree(key);
             [innerXML appendString:text];
         }
         cur = cur->next;
