@@ -166,17 +166,17 @@
     xmlNodePtr cur = node_->children;
     
     while (cur != nil) {
-        if (cur->type == XML_ELEMENT_NODE) {
-            xmlBufferPtr buffer = xmlBufferCreate();
-            xmlNodeDump(buffer, node_->doc, cur, 0, false);
-            NSString *text = [NSString stringWithUTF8String:(const char *)xmlBufferContent(buffer)];
-            xmlBufferFree(buffer);
-            [innerXml appendString:text];
-        } else if (cur->type == XML_TEXT_NODE) {
+        if (cur->type == XML_TEXT_NODE) {
             xmlChar *key = xmlNodeGetContent(cur);
             NSString *text = (key ? [NSString stringWithUTF8String:(const char *)key] : @"");
             xmlFree(key);
             [innerXml appendString:text];
+        } else {
+            xmlBufferPtr buffer = xmlBufferCreate();
+            xmlNodeDump(buffer, node_->doc, cur, 0, false);
+            NSString *text = [NSString stringWithUTF8String:(const char *)xmlBufferContent(buffer)];
+            xmlBufferFree(buffer);
+            [innerXml appendString:text];            
         }
         cur = cur->next;
     }

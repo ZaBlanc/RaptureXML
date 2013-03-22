@@ -106,6 +106,10 @@
     RXMLElement* colors = [rxml child:@"colors"];
     STAssertEqualObjects(colors.xml, @"<colors>TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb></colors>", nil);
     STAssertEqualObjects(colors.innerXml, @"TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb>", nil);
+    
+    RXMLElement *cdata = [RXMLElement elementFromXMLString:cdataXML_ encoding:NSUTF8StringEncoding];
+    STAssertEqualObjects(cdata.xml, @"<top><![CDATA[thisiscdata]]></top>", nil);
+    STAssertEqualObjects(cdata.innerXml, @"<![CDATA[thisiscdata]]>", nil);
 }
 
 @end
