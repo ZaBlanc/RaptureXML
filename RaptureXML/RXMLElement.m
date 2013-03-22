@@ -102,6 +102,42 @@
     return self;        
 }
 
+- (id)initFromHTMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding {
+    return [self initFromHTMLData:[xmlString dataUsingEncoding:encoding]];
+}
+
+- (id)initFromHTMLFile:(NSString *)filename {
+    NSString *fullPath = [[[NSBundle bundleForClass:self.class] bundlePath] stringByAppendingPathComponent:filename];
+    return [self initFromHTMLData:[NSData dataWithContentsOfFile:fullPath]];
+}
+
+- (id)initFromHTMLFile:(NSString *)filename fileExtension:(NSString*)extension {
+    NSString *fullPath = [[NSBundle bundleForClass:[self class]] pathForResource:filename ofType:extension];
+    return [self initFromHTMLData:[NSData dataWithContentsOfFile:fullPath]];
+}
+
+- (id)initFromHTMLFilePath:(NSString *)fullPath {
+    return [self initFromHTMLData:[NSData dataWithContentsOfFile:fullPath]];
+
+}
+
+- (id)initFromHTMLData:(NSData *)data {
+    if ((self = [super init])) {
+        xmlDocPtr doc = htmlReadMemory([data bytes], (int)[data length], "", nil, HTML_PARSE_NOWARNING | HTML_PARSE_NOERROR);
+        self.xmlDoc = [[RXMLDocHolder alloc] initWithDocPtr:doc];
+        
+        if ([self isValid]) {
+            node_ = xmlDocGetRootElement(doc);
+            
+            if (!node_) {
+                self.xmlDoc = nil;
+            }
+        }
+    }
+    return self;
+}
+
+
 // Copy the RaptureXML element
 // (calling copy will call this method automatically with the default zone)
 -(id)copyWithZone:(NSZone *)zone{
@@ -137,6 +173,26 @@
 
 - (NSString *)description {
     return [self text];
+}
+
++ (id)elementFromHTMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding {
+    return [[RXMLElement alloc] initFromHTMLString:xmlString encoding:encoding];
+}
+
++ (id)elementFromHTMLFile:(NSString *)filename {
+    return [[RXMLElement alloc] initFromHTMLFile:filename];
+}
+
++ (id)elementFromHTMLFile:(NSString *)filename fileExtension:(NSString*)extension {
+    return [[RXMLElement alloc] initFromHTMLFile:filename fileExtension:extension];
+}
+
++ (id)elementFromHTMLFilePath:(NSString *)fullPath {
+    return [[RXMLElement alloc] initFromHTMLFilePath:fullPath];
+}
+
++ (id)elementFromHTMLData:(NSData *)data {
+    return [[RXMLElement alloc] initFromHTMLData:data];
 }
 
 #pragma mark -

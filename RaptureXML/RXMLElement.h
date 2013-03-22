@@ -31,6 +31,7 @@
 #import <Foundation/Foundation.h>
 #import <libxml2/libxml/xmlreader.h>
 #import <libxml2/libxml/xmlmemory.h>
+#import <libxml2/libxml/HTMLparser.h>
 #import <libxml/xpath.h>
 #import <libxml/xpathInternals.h>
 
@@ -55,12 +56,24 @@
 - (id)initFromXMLData:(NSData *)data;
 - (id)initFromXMLDoc:(RXMLDocHolder *)doc node:(xmlNodePtr)node;
 
+- (id)initFromHTMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
+- (id)initFromHTMLFile:(NSString *)filename;
+- (id)initFromHTMLFile:(NSString *)filename fileExtension:(NSString*)extension;
+- (id)initFromHTMLFilePath:(NSString *)fullPath;
+- (id)initFromHTMLData:(NSData *)data;
+
 + (id)elementFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
 + (id)elementFromXMLFile:(NSString *)filename;
 + (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension;
 + (id)elementFromURL:(NSURL *)url __attribute__((deprecated));
 + (id)elementFromXMLData:(NSData *)data;
 + (id)elementFromXMLDoc:(RXMLDocHolder *)doc node:(xmlNodePtr)node;
+
++ (id)elementFromHTMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
++ (id)elementFromHTMLFile:(NSString *)filename;
++ (id)elementFromHTMLFile:(NSString *)filename fileExtension:(NSString*)extension;
++ (id)elementFromHTMLFilePath:(NSString *)fullPath;
++ (id)elementFromHTMLData:(NSData *)data;
 
 - (NSString *)attribute:(NSString *)attributeName;
 - (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)ns;

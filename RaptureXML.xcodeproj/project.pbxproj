@@ -45,6 +45,7 @@
 		02F3A3FF1526D22600E8C822 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB8F2D14681BD800024989 /* players.xml */; };
 		0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
+		5415BE4216FC638100AFC566 /* HTMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5415BE4116FC638100AFC566 /* HTMLTests.m */; };
 		6BD1BDA91558B91400F1D055 /* RXMLElement.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = 027DAC2E14FBF443001BA563 /* RXMLElement.h */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		0DEB8F2B14681A0800024989 /* Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tests-Prefix.pch"; path = "Tests/Tests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
 		0DEB8F2D14681BD800024989 /* players.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = players.xml; path = Tests/players.xml; sourceTree = SOURCE_ROOT; };
 		1413670716D9BEC700501ABB /* CopyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CopyTests.m; path = Tests/CopyTests.m; sourceTree = SOURCE_ROOT; };
+		5415BE4116FC638100AFC566 /* HTMLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMLTests.m; path = Tests/HTMLTests.m; sourceTree = SOURCE_ROOT; };
 		6BD1BD951558B7A800F1D055 /* RaptureXML-StaticLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RaptureXML-StaticLib-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,6 +170,7 @@
 				02F3A4041526D7BC00E8C822 /* EncodingTests.m */,
 				027B6BCF153C652E00A4EDF2 /* XPathTests.m */,
 				02ADE6A116A0E33A008643D5 /* AttributeTests.m */,
+				5415BE4116FC638100AFC566 /* HTMLTests.m */,
 			);
 			name = Tests;
 			path = RaptureXMLTests;
@@ -353,6 +356,7 @@
 				02ADE6A916A0E491008643D5 /* EncodingTests.m in Sources */,
 				02ADE6AA16A0E491008643D5 /* XPathTests.m in Sources */,
 				02565F9916E6320700A882F9 /* CopyTests.m in Sources */,
+				5415BE4216FC638100AFC566 /* HTMLTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
