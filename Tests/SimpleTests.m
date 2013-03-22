@@ -101,11 +101,11 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:treeXML_ encoding:NSUTF8StringEncoding];
     RXMLElement* shapes = [rxml child:@"shapes"];
     STAssertEqualObjects(shapes.xml, @"<shapes><circle>Circle</circle></shapes>", nil);
-    STAssertEqualObjects(shapes.innerXML, @"<circle>Circle</circle>", nil);
+    STAssertEqualObjects(shapes.innerXml, @"<circle>Circle</circle>", nil);
 
     RXMLElement* colors = [rxml child:@"colors"];
     STAssertEqualObjects(colors.xml, @"<colors>TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb></colors>", nil);
-    STAssertEqualObjects(colors.innerXML, @"TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb>", nil);
+    STAssertEqualObjects(colors.innerXml, @"TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb>", nil);
 }
 
 @end

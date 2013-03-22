@@ -161,8 +161,8 @@
     return text;
 }
 
-- (NSString *)innerXML {
-    NSMutableString* innerXML = [NSMutableString string];
+- (NSString *)innerXml {
+    NSMutableString* innerXml = [NSMutableString string];
     xmlNodePtr cur = node_->children;
     
     while (cur != nil) {
@@ -171,17 +171,17 @@
             xmlNodeDump(buffer, node_->doc, cur, 0, false);
             NSString *text = [NSString stringWithUTF8String:(const char *)xmlBufferContent(buffer)];
             xmlBufferFree(buffer);
-            [innerXML appendString:text];
+            [innerXml appendString:text];
         } else if (cur->type == XML_TEXT_NODE) {
             xmlChar *key = xmlNodeGetContent(cur);
             NSString *text = (key ? [NSString stringWithUTF8String:(const char *)key] : @"");
             xmlFree(key);
-            [innerXML appendString:text];
+            [innerXml appendString:text];
         }
         cur = cur->next;
     }
 
-    return innerXML;
+    return innerXml;
 }
 
 - (NSInteger)textAsInt {
