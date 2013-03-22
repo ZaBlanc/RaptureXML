@@ -153,6 +153,32 @@
     return text;
 }
 
+- (NSString *)xml {
+    xmlBufferPtr buffer = xmlBufferCreate();
+    xmlNodeDump(buffer, node_->doc, node_, 0, false);
+    xmlBufferFree(buffer);
+    NSString *text = [NSString stringWithUTF8String:(const char *)xmlBufferContent(buffer)];
+    return text;
+}
+
+- (NSString *)innerXML {
+    NSMutableString* innerXML = [NSMutableString string];
+    xmlNodePtr cur = node_->children;
+    
+    while (cur != nil) {
+        if (cur->type == XML_ELEMENT_NODE) {
+            xmlBufferPtr buffer = xmlBufferCreate();
+            xmlNodeDump(buffer, node_->doc, cur, 0, false);
+            xmlBufferFree(buffer);
+            NSString *text = [NSString stringWithUTF8String:(const char *)xmlBufferContent(buffer)];
+            [innerXML appendString:text];
+        }
+        cur = cur->next;
+    }
+
+    return innerXML;
+}
+
 - (NSInteger)textAsInt {
     return [self.text intValue];
 }

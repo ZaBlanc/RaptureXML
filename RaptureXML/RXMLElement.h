@@ -87,6 +87,8 @@
 @property (nonatomic, strong) RXMLDocHolder *xmlDoc;
 @property (nonatomic, readonly) NSString *tag;
 @property (nonatomic, readonly) NSString *text;
+@property (nonatomic, readonly) NSString *xml;
+@property (nonatomic, readonly) NSString *innerXML;
 @property (nonatomic, readonly) NSInteger textAsInt;
 @property (nonatomic, readonly) double textAsDouble;
 @property (nonatomic, readonly) BOOL isValid;
