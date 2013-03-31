@@ -124,7 +124,7 @@ If you don't want to use the custom RaptureXML iteration query syntax, you can u
 
 And remember, you can also test attributes using XPath as well. Here's how you can find the player with #5:
 
-	[rootXML iterateWithRootXPath:@"//player[number='5']" usingBlock: ^(RXMLElement *player) {
+	[rootXML iterateWithRootXPath:@"//player[@number='5']" usingBlock: ^(RXMLElement *player) {
 		NSLog(@"Player #5: %@", [player child:@"name"]);
 	}];    
 
