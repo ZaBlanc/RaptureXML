@@ -16,7 +16,9 @@ I don't think any more needs to be said.
 
 # Adding RaptureXML to Your Project #
 
-There's just a few simple steps:
+The recommended way to add RaptureXML to your project is through CocoaPods. Simply add 'RaptureXML' into your Podfile.
+
+To install manually, there's just a few simple steps:
 
   * Copy the RaptureXML/RaptureXML folder into your own project and import "RXMLElement.h" somewhere (e.g., your PCH file).
   * Link in libz.dylib to your target.
@@ -24,6 +26,10 @@ There's just a few simple steps:
   * In your build settings, for the key "Header Search Paths", add "$(SDK_DIR)"/usr/include/libxml2
 
 RaptureXML supports ARC.  In fact, it does so without a branch.  The code automatically detects if ARC is being used in your project and compiles accordingly.  You are free to use any version of LLVM or gcc as well! (Though you should be using LLVM by now.)
+
+# ARC isn't just supported, it's required!
+
+RaptureXML supports ARC.  In fact, it only supports ARC.  If you're still running a project that doesn't use ARC, RaptureXML won't be your cup of tea.
 
 # Getting Started #
 
