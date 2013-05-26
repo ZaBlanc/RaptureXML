@@ -58,6 +58,7 @@
 + (id)elementFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding;
 + (id)elementFromXMLFile:(NSString *)filename;
 + (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension;
++ (id)elementFromXMLFilePath:(NSString *)fullPath;
 + (id)elementFromURL:(NSURL *)url __attribute__((deprecated));
 + (id)elementFromXMLData:(NSData *)data;
 + (id)elementFromXMLDoc:(RXMLDocHolder *)doc node:(xmlNodePtr)node;

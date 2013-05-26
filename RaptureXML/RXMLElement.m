@@ -115,6 +115,10 @@
     return [[RXMLElement alloc] initFromXMLString:attributeXML_ encoding:encoding];    
 }
 
++ (id)elementFromXMLFilePath:(NSString *)fullPath {
+    return [[RXMLElement alloc] initFromXMLFilePath:fullPath];
+}
+
 + (id)elementFromXMLFile:(NSString *)filename {
     return [[RXMLElement alloc] initFromXMLFile:filename];    
 }
