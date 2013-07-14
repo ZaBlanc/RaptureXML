@@ -382,9 +382,9 @@
         
         if ([iTagName isEqualToString:@"*"]) {
             cur = cur->children;
-
+ 
             // different behavior depending on if this is the end of the query or midstream
-            if (i < (components.count - 1)) {
+            if (i < (components.count - 1) && cur != nil) {
                 // midstream
                 do {
                     if (cur->type == XML_ELEMENT_NODE) {
