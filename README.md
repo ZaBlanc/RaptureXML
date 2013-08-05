@@ -7,7 +7,7 @@ You tell me.  Processing XML in Objective-C is an awful, frustrating experience 
 	RXMLElement *rootXML = [RXMLElement elementFromXMLFile:@"players.xml"];
 	
 	[rootXML iterate:@"players.player" usingBlock: ^(RXMLElement *e) {
-		NSLog(@"Player #%@: %@ (%@)", [e attribute:@"number"], [e child:@"name"].text);
+		NSLog(@"Player #%@: %@", [e attribute:@"number"], [e child:@"name"].text);
 	}];    
 
 RaptureXML changes the game when it comes to XML processing in Objective-C.  As you can see from the code, it takes only seconds to understand what this code does.  There are no wasted arrays and verbose looping you have to do.  The code is a breeze to read and maintain.
