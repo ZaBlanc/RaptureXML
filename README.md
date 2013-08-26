@@ -25,7 +25,7 @@ To install manually, there's just a few simple steps:
   * Link in libxml2.dylib to your target.
   * In your build settings, for the key "Header Search Paths", add "$(SDK_DIR)"/usr/include/libxml2
 
-RaptureXML supports ARC.  In fact, it does so without a branch.  The code automatically detects if ARC is being used in your project and compiles accordingly.  You are free to use any version of LLVM or gcc as well! (Though you should be using LLVM by now.)
+RaptureXML supports ARC. You are free to use any version of LLVM or gcc as well! (Though you should be using LLVM by now.)
 
 # ARC isn't just supported, it's required!
 
