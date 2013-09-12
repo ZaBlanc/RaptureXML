@@ -102,9 +102,9 @@ From there, we can process the individual players and be happy.  Now, this is al
 
 Your block is passed an RXMLElement representing each player in just one line!  Alternatively, you could have shortened it with:
 
-[rootXML iterate:@"players.player" usingBlock: ^(RXMLElement *player) {
-	NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
-}];    
+	[rootXML iterate:@"players.player" usingBlock: ^(RXMLElement *player) {
+		NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
+	}];    
 
 This also works because RXMLElement#description returns the text of the tag. Query paths are even more powerful with wildcards.  Let's say we wanted the name of every person on the team, player or coach.  We use the wildcard to get it:
 
