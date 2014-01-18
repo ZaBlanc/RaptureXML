@@ -272,11 +272,7 @@
 - (NSString *)attribute:(NSString *)attName inNamespace:(NSString *)ns {
     const unsigned char *attCStr = xmlGetNsProp(node_, (const xmlChar *)[attName cStringUsingEncoding:NSUTF8StringEncoding], (const xmlChar *)[ns cStringUsingEncoding:NSUTF8StringEncoding]);
 
-    if (attCStr) {
-        return [NSString stringWithUTF8String:(const char *)attCStr];
-    }
-    
-    return nil;
+    return attCStr ? [NSString stringWithUTF8String:(const char *)attCStr] : nil;
 }
 
 - (NSArray *)attributeNames {
@@ -341,11 +337,7 @@
         }
     }
     
-    if (cur) {
-        return [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur];
-    }
-  
-    return nil;
+    return cur ? [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur] : nil;
 }
 
 - (RXMLElement *)child:(NSString *)tag inNamespace:(NSString *)ns {
@@ -379,11 +371,7 @@
         }
     }
     
-    if (cur) {
-        return [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur];
-    }
-    
-    return nil;
+    return cur ? [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur] : nil;
 }
 
 - (NSArray *)children:(NSString *)tag {
