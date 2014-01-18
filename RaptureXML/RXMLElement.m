@@ -307,7 +307,7 @@
 
 #pragma mark -
 
-- (RXMLElement *)child:(NSString *)tag {
+- (RXMLElement *)childElementWithTag:(NSString *)tag {
     NSArray *components = [tag componentsSeparatedByString:@"."];
     xmlNodePtr cur = node_;
     
@@ -340,7 +340,7 @@
     return cur ? [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur] : nil;
 }
 
-- (RXMLElement *)child:(NSString *)tag inNamespace:(NSString *)ns {
+- (RXMLElement *)childElementWithTag:(NSString *)tag inNamespace:(NSString *)ns {
     NSArray *components = [tag componentsSeparatedByString:@"."];
     xmlNodePtr cur = node_;
     const xmlChar *namespaceC = (const xmlChar *)[ns cStringUsingEncoding:NSUTF8StringEncoding];
@@ -374,7 +374,7 @@
     return cur ? [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur] : nil;
 }
 
-- (NSArray *)children:(NSString *)tag {
+- (NSArray *)childrenArrayWithTag:(NSString *)tag {
     const xmlChar *tagC = (const xmlChar *)[tag cStringUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *children = [NSMutableArray array];
     xmlNodePtr cur = node_->children;
@@ -390,7 +390,7 @@
     return [children copy];
 }
 
-- (NSArray *)children:(NSString *)tag inNamespace:(NSString *)ns {
+- (NSArray *)childrenArrayWithTag:(NSString *)tag inNamespace:(NSString *)ns {
     const xmlChar *tagC = (const xmlChar *)[tag cStringUsingEncoding:NSUTF8StringEncoding];
     const xmlChar *namespaceC = (const xmlChar *)[ns cStringUsingEncoding:NSUTF8StringEncoding];
     NSMutableArray *children = [NSMutableArray array];
@@ -407,7 +407,7 @@
     return [children copy];
 }
 
-- (NSArray *)childrenWithRootXPath:(NSString *)xpath {
+- (NSArray *)childrenArrayWithRootXPath:(NSString *)xpath {
     // check for a query
     if (!xpath) {
         return [NSArray array];
@@ -447,7 +447,7 @@
 
 #pragma mark -
 
-- (void)iterate:(NSString *)query usingBlock:(void (^)(RXMLElement *))blk {
+- (void)iterateWithQuery:(NSString *)query usingBlock:(void (^)(RXMLElement *))blk {
     // check for a query
     if (!query) {
         return;
@@ -470,7 +470,7 @@
                     if (cur->type == XML_ELEMENT_NODE) {
                         RXMLElement *element = [RXMLElement elementFromXMLDoc:self.xmlDoc node:cur];
                         NSString *restOfQuery = [[components subarrayWithRange:NSMakeRange(i + 1, components.count - i - 1)] componentsJoinedByString:@"."];
-                        [element iterate:restOfQuery usingBlock:blk];
+                        [element iterateWithQuery:restOfQuery usingBlock:blk];
                     }
                     
                     cur = cur->next;
@@ -521,7 +521,7 @@
 }
 
 - (void)iterateWithRootXPath:(NSString *)xpath usingBlock:(void (^)(RXMLElement *))blk {
-    NSArray *children = [self childrenWithRootXPath:xpath];
+    NSArray *children = [self childrenArrayWithRootXPath:xpath];
     [self iterateElements:children usingBlock:blk];
 }
 

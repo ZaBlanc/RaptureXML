@@ -85,14 +85,14 @@ typedef struct _xmlNode *xmlNodePtr; /* frorward declaration */
 - (double)attributeAsDouble:(NSString *)attributeName;
 - (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)ns;
 
-- (RXMLElement *)child:(NSString *)tag;
-- (RXMLElement *)child:(NSString *)tag inNamespace:(NSString *)ns;
+- (RXMLElement *)childElementWithTag:(NSString *)tag;
+- (RXMLElement *)childElementWithTag:(NSString *)tag inNamespace:(NSString *)ns;
 
-- (NSArray *)children:(NSString *)tag;
-- (NSArray *)children:(NSString *)tag inNamespace:(NSString *)ns;
-- (NSArray *)childrenWithRootXPath:(NSString *)xpath;
+- (NSArray *)childrenArrayWithTag:(NSString *)tag;
+- (NSArray *)childrenArrayWithTag:(NSString *)tag inNamespace:(NSString *)ns;
+- (NSArray *)childrenArrayWithRootXPath:(NSString *)xpath;
 
-- (void)iterate:(NSString *)query usingBlock:(void (^)(RXMLElement *))blk;
+- (void)iterateWithQuery:(NSString *)query usingBlock:(void (^)(RXMLElement *))blk;
 - (void)iterateWithRootXPath:(NSString *)xpath usingBlock:(void (^)(RXMLElement *))blk;
 - (void)iterateElements:(NSArray *)elements usingBlock:(void (^)(RXMLElement *))blk;
 

@@ -55,7 +55,7 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
+    [rxml iterateWithQuery:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
             STAssertEqualObjects(e.tag, @"square", nil);
             STAssertEqualObjects(e.text, @"Square", nil);
@@ -77,7 +77,7 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
+    [rxml iterateWithQuery:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
             STAssertEqualObjects([e attribute:@"name"], @"Square", nil);
         } else if (i == 1) {
@@ -99,11 +99,11 @@
 </data>";
 
     RXMLElement *rxml = [RXMLElement elementFromXMLString:treeXML_ encoding:NSUTF8StringEncoding];
-    RXMLElement* shapes = [rxml child:@"shapes"];
+    RXMLElement* shapes = [rxml childElementWithTag:@"shapes"];
     STAssertEqualObjects(shapes.xml, @"<shapes><circle>Circle</circle></shapes>", nil);
     STAssertEqualObjects(shapes.innerXml, @"<circle>Circle</circle>", nil);
 
-    RXMLElement* colors = [rxml child:@"colors"];
+    RXMLElement* colors = [rxml childElementWithTag:@"colors"];
     STAssertEqualObjects(colors.xml, @"<colors>TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb></colors>", nil);
     STAssertEqualObjects(colors.innerXml, @"TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb>", nil);
     

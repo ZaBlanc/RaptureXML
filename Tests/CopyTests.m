@@ -55,7 +55,7 @@
     RXMLElement *rxml2 = [rxml copy];
     __block NSInteger i = 0;
     
-    [rxml2 iterate:@"*" usingBlock:^(RXMLElement *e) {
+    [rxml2 iterateWithQuery:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
             STAssertEqualObjects(e.tag, @"square", nil);
             STAssertEqualObjects(e.text, @"Square", nil);
@@ -78,7 +78,7 @@
     RXMLElement *rxml2 = [rxml copy];
     __block NSInteger i = 0;
     
-    [rxml2 iterate:@"*" usingBlock:^(RXMLElement *e) {
+    [rxml2 iterateWithQuery:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
             STAssertEqualObjects([e attribute:@"name"], @"Square", nil);
         } else if (i == 1) {

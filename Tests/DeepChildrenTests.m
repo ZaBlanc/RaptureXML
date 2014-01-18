@@ -22,8 +22,8 @@
     __block NSInteger i = 0;
     
     // count the players
-    RXMLElement *players = [rxml child:@"players"];
-    NSArray *children = [players children:@"player"];
+    RXMLElement *players = [rxml childElementWithTag:@"players"];
+    NSArray *children = [players childrenArrayWithTag:@"player"];
     
     [rxml iterateElements:children usingBlock: ^(RXMLElement *e) {
         i++;
@@ -36,7 +36,7 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
     
     // count the players
-    RXMLElement *coachingYears = [rxml child:@"players.coach.experience.years"];
+    RXMLElement *coachingYears = [rxml childElementWithTag:@"players.coach.experience.years"];
     
     STAssertEquals(coachingYears.textAsInt, 1, nil);
 }
@@ -45,7 +45,7 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
     
     // count the players
-    RXMLElement *coachingYears = [rxml child:@"players.coach.experience.teams.*"];
+    RXMLElement *coachingYears = [rxml childElementWithTag:@"players.coach.experience.teams.*"];
     
     // first team returned
     STAssertEquals(coachingYears.textAsInt, 53, nil);
