@@ -39,7 +39,7 @@ You can load the XML with any of the following constructors:
 
 	RXMLElement *rootXML = [RXMLElement elementFromXMLString:@"...my xml..." encoding:NSUTF8StringEncoding];
 	RXMLElement *rootXML = [RXMLElement elementFromXMLFile:@"myfile.xml"];
-	RXMLElement *rootXML = [RXMLElement elementFromXMLFilename:@"myfile" elementFromXMLFilename:@"xml"];
+	RXMLElement *rootXML = [RXMLElement elementFromXMLFilename:@"myfile" fileExtension:@"xml"];
 	RXMLElement *rootXML = [RXMLElement elementFromXMLData:myData];
 
 These constructors return an RXMLElement object that represents the top-level tags. Now, you can query the data in any number of ways.
