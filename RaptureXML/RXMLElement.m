@@ -309,6 +309,8 @@
 - (RXMLElement *)child:(NSString *)tag {
     NSArray *components = [tag componentsSeparatedByString:@"."];
     xmlNodePtr cur = node_;
+	
+	if (!cur) return nil;
     
     // navigate down
     for (NSString *itag in components) {
