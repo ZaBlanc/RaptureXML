@@ -26,26 +26,25 @@
 		0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
 		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
-		02565F9916E6320700A882F9 /* CopyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1413670716D9BEC700501ABB /* CopyTests.m */; };
-		027B3571153C624700A4EDF2 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */; };
 		027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
 		027DAC3614FBF465001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
-		02ADE6A216A0E33A008643D5 /* AttributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ADE6A116A0E33A008643D5 /* AttributeTests.m */; };
-		02ADE6A316A0E491008643D5 /* BoundaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC61467ED9C00024989 /* BoundaryTests.m */; };
-		02ADE6A416A0E491008643D5 /* DeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC81467ED9C00024989 /* DeepTests.m */; };
-		02ADE6A516A0E491008643D5 /* ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC91467ED9C00024989 /* ErrorTests.m */; };
-		02ADE6A616A0E491008643D5 /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECA1467ED9C00024989 /* SimpleTests.m */; };
-		02ADE6A716A0E491008643D5 /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */; };
-		02ADE6A816A0E491008643D5 /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8ECC1467ED9C00024989 /* WildcardTests.m */; };
-		02ADE6A916A0E491008643D5 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02F3A4041526D7BC00E8C822 /* EncodingTests.m */; };
-		02ADE6AA16A0E491008643D5 /* XPathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 027B6BCF153C652E00A4EDF2 /* XPathTests.m */; };
-		02F3A3FF1526D22600E8C822 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB8F2D14681BD800024989 /* players.xml */; };
 		0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
-		5415BE4216FC638100AFC566 /* HTMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5415BE4116FC638100AFC566 /* HTMLTests.m */; };
 		6BD1BDA91558B91400F1D055 /* RXMLElement.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = 027DAC2E14FBF443001BA563 /* RXMLElement.h */; };
-		8BF337A91A8DA22500723C79 /* libRaptureXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEB8EB41467EC9B00024989 /* libRaptureXML.a */; };
 		8BF337AA1A8DA24000723C79 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF337A61A8DA1F700723C79 /* libxml2.2.dylib */; };
+		8BF337F21A8DA68B00723C79 /* AttributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337E41A8DA68B00723C79 /* AttributeTests.m */; };
+		8BF337F31A8DA68B00723C79 /* BoundaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337E51A8DA68B00723C79 /* BoundaryTests.m */; };
+		8BF337F41A8DA68B00723C79 /* CopyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337E61A8DA68B00723C79 /* CopyTests.m */; };
+		8BF337F51A8DA68B00723C79 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337E71A8DA68B00723C79 /* DeepChildrenTests.m */; };
+		8BF337F61A8DA68B00723C79 /* DeepTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337E81A8DA68B00723C79 /* DeepTests.m */; };
+		8BF337F71A8DA68B00723C79 /* EncodingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337E91A8DA68B00723C79 /* EncodingTests.m */; };
+		8BF337F81A8DA68B00723C79 /* ErrorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337EA1A8DA68B00723C79 /* ErrorTests.m */; };
+		8BF337F91A8DA68B00723C79 /* HTMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337EB1A8DA68B00723C79 /* HTMLTests.m */; };
+		8BF337FA1A8DA68B00723C79 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 8BF337EC1A8DA68B00723C79 /* players.xml */; };
+		8BF337FB1A8DA68B00723C79 /* SimpleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337ED1A8DA68B00723C79 /* SimpleTests.m */; };
+		8BF337FC1A8DA68B00723C79 /* TextConversionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337EF1A8DA68B00723C79 /* TextConversionTests.m */; };
+		8BF337FD1A8DA68B00723C79 /* WildcardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337F01A8DA68B00723C79 /* WildcardTests.m */; };
+		8BF337FE1A8DA68B00723C79 /* XPathTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF337F11A8DA68B00723C79 /* XPathTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -70,26 +69,25 @@
 		0252B2C7142ADFC60018B75D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		0252B2DD142ADFC60018B75D /* RaptureXMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0252B305142AE3FF0018B75D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		027B6BCF153C652E00A4EDF2 /* XPathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathTests.m; path = Tests/XPathTests.m; sourceTree = SOURCE_ROOT; };
 		027DAC2E14FBF443001BA563 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
 		027DAC2F14FBF443001BA563 /* RXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RXMLElement.m; sourceTree = "<group>"; };
 		027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Library-Prefix.pch"; sourceTree = "<group>"; };
-		02ADE6A116A0E33A008643D5 /* AttributeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeTests.m; sourceTree = SOURCE_ROOT; };
-		02F3A4041526D7BC00E8C822 /* EncodingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EncodingTests.m; sourceTree = SOURCE_ROOT; };
 		0DEB8EB41467EC9B00024989 /* libRaptureXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRaptureXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		0DEB8EC61467ED9C00024989 /* BoundaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoundaryTests.m; path = Tests/BoundaryTests.m; sourceTree = SOURCE_ROOT; };
-		0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeepChildrenTests.m; path = Tests/DeepChildrenTests.m; sourceTree = SOURCE_ROOT; };
-		0DEB8EC81467ED9C00024989 /* DeepTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeepTests.m; path = Tests/DeepTests.m; sourceTree = SOURCE_ROOT; };
-		0DEB8EC91467ED9C00024989 /* ErrorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorTests.m; path = Tests/ErrorTests.m; sourceTree = SOURCE_ROOT; };
-		0DEB8ECA1467ED9C00024989 /* SimpleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleTests.m; path = Tests/SimpleTests.m; sourceTree = SOURCE_ROOT; };
-		0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextConversionTests.m; path = Tests/TextConversionTests.m; sourceTree = SOURCE_ROOT; };
-		0DEB8ECC1467ED9C00024989 /* WildcardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WildcardTests.m; path = Tests/WildcardTests.m; sourceTree = SOURCE_ROOT; };
-		0DEB8F2B14681A0800024989 /* Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tests-Prefix.pch"; path = "Tests/Tests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
-		0DEB8F2D14681BD800024989 /* players.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = players.xml; path = Tests/players.xml; sourceTree = SOURCE_ROOT; };
-		1413670716D9BEC700501ABB /* CopyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CopyTests.m; path = Tests/CopyTests.m; sourceTree = SOURCE_ROOT; };
-		5415BE4116FC638100AFC566 /* HTMLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMLTests.m; path = Tests/HTMLTests.m; sourceTree = SOURCE_ROOT; };
-		6BD1BD951558B7A800F1D055 /* RaptureXML-StaticLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RaptureXML-StaticLib-Prefix.pch"; sourceTree = "<group>"; };
 		8BF337A61A8DA1F700723C79 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
+		8BF337E41A8DA68B00723C79 /* AttributeTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AttributeTests.m; path = RaptureXMLTest/AttributeTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337E51A8DA68B00723C79 /* BoundaryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BoundaryTests.m; path = RaptureXMLTest/BoundaryTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337E61A8DA68B00723C79 /* CopyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CopyTests.m; path = RaptureXMLTest/CopyTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337E71A8DA68B00723C79 /* DeepChildrenTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeepChildrenTests.m; path = RaptureXMLTest/DeepChildrenTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337E81A8DA68B00723C79 /* DeepTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DeepTests.m; path = RaptureXMLTest/DeepTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337E91A8DA68B00723C79 /* EncodingTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EncodingTests.m; path = RaptureXMLTest/EncodingTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337EA1A8DA68B00723C79 /* ErrorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorTests.m; path = RaptureXMLTest/ErrorTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337EB1A8DA68B00723C79 /* HTMLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMLTests.m; path = RaptureXMLTest/HTMLTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337EC1A8DA68B00723C79 /* players.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = players.xml; path = RaptureXMLTest/players.xml; sourceTree = SOURCE_ROOT; };
+		8BF337ED1A8DA68B00723C79 /* SimpleTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleTests.m; path = RaptureXMLTest/SimpleTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337EE1A8DA68B00723C79 /* Tests-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Tests-Prefix.pch"; path = "RaptureXMLTest/Tests-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		8BF337EF1A8DA68B00723C79 /* TextConversionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TextConversionTests.m; path = RaptureXMLTest/TextConversionTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337F01A8DA68B00723C79 /* WildcardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = WildcardTests.m; path = RaptureXMLTest/WildcardTests.m; sourceTree = SOURCE_ROOT; };
+		8BF337F11A8DA68B00723C79 /* XPathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathTests.m; path = RaptureXMLTest/XPathTests.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,7 +96,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BF337AA1A8DA24000723C79 /* libxml2.2.dylib in Frameworks */,
-				8BF337A91A8DA22500723C79 /* libRaptureXML.a in Frameworks */,
 				0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */,
 				0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */,
 				0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */,
@@ -122,8 +119,7 @@
 			children = (
 				027DAC3814FBF4B5001BA563 /* Library-Prefix.pch */,
 				027DAC2B14FBF443001BA563 /* RaptureXML */,
-				0252B2E5142ADFC60018B75D /* Tests */,
-				6BD1BD931558B7A800F1D055 /* RaptureXML-StaticLib */,
+				0252B2E5142ADFC60018B75D /* RaptureXMLTests */,
 				0252B2C2142ADFC60018B75D /* Frameworks */,
 				0252B2C0142ADFC60018B75D /* Products */,
 			);
@@ -152,25 +148,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		0252B2E5142ADFC60018B75D /* Tests */ = {
+		0252B2E5142ADFC60018B75D /* RaptureXMLTests */ = {
 			isa = PBXGroup;
 			children = (
-				1413670716D9BEC700501ABB /* CopyTests.m */,
-				0DEB8F2D14681BD800024989 /* players.xml */,
-				0DEB8F2B14681A0800024989 /* Tests-Prefix.pch */,
-				0DEB8EC61467ED9C00024989 /* BoundaryTests.m */,
-				0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */,
-				0DEB8EC81467ED9C00024989 /* DeepTests.m */,
-				0DEB8EC91467ED9C00024989 /* ErrorTests.m */,
-				0DEB8ECA1467ED9C00024989 /* SimpleTests.m */,
-				0DEB8ECB1467ED9C00024989 /* TextConversionTests.m */,
-				0DEB8ECC1467ED9C00024989 /* WildcardTests.m */,
-				02F3A4041526D7BC00E8C822 /* EncodingTests.m */,
-				027B6BCF153C652E00A4EDF2 /* XPathTests.m */,
-				02ADE6A116A0E33A008643D5 /* AttributeTests.m */,
-				5415BE4116FC638100AFC566 /* HTMLTests.m */,
+				8BF337E41A8DA68B00723C79 /* AttributeTests.m */,
+				8BF337E51A8DA68B00723C79 /* BoundaryTests.m */,
+				8BF337E61A8DA68B00723C79 /* CopyTests.m */,
+				8BF337E71A8DA68B00723C79 /* DeepChildrenTests.m */,
+				8BF337E81A8DA68B00723C79 /* DeepTests.m */,
+				8BF337E91A8DA68B00723C79 /* EncodingTests.m */,
+				8BF337EA1A8DA68B00723C79 /* ErrorTests.m */,
+				8BF337EB1A8DA68B00723C79 /* HTMLTests.m */,
+				8BF337EC1A8DA68B00723C79 /* players.xml */,
+				8BF337ED1A8DA68B00723C79 /* SimpleTests.m */,
+				8BF337EE1A8DA68B00723C79 /* Tests-Prefix.pch */,
+				8BF337EF1A8DA68B00723C79 /* TextConversionTests.m */,
+				8BF337F01A8DA68B00723C79 /* WildcardTests.m */,
+				8BF337F11A8DA68B00723C79 /* XPathTests.m */,
 			);
-			name = Tests;
 			path = RaptureXMLTests;
 			sourceTree = "<group>";
 		};
@@ -181,22 +176,6 @@
 				027DAC2F14FBF443001BA563 /* RXMLElement.m */,
 			);
 			path = RaptureXML;
-			sourceTree = "<group>";
-		};
-		6BD1BD931558B7A800F1D055 /* RaptureXML-StaticLib */ = {
-			isa = PBXGroup;
-			children = (
-				6BD1BD941558B7A800F1D055 /* Supporting Files */,
-			);
-			path = "RaptureXML-StaticLib";
-			sourceTree = "<group>";
-		};
-		6BD1BD941558B7A800F1D055 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6BD1BD951558B7A800F1D055 /* RaptureXML-StaticLib-Prefix.pch */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,7 +266,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02F3A3FF1526D22600E8C822 /* players.xml in Resources */,
+				8BF337FA1A8DA68B00723C79 /* players.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,19 +308,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BF337F41A8DA68B00723C79 /* CopyTests.m in Sources */,
+				8BF337FB1A8DA68B00723C79 /* SimpleTests.m in Sources */,
+				8BF337F91A8DA68B00723C79 /* HTMLTests.m in Sources */,
+				8BF337FD1A8DA68B00723C79 /* WildcardTests.m in Sources */,
+				8BF337F21A8DA68B00723C79 /* AttributeTests.m in Sources */,
+				8BF337F51A8DA68B00723C79 /* DeepChildrenTests.m in Sources */,
+				8BF337F61A8DA68B00723C79 /* DeepTests.m in Sources */,
+				8BF337F81A8DA68B00723C79 /* ErrorTests.m in Sources */,
+				8BF337F31A8DA68B00723C79 /* BoundaryTests.m in Sources */,
+				8BF337FC1A8DA68B00723C79 /* TextConversionTests.m in Sources */,
 				027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */,
-				027B3571153C624700A4EDF2 /* DeepChildrenTests.m in Sources */,
-				02ADE6A216A0E33A008643D5 /* AttributeTests.m in Sources */,
-				02ADE6A316A0E491008643D5 /* BoundaryTests.m in Sources */,
-				02ADE6A416A0E491008643D5 /* DeepTests.m in Sources */,
-				02ADE6A516A0E491008643D5 /* ErrorTests.m in Sources */,
-				02ADE6A616A0E491008643D5 /* SimpleTests.m in Sources */,
-				02ADE6A716A0E491008643D5 /* TextConversionTests.m in Sources */,
-				02ADE6A816A0E491008643D5 /* WildcardTests.m in Sources */,
-				02ADE6A916A0E491008643D5 /* EncodingTests.m in Sources */,
-				02ADE6AA16A0E491008643D5 /* XPathTests.m in Sources */,
-				02565F9916E6320700A882F9 /* CopyTests.m in Sources */,
-				5415BE4216FC638100AFC566 /* HTMLTests.m in Sources */,
+				8BF337FE1A8DA68B00723C79 /* XPathTests.m in Sources */,
+				8BF337F71A8DA68B00723C79 /* EncodingTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -431,7 +410,7 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				GCC_PREFIX_HEADER = "RaptureXMLTest/Tests-Prefix.pch";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,7 +427,7 @@
 					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
+				GCC_PREFIX_HEADER = "RaptureXMLTest/Tests-Prefix.pch";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
