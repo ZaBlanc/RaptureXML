@@ -8,7 +8,7 @@
 
 #import "RXMLElement.h"
 
-@interface ErrorTests : SenTestCase {
+@interface ErrorTests : XCTestCase {
     NSString *simplifiedXML_;
     NSString *badXML_;
 }
@@ -31,14 +31,14 @@
 
 - (void)testBadXML {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:badXML_ encoding:NSUTF8StringEncoding];
-    STAssertFalse([rxml isValid], nil);
+    XCTAssertFalse([rxml isValid]);
 }
 
 - (void)testMissingTag {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     RXMLElement *hexagon = [rxml child:@"hexagon"];
     
-    STAssertNil(hexagon, nil);
+    XCTAssertNil(hexagon);
 }
 
 - (void)testMissingTagIteration {
@@ -49,14 +49,14 @@
         i++;
     }];
      
-    STAssertEquals(i, 0, nil);
+    XCTAssertEqual(i, 0);
 }
 
 - (void)testMissingAttribute {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     NSString *missingName = [rxml attribute:@"name"];
     
-    STAssertNil(missingName, nil);
+    XCTAssertNil(missingName);
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import "RXMLElement.h"
 
-@interface XPathTests : SenTestCase {
+@interface XPathTests : XCTestCase {
     NSString *simplifiedXML_;
     NSString *attributedXML_;
     NSString *interruptedTextXML_;
@@ -45,11 +45,11 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     
     [rxml iterateWithRootXPath:@"//circle" usingBlock:^(RXMLElement *element) {
-        STAssertEqualObjects(element.text, @"Circle", nil);
+        XCTAssertEqualObjects(element.text, @"Circle");
         i++;
     }];
 
-    STAssertEquals(i, 1, nil);
+    XCTAssertEqual(i, 1);
 }
 
 - (void)testAttributePath {
@@ -58,11 +58,11 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ encoding:NSUTF8StringEncoding];
     
     [rxml iterateWithRootXPath:@"//circle[@name='Circle']" usingBlock:^(RXMLElement *element) {
-        STAssertEqualObjects([element attribute:@"name"], @"Circle", nil);
+        XCTAssertEqualObjects([element attribute:@"name"], @"Circle");
         i++;
     }];
     
-    STAssertEquals(i, 1, nil);
+    XCTAssertEqual(i, 1);
 }
 
 @end

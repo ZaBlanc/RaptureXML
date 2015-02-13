@@ -8,7 +8,7 @@
 
 #import "RXMLElement.h"
 
-@interface EncodingTests : SenTestCase {
+@interface EncodingTests : XCTestCase {
     NSString *chineseXML_;
 }
 
@@ -24,7 +24,7 @@
 
 - (void)testChinese {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:chineseXML_ encoding:NSUTF8StringEncoding];
-    STAssertEqualObjects([rxml attribute:@"data"], @"以晴为主", nil);
+    XCTAssertEqualObjects([rxml attribute:@"data"], @"以晴为主");
 }
 
 @end

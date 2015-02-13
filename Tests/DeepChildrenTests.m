@@ -8,7 +8,7 @@
 
 #import "RXMLElement.h"
 
-@interface DeepChildrenTests : SenTestCase {
+@interface DeepChildrenTests : XCTestCase {
 }
 
 @end
@@ -29,7 +29,7 @@
         i++;
     }];    
     
-    STAssertEquals(i, 9, nil);
+    XCTAssertEqual(i, 9);
 }
 
 - (void)testDeepChildQuery {
@@ -38,7 +38,7 @@
     // count the players
     RXMLElement *coachingYears = [rxml child:@"players.coach.experience.years"];
     
-    STAssertEquals(coachingYears.textAsInt, 1, nil);
+    XCTAssertEqual(coachingYears.textAsInt, 1);
 }
 
 - (void)testDeepChildQueryWithWildcard {
@@ -48,7 +48,7 @@
     RXMLElement *coachingYears = [rxml child:@"players.coach.experience.teams.*"];
     
     // first team returned
-    STAssertEquals(coachingYears.textAsInt, 53, nil);
+    XCTAssertEqual(coachingYears.textAsInt, 53);
 }
 
 @end

@@ -8,7 +8,7 @@
 
 #import "RXMLElement.h"
 
-@interface WildcardTests : SenTestCase {
+@interface WildcardTests : XCTestCase {
 }
 
 @end
@@ -28,7 +28,7 @@
         i++;
     }];    
     
-    STAssertEquals(i, 10, nil);
+    XCTAssertEqual(i, 10);
 }
 
 - (void)testMidstreamWildcard {

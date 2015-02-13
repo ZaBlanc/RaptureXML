@@ -23,9 +23,6 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		02041DB81526A71200D1F36A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02041DB71526A71200D1F36A /* libxml2.dylib */; };
-		02041DBA1526B0DE00D1F36A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02041DB71526A71200D1F36A /* libxml2.dylib */; };
-		0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2DE142ADFC60018B75D /* SenTestingKit.framework */; };
 		0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C3142ADFC60018B75D /* UIKit.framework */; };
 		0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C5142ADFC60018B75D /* Foundation.framework */; };
 		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
@@ -47,6 +44,8 @@
 		0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
 		5415BE4216FC638100AFC566 /* HTMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5415BE4116FC638100AFC566 /* HTMLTests.m */; };
 		6BD1BDA91558B91400F1D055 /* RXMLElement.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = 027DAC2E14FBF443001BA563 /* RXMLElement.h */; };
+		8BF337A91A8DA22500723C79 /* libRaptureXML.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DEB8EB41467EC9B00024989 /* libRaptureXML.a */; };
+		8BF337AA1A8DA24000723C79 /* libxml2.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 8BF337A61A8DA1F700723C79 /* libxml2.2.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -69,8 +68,7 @@
 		0252B2C3142ADFC60018B75D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		0252B2C5142ADFC60018B75D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		0252B2C7142ADFC60018B75D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0252B2DE142ADFC60018B75D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		0252B2DD142ADFC60018B75D /* RaptureXMLTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0252B305142AE3FF0018B75D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		027B6BCF153C652E00A4EDF2 /* XPathTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = XPathTests.m; path = Tests/XPathTests.m; sourceTree = SOURCE_ROOT; };
 		027DAC2E14FBF443001BA563 /* RXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RXMLElement.h; sourceTree = "<group>"; };
@@ -91,6 +89,7 @@
 		1413670716D9BEC700501ABB /* CopyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CopyTests.m; path = Tests/CopyTests.m; sourceTree = SOURCE_ROOT; };
 		5415BE4116FC638100AFC566 /* HTMLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMLTests.m; path = Tests/HTMLTests.m; sourceTree = SOURCE_ROOT; };
 		6BD1BD951558B7A800F1D055 /* RaptureXML-StaticLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RaptureXML-StaticLib-Prefix.pch"; sourceTree = "<group>"; };
+		8BF337A61A8DA1F700723C79 /* libxml2.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.2.dylib; path = usr/lib/libxml2.2.dylib; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,9 +97,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02041DBA1526B0DE00D1F36A /* libxml2.dylib in Frameworks */,
+				8BF337AA1A8DA24000723C79 /* libxml2.2.dylib in Frameworks */,
+				8BF337A91A8DA22500723C79 /* libRaptureXML.a in Frameworks */,
 				0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */,
-				0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */,
 				0252B2E0142ADFC60018B75D /* UIKit.framework in Frameworks */,
 				0252B2E1142ADFC60018B75D /* Foundation.framework in Frameworks */,
 				0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */,
@@ -111,7 +110,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02041DB81526A71200D1F36A /* libxml2.dylib in Frameworks */,
 				0DEB8EB51467EC9B00024989 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,7 +132,7 @@
 		0252B2C0142ADFC60018B75D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */,
+				0252B2DD142ADFC60018B75D /* RaptureXMLTests.xctest */,
 				0DEB8EB41467EC9B00024989 /* libRaptureXML.a */,
 			);
 			name = Products;
@@ -143,13 +141,13 @@
 		0252B2C2142ADFC60018B75D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8BF337A61A8DA1F700723C79 /* libxml2.2.dylib */,
 				02041DC21526D03A00D1F36A /* MediaPlayer.framework */,
 				02041DB71526A71200D1F36A /* libxml2.dylib */,
 				0252B305142AE3FF0018B75D /* libz.dylib */,
 				0252B2C3142ADFC60018B75D /* UIKit.framework */,
 				0252B2C5142ADFC60018B75D /* Foundation.framework */,
 				0252B2C7142ADFC60018B75D /* CoreGraphics.framework */,
-				0252B2DE142ADFC60018B75D /* SenTestingKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -221,7 +219,6 @@
 				0252B2D8142ADFC60018B75D /* Sources */,
 				0252B2D9142ADFC60018B75D /* Frameworks */,
 				0252B2DA142ADFC60018B75D /* Resources */,
-				0252B2DB142ADFC60018B75D /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -229,8 +226,8 @@
 			);
 			name = RaptureXMLTests;
 			productName = RaptureXMLTests;
-			productReference = 0252B2DD142ADFC60018B75D /* RaptureXMLTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productReference = 0252B2DD142ADFC60018B75D /* RaptureXMLTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		0DEB8EB31467EC9B00024989 /* RaptureXML */ = {
 			isa = PBXNativeTarget;
@@ -255,7 +252,8 @@
 		0252B2B6142ADFC60018B75D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastTestingUpgradeCheck = 0610;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Rapture In Venice";
 			};
 			buildConfigurationList = 0252B2B9142ADFC60018B75D /* Build configuration list for PBXProject "RaptureXML" */;
@@ -296,19 +294,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0252B2DB142ADFC60018B75D /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
 		6BD1BDA61558B82400F1D055 /* Build static lib */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,13 +360,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -391,11 +379,15 @@
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -404,18 +396,24 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
@@ -430,16 +428,14 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Debug;
 		};
@@ -449,16 +445,14 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(DEVELOPER_LIBRARY_DIR)/Frameworks",
+					"$(inherited)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Tests/Tests-Prefix.pch";
 				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = "\"$(SDK_DIR)\"/usr/include/libxml2/**";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_AFTER_BUILD = YES;
 				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};

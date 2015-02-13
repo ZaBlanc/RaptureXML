@@ -8,7 +8,7 @@
 
 #import "RXMLElement.h"
 
-@interface DeepTests : SenTestCase {
+@interface DeepTests : XCTestCase {
 }
 
 @end
@@ -28,7 +28,7 @@
         i++;
     }];    
     
-    STAssertEquals(i, 9, nil);
+    XCTAssertEqual(i, 9);
 
     // count the first player's name
     i = 0;
@@ -37,7 +37,7 @@
         i++;
     }];    
     
-    STAssertEquals(i, 1, nil);
+    XCTAssertEqual(i, 1);
 
     // count the coaches
     i = 0;
@@ -46,7 +46,7 @@
         i++;
     }];    
     
-    STAssertEquals(i, 1, nil);
+    XCTAssertEqual(i, 1);
 }
 
 @end
