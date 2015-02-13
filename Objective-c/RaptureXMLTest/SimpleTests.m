@@ -8,7 +8,7 @@
 
 #import "RXMLElement.h"
 
-@interface SimpleTests : SenTestCase {
+@interface SimpleTests : XCTestCase {
     NSString *simplifiedXML_;
     NSString *attributedXML_;
     NSString *interruptedTextXML_;
@@ -43,12 +43,12 @@
 
 - (void)testInterruptedText {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:interruptedTextXML_ encoding:NSUTF8StringEncoding];
-    STAssertEqualObjects(rxml.text, @"thisisinterruptedtext", nil);
+    XCTAssertEqualObjects(rxml.text, @"thisisinterruptedtext");
 }
 
 - (void)testCDataText {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:cdataXML_ encoding:NSUTF8StringEncoding];
-    STAssertEqualObjects(rxml.text, @"thisiscdata", nil);
+    XCTAssertEqualObjects(rxml.text, @"thisiscdata");
 }
 
 - (void)testTags {
@@ -57,20 +57,20 @@
     
     [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEqualObjects(e.tag, @"square", nil);
-            STAssertEqualObjects(e.text, @"Square", nil);
+            XCTAssertEqualObjects(e.tag, @"square");
+            XCTAssertEqualObjects(e.text, @"Square");
         } else if (i == 1) {
-            STAssertEqualObjects(e.tag, @"triangle", nil);            
-            STAssertEqualObjects(e.text, @"Triangle", nil);
+            XCTAssertEqualObjects(e.tag, @"triangle");            
+            XCTAssertEqualObjects(e.text, @"Triangle");
         } else if (i == 2) {
-            STAssertEqualObjects(e.tag, @"circle", nil);            
-            STAssertEqualObjects(e.text, @"Circle", nil);
+            XCTAssertEqualObjects(e.tag, @"circle");            
+            XCTAssertEqualObjects(e.text, @"Circle");
         }
 
         i++;
     }];
     
-    STAssertEquals(i, 3, nil);
+    XCTAssertEqual(i, 3);
 }
 
 - (void)testAttributes {
@@ -79,17 +79,17 @@
     
     [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEqualObjects([e attribute:@"name"], @"Square", nil);
+            XCTAssertEqualObjects([e attribute:@"name"], @"Square");
         } else if (i == 1) {
-            STAssertEqualObjects([e attribute:@"name"], @"Triangle", nil);            
+            XCTAssertEqualObjects([e attribute:@"name"], @"Triangle");            
         } else if (i == 2) {
-            STAssertEqualObjects([e attribute:@"name"], @"Circle", nil);            
+            XCTAssertEqualObjects([e attribute:@"name"], @"Circle");            
         }
         
         i++;
     }];
     
-    STAssertEquals(i, 3, nil);
+    XCTAssertEqual(i, 3);
 }
 
 -(void) testInnerXml {    
@@ -100,16 +100,16 @@
 
     RXMLElement *rxml = [RXMLElement elementFromXMLString:treeXML_ encoding:NSUTF8StringEncoding];
     RXMLElement* shapes = [rxml child:@"shapes"];
-    STAssertEqualObjects(shapes.xml, @"<shapes><circle>Circle</circle></shapes>", nil);
-    STAssertEqualObjects(shapes.innerXml, @"<circle>Circle</circle>", nil);
+    XCTAssertEqualObjects(shapes.xml, @"<shapes><circle>Circle</circle></shapes>");
+    XCTAssertEqualObjects(shapes.innerXml, @"<circle>Circle</circle>");
 
     RXMLElement* colors = [rxml child:@"colors"];
-    STAssertEqualObjects(colors.xml, @"<colors>TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb></colors>", nil);
-    STAssertEqualObjects(colors.innerXml, @"TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb>", nil);
+    XCTAssertEqualObjects(colors.xml, @"<colors>TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb></colors>");
+    XCTAssertEqualObjects(colors.innerXml, @"TEST<rgb code=\"0,0,0\">Black<annotation>default color</annotation></rgb>");
     
     RXMLElement *cdata = [RXMLElement elementFromXMLString:cdataXML_ encoding:NSUTF8StringEncoding];
-    STAssertEqualObjects(cdata.xml, @"<top><![CDATA[thisiscdata]]></top>", nil);
-    STAssertEqualObjects(cdata.innerXml, @"<![CDATA[thisiscdata]]>", nil);
+    XCTAssertEqualObjects(cdata.xml, @"<top><![CDATA[thisiscdata]]></top>");
+    XCTAssertEqualObjects(cdata.innerXml, @"<![CDATA[thisiscdata]]>");
 }
 
 @end

@@ -9,7 +9,7 @@
 
 #import "RXMLElement.h"
 
-@interface CopyTests : SenTestCase {
+@interface CopyTests : XCTestCase {
     NSString *simplifiedXML_;
     NSString *attributedXML_;
     NSString *interruptedTextXML_;
@@ -41,13 +41,13 @@
 - (void)testInterruptedText {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:interruptedTextXML_ encoding:NSUTF8StringEncoding];
     RXMLElement *rxml2 = [rxml copy];
-    STAssertEqualObjects(rxml2.text, @"thisisinterruptedtext", nil);
+    XCTAssertEqualObjects(rxml2.text, @"thisisinterruptedtext");
 }
 
 - (void)testCDataText {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:cdataXML_ encoding:NSUTF8StringEncoding];
     RXMLElement *rxml2 = [rxml copy];
-    STAssertEqualObjects(rxml2.text, @"thisiscdata", nil);
+    XCTAssertEqualObjects(rxml2.text, @"thisiscdata");
 }
 
 - (void)testTags {
@@ -57,20 +57,20 @@
     
     [rxml2 iterate:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEqualObjects(e.tag, @"square", nil);
-            STAssertEqualObjects(e.text, @"Square", nil);
+            XCTAssertEqualObjects(e.tag, @"square");
+            XCTAssertEqualObjects(e.text, @"Square");
         } else if (i == 1) {
-            STAssertEqualObjects(e.tag, @"triangle", nil);
-            STAssertEqualObjects(e.text, @"Triangle", nil);
+            XCTAssertEqualObjects(e.tag, @"triangle");
+            XCTAssertEqualObjects(e.text, @"Triangle");
         } else if (i == 2) {
-            STAssertEqualObjects(e.tag, @"circle", nil);
-            STAssertEqualObjects(e.text, @"Circle", nil);
+            XCTAssertEqualObjects(e.tag, @"circle");
+            XCTAssertEqualObjects(e.text, @"Circle");
         }
         
         i++;
     }];
     
-    STAssertEquals(i, 3, nil);
+    XCTAssertEqual(i, 3);
 }
 
 - (void)testAttributes {
@@ -80,17 +80,17 @@
     
     [rxml2 iterate:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEqualObjects([e attribute:@"name"], @"Square", nil);
+            XCTAssertEqualObjects([e attribute:@"name"], @"Square");
         } else if (i == 1) {
-            STAssertEqualObjects([e attribute:@"name"], @"Triangle", nil);
+            XCTAssertEqualObjects([e attribute:@"name"], @"Triangle");
         } else if (i == 2) {
-            STAssertEqualObjects([e attribute:@"name"], @"Circle", nil);
+            XCTAssertEqualObjects([e attribute:@"name"], @"Circle");
         }
         
         i++;
     }];
     
-    STAssertEquals(i, 3, nil);
+    XCTAssertEqual(i, 3);
 }
 
 @end
