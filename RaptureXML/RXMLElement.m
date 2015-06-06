@@ -361,9 +361,20 @@
         } else {
             cur = cur->children;
             while (cur != nil) {
-                if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagC) && !xmlStrcmp(cur->ns->href, namespaceC)) {
-                    break;
+                if (cur->ns != nil) {
+                    if (cur->type == XML_ELEMENT_NODE &&
+                        !xmlStrcmp(cur->name, tagC) &&
+                        !xmlStrcmp(cur->ns->href, namespaceC)) {
+                        break;
+                    }
+                } else {
+                    if (cur->type == XML_ELEMENT_NODE &&
+                        !xmlStrcmp(cur->name, tagC) &&
+                        !xmlStrcmp(namespaceC, nil)) {
+                        break;
+                    }
                 }
+
                 
                 cur = cur->next;
             }
