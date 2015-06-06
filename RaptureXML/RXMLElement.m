@@ -202,7 +202,11 @@
 #pragma mark -
 
 - (NSString *)tag {
-    return [NSString stringWithUTF8String:(const char *)node_->name];
+    if (node_) {
+        return [NSString stringWithUTF8String:(const char *)node_->name];
+    } else {
+        return nil;
+    }
 }
 
 - (NSString *)text {
