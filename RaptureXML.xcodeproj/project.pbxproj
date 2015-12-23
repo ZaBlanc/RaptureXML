@@ -6,22 +6,6 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXAggregateTarget section */
-		6BD1BD9D1558B7FA00F1D055 /* RaptureXMLFramework */ = {
-			isa = PBXAggregateTarget;
-			buildConfigurationList = 6BD1BD9E1558B7FA00F1D055 /* Build configuration list for PBXAggregateTarget "RaptureXMLFramework" */;
-			buildPhases = (
-				6BD1BDA61558B82400F1D055 /* Build static lib */,
-				6BD1BDA71558B85A00F1D055 /* Assemble Framework */,
-				6BD1BDA81558B90300F1D055 /* Copy Headers */,
-			);
-			dependencies = (
-			);
-			name = RaptureXMLFramework;
-			productName = RaptureXMLKit;
-		};
-/* End PBXAggregateTarget section */
-
 /* Begin PBXBuildFile section */
 		02041DBA1526B0DE00D1F36A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02041DB71526A71200D1F36A /* libxml2.dylib */; };
 		0252B2DF142ADFC60018B75D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2DE142ADFC60018B75D /* SenTestingKit.framework */; };
@@ -49,22 +33,7 @@
 		3B5E33091C2A08C200121E9E /* RXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DAC2E14FBF443001BA563 /* RXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B5E330A1C2A08C700121E9E /* RXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DAC2E14FBF443001BA563 /* RXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5415BE4216FC638100AFC566 /* HTMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5415BE4116FC638100AFC566 /* HTMLTests.m */; };
-		6BD1BDA91558B91400F1D055 /* RXMLElement.h in Copy Headers */ = {isa = PBXBuildFile; fileRef = 027DAC2E14FBF443001BA563 /* RXMLElement.h */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		6BD1BDA81558B90300F1D055 /* Copy Headers */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal/${PRODUCT_NAME}.framework/Versions/A/Headers/";
-			dstSubfolderSpec = 0;
-			files = (
-				6BD1BDA91558B91400F1D055 /* RXMLElement.h in Copy Headers */,
-			);
-			name = "Copy Headers";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		02041DB71526A71200D1F36A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -321,7 +290,6 @@
 				0DEB8EB31467EC9B00024989 /* RaptureXML iOS */,
 				20370A001B3C3E2D0043E14E /* RaptureXML OSX */,
 				0252B2DC142ADFC60018B75D /* RaptureXMLTests */,
-				6BD1BD9D1558B7FA00F1D055 /* RaptureXMLFramework */,
 			);
 		};
 /* End PBXProject section */
@@ -350,34 +318,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
-		};
-		6BD1BDA61558B82400F1D055 /* Build static lib */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Build static lib";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/bin/xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphonesimulator -target ${PROJECT_NAME} -configuration ${CONFIGURATION} clean build\n/usr/bin/xcodebuild -project ${PROJECT_NAME}.xcodeproj -sdk iphoneos -target ${PROJECT_NAME} -configuration ${CONFIGURATION} clean build\n";
-		};
-		6BD1BDA71558B85A00F1D055 /* Assemble Framework */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Assemble Framework";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/lib${PROJECT_NAME}.a\" &&\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/lib${PROJECT_NAME}.a\" &&\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\" &&\nUNIVERSAL_LIBRARY_PATH=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}\" &&\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${PRODUCT_NAME}.framework\" &&\n\n# Create framework directory structure.\nrm -rf \"${FRAMEWORK}\" &&\nmkdir -p \"${UNIVERSAL_LIBRARY_DIR}\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Headers\" &&\nmkdir -p \"${FRAMEWORK}/Versions/A/Resources\" &&\n\n# Generate universal binary from desktop, device, and simulator builds.\nlipo \"${SIMULATOR_LIBRARY_PATH}\" \"${DEVICE_LIBRARY_PATH}\" -create -output \"${UNIVERSAL_LIBRARY_PATH}\" &&\n\n# Move files to appropriate locations in framework paths.\ncp \"${UNIVERSAL_LIBRARY_PATH}\" \"${FRAMEWORK}/Versions/A\" &&\nln -s \"A\" \"${FRAMEWORK}/Versions/Current\" &&\nln -s \"Versions/Current/Headers\" \"${FRAMEWORK}/Headers\" &&\nln -s \"Versions/Current/Resources\" \"${FRAMEWORK}/Resources\" &&\nln -s \"Versions/Current/${PRODUCT_NAME}\" \"${FRAMEWORK}/${PRODUCT_NAME}\"\n#cp \"${SRCROOT}/Resources/Info.plist\" \"${FRAMEWORK}/Resources/Info.plist\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -655,20 +595,6 @@
 			};
 			name = Release;
 		};
-		6BD1BD9F1558B7FA00F1D055 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = RaptureXML;
-			};
-			name = Debug;
-		};
-		6BD1BDA01558B7FA00F1D055 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				PRODUCT_NAME = RaptureXML;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -704,15 +630,6 @@
 			buildConfigurations = (
 				20370A081B3C3E2D0043E14E /* Debug */,
 				20370A091B3C3E2D0043E14E /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6BD1BD9E1558B7FA00F1D055 /* Build configuration list for PBXAggregateTarget "RaptureXMLFramework" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6BD1BD9F1558B7FA00F1D055 /* Debug */,
-				6BD1BDA01558B7FA00F1D055 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
