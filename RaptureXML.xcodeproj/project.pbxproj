@@ -44,6 +44,8 @@
 		02F3A3FF1526D22600E8C822 /* players.xml in Resources */ = {isa = PBXBuildFile; fileRef = 0DEB8F2D14681BD800024989 /* players.xml */; };
 		0DEB8F2C14681A9400024989 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B305142AE3FF0018B75D /* libz.dylib */; };
 		20370A021B3C3E2D0043E14E /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
+		3B067BFC1C2A5A1300DE2495 /* RaptureXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B067BFB1C2A5A1300DE2495 /* RaptureXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3B067BFD1C2A5A1300DE2495 /* RaptureXML.h in Headers */ = {isa = PBXBuildFile; fileRef = 3B067BFB1C2A5A1300DE2495 /* RaptureXML.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B5E33091C2A08C200121E9E /* RXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DAC2E14FBF443001BA563 /* RXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3B5E330A1C2A08C700121E9E /* RXMLElement.h in Headers */ = {isa = PBXBuildFile; fileRef = 027DAC2E14FBF443001BA563 /* RXMLElement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5415BE4216FC638100AFC566 /* HTMLTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5415BE4116FC638100AFC566 /* HTMLTests.m */; };
@@ -91,6 +93,7 @@
 		0DEB8F2D14681BD800024989 /* players.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; name = players.xml; path = Tests/players.xml; sourceTree = SOURCE_ROOT; };
 		1413670716D9BEC700501ABB /* CopyTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CopyTests.m; path = Tests/CopyTests.m; sourceTree = SOURCE_ROOT; };
 		20370A0A1B3C3E2D0043E14E /* libRaptureXML.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRaptureXML.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B067BFB1C2A5A1300DE2495 /* RaptureXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaptureXML.h; sourceTree = "<group>"; };
 		5415BE4116FC638100AFC566 /* HTMLTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HTMLTests.m; path = Tests/HTMLTests.m; sourceTree = SOURCE_ROOT; };
 		6BD1BD951558B7A800F1D055 /* RaptureXML-StaticLib-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RaptureXML-StaticLib-Prefix.pch"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +190,7 @@
 		027DAC2B14FBF443001BA563 /* RaptureXML */ = {
 			isa = PBXGroup;
 			children = (
+				3B067BFB1C2A5A1300DE2495 /* RaptureXML.h */,
 				027DAC2E14FBF443001BA563 /* RXMLElement.h */,
 				027DAC2F14FBF443001BA563 /* RXMLElement.m */,
 			);
@@ -216,6 +220,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B067BFC1C2A5A1300DE2495 /* RaptureXML.h in Headers */,
 				3B5E33091C2A08C200121E9E /* RXMLElement.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,6 +229,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B067BFD1C2A5A1300DE2495 /* RaptureXML.h in Headers */,
 				3B5E330A1C2A08C700121E9E /* RXMLElement.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
