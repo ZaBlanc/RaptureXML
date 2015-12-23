@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name          = 'RaptureXML@Gilt'
-  s.version       = '1.0.7'
+  s.version       = '1.0.8'
   s.license       = 'MIT'
   s.summary       = 'A simple, sensible, block-based XML API for iOS and Mac development.'
   s.description   = 'Forked by Gilt Groupe to allow access to the xml property of the RXMLElement class from within CocoaPods.'
