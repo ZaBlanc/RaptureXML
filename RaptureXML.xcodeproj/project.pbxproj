@@ -14,7 +14,6 @@
 		0252B2E2142ADFC60018B75D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0252B2C7142ADFC60018B75D /* CoreGraphics.framework */; };
 		02565F9916E6320700A882F9 /* CopyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1413670716D9BEC700501ABB /* CopyTests.m */; };
 		027B3571153C624700A4EDF2 /* DeepChildrenTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC71467ED9C00024989 /* DeepChildrenTests.m */; };
-		027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
 		027DAC3614FBF465001BA563 /* RXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 027DAC2F14FBF443001BA563 /* RXMLElement.m */; };
 		02ADE6A216A0E33A008643D5 /* AttributeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 02ADE6A116A0E33A008643D5 /* AttributeTests.m */; };
 		02ADE6A316A0E491008643D5 /* BoundaryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DEB8EC61467ED9C00024989 /* BoundaryTests.m */; };
@@ -326,7 +325,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				027DAC3314FBF443001BA563 /* RXMLElement.m in Sources */,
 				027B3571153C624700A4EDF2 /* DeepChildrenTests.m in Sources */,
 				02ADE6A216A0E33A008643D5 /* AttributeTests.m in Sources */,
 				02ADE6A316A0E491008643D5 /* BoundaryTests.m in Sources */,
@@ -471,6 +469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				DEFINES_MODULE = YES;
 				DSTROOT = /tmp/RaptureXML.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -502,6 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				DEFINES_MODULE = YES;
 				DSTROOT = /tmp/RaptureXML.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,6 +534,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DSTROOT = /tmp/RaptureXML.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -567,6 +568,7 @@
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEFINES_MODULE = YES;
 				DSTROOT = /tmp/RaptureXML.dst;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

@@ -29,11 +29,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <libxml2/libxml/xmlreader.h>
-#import <libxml2/libxml/xmlmemory.h>
-#import <libxml2/libxml/HTMLparser.h>
-#import <libxml/xpath.h>
-#import <libxml/xpathInternals.h>
 
 @interface RXMLDocHolder : NSObject {
     xmlDocPtr doc_;

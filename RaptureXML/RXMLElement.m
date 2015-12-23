@@ -28,7 +28,7 @@
 // ================================================================================================
 //
 
-#import "RXMLElement.h"
+#import <RaptureXML/RaptureXML.h>
 
 @implementation RXMLDocHolder
 
