@@ -30,6 +30,11 @@
 
 #import <Foundation/Foundation.h>
 
+#ifndef __XML_TREE_H__
+typedef void* xmlDocPtr;
+typedef void* xmlNodePtr;
+#endif
+
 @interface RXMLDocHolder : NSObject {
     xmlDocPtr doc_;
 }
