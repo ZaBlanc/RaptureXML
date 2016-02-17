@@ -154,7 +154,7 @@ RaptureXML is easily integrated into RubyMotion!  [Here's how.](http://rapturein
 
 # Unit Tests as Documentation #
 
-You can see the full usage of RaptureXML by reading the unit tests in the project.  Not only does it show you all the code, but you'll know it works! (You can run the unit tests by pressing Command-U in XCode)
+You can see the full usage of RaptureXML by reading the unit tests in the project.  Not only does it show you all the code, but you'll know it works! (You can run the unit tests by pressing Command-U in Xcode)
 
 # Who Created RaptureXML? #
 
