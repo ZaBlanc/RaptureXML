@@ -1,15 +1,10 @@
 //
 //  RaptureXML.h
+//  RaptureXML
 //
-//  Created by Evan Maloney on 12/22/15.
-//  Copyright © 2015 Gilt Groupe. All rights reserved.
+//  Created by emaloney on 3/4/16.
+//  Copyright © 2016 Rapture In Venice. All rights reserved.
 //
-
-#ifndef __OBJC__
-
-#error RaptureXML requires Objective-C
-
-#else
 
 #import <Foundation/Foundation.h>
 
@@ -19,9 +14,6 @@ FOUNDATION_EXPORT double RaptureXMLVersionNumber;
 //! Project version string for RaptureXML.
 FOUNDATION_EXPORT const unsigned char RaptureXMLVersionString[];
 
-// import the public headers
+// In this header, you should import all the public headers of your framework using statements like #import <RaptureXML/PublicHeader.h>
 
 #import <RaptureXML/RXMLElement.h>
-
-#endif
-

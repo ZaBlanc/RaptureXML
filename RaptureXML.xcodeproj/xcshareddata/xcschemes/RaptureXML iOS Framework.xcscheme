@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0640"
+   LastUpgradeVersion = "0730"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "20370A001B3C3E2D0043E14E"
-               BuildableName = "libRaptureXML.a"
-               BlueprintName = "RaptureXML OSX"
+               BlueprintIdentifier = "3B6D82871C89EFCB00504542"
+               BuildableName = "RaptureXML.framework"
+               BlueprintName = "RaptureXML-iOS"
                ReferencedContainer = "container:RaptureXML.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "20370A001B3C3E2D0043E14E"
-            BuildableName = "libRaptureXML.a"
-            BlueprintName = "RaptureXML OSX"
+            BlueprintIdentifier = "3B6D82871C89EFCB00504542"
+            BuildableName = "RaptureXML.framework"
+            BlueprintName = "RaptureXML-iOS"
             ReferencedContainer = "container:RaptureXML.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -63,9 +63,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "20370A001B3C3E2D0043E14E"
-            BuildableName = "libRaptureXML.a"
-            BlueprintName = "RaptureXML OSX"
+            BlueprintIdentifier = "3B6D82871C89EFCB00504542"
+            BuildableName = "RaptureXML.framework"
+            BlueprintName = "RaptureXML-iOS"
             ReferencedContainer = "container:RaptureXML.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
