@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 Rapture In Venice. All rights reserved.
 //
 
-#import "RXMLElement.h"
+#import "RaptureTestSuite.h"
 
-@interface DeepTests : SenTestCase {
+@interface DeepTests : RaptureTestSuite {
 }
 
 @end
@@ -18,7 +18,7 @@
 @implementation DeepTests
 
 - (void)testQuery {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *rxml = [self testXML];
     __block NSInteger i;
     
     // count the players
@@ -28,7 +28,7 @@
         i++;
     }];    
     
-    STAssertEquals(i, 9, nil);
+    XCTAssertEqual(i, 9);
 
     // count the first player's name
     i = 0;
@@ -37,7 +37,7 @@
         i++;
     }];    
     
-    STAssertEquals(i, 1, nil);
+    XCTAssertEqual(i, 1);
 
     // count the coaches
     i = 0;
@@ -46,7 +46,7 @@
         i++;
     }];    
     
-    STAssertEquals(i, 1, nil);
+    XCTAssertEqual(i, 1);
 }
 
 @end
