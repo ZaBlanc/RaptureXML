@@ -1,0 +1,774 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/RXMLElement.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/RXMLElement</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+            
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromXMLString:encoding:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding</Declaration>
+			
+			
+			<Anchor>//api/name/initFromXMLString:encoding:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromXMLFile:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromXMLFile:(NSString *)filename</Declaration>
+			
+			
+			<Anchor>//api/name/initFromXMLFile:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromXMLFile:fileExtension:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromXMLFile:(NSString *)filename fileExtension:(NSString *)extension</Declaration>
+			
+			
+			<Anchor>//api/name/initFromXMLFile:fileExtension:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromXMLFilePath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromXMLFilePath:(NSString *)fullPath</Declaration>
+			
+			
+			<Anchor>//api/name/initFromXMLFilePath:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromURL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromURL:(NSURL *)url</Declaration>
+			
+			
+			<Anchor>//api/name/initFromURL:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromXMLData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromXMLData:(NSData *)data</Declaration>
+			
+			
+			<Anchor>//api/name/initFromXMLData:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromXMLDoc:node:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromXMLDoc:(RXMLDocHolder *)doc node:(xmlNodePtr)node</Declaration>
+			
+			
+			<Anchor>//api/name/initFromXMLDoc:node:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromHTMLString:encoding:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromHTMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding</Declaration>
+			
+			
+			<Anchor>//api/name/initFromHTMLString:encoding:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromHTMLFile:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromHTMLFile:(NSString *)filename</Declaration>
+			
+			
+			<Anchor>//api/name/initFromHTMLFile:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromHTMLFile:fileExtension:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromHTMLFile:(NSString *)filename fileExtension:(NSString *)extension</Declaration>
+			
+			
+			<Anchor>//api/name/initFromHTMLFile:fileExtension:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromHTMLFilePath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromHTMLFilePath:(NSString *)fullPath</Declaration>
+			
+			
+			<Anchor>//api/name/initFromHTMLFilePath:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/initFromHTMLData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initFromHTMLData:(NSData *)data</Declaration>
+			
+			
+			<Anchor>//api/name/initFromHTMLData:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromXMLString:encoding:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromXMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromXMLString:encoding:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromXMLFile:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromXMLFile:(NSString *)filename</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromXMLFile:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromXMLFilename:fileExtension:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromXMLFilename:(NSString *)filename fileExtension:(NSString *)extension</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromXMLFilename:fileExtension:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromXMLFilePath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromXMLFilePath:(NSString *)fullPath</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromXMLFilePath:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromURL:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromURL:(NSURL *)url</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromURL:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromXMLData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromXMLData:(NSData *)data</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromXMLData:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromXMLDoc:node:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromXMLDoc:(RXMLDocHolder *)doc node:(xmlNodePtr)node</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromXMLDoc:node:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromHTMLString:encoding:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromHTMLString:(NSString *)xmlString encoding:(NSStringEncoding)encoding</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromHTMLString:encoding:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromHTMLFile:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromHTMLFile:(NSString *)filename</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromHTMLFile:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromHTMLFile:fileExtension:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromHTMLFile:(NSString *)filename fileExtension:(NSString *)extension</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromHTMLFile:fileExtension:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromHTMLFilePath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromHTMLFilePath:(NSString *)fullPath</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromHTMLFilePath:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/RXMLElement/elementFromHTMLData:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>+ (id)elementFromHTMLData:(NSData *)data</Declaration>
+			
+			
+			<Anchor>//api/name/elementFromHTMLData:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/attribute:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)attribute:(NSString *)attributeName</Declaration>
+			
+			
+			<Anchor>//api/name/attribute:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/attribute:inNamespace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (NSString *)attribute:(NSString *)attributeName inNamespace:(NSString *)ns</Declaration>
+			
+			
+			<Anchor>//api/name/attribute:inNamespace:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/attributeNames</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)attributeNames</Declaration>
+			
+			
+			<Anchor>//api/name/attributeNames</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/attributeAsInt:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)attributeAsInt:(NSString *)attributeName</Declaration>
+			
+			
+			<Anchor>//api/name/attributeAsInt:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/attributeAsInt:inNamespace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (NSInteger)attributeAsInt:(NSString *)attributeName inNamespace:(NSString *)ns</Declaration>
+			
+			
+			<Anchor>//api/name/attributeAsInt:inNamespace:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/attributeAsDouble:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (double)attributeAsDouble:(NSString *)attributeName</Declaration>
+			
+			
+			<Anchor>//api/name/attributeAsDouble:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/attributeAsDouble:inNamespace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)ns</Declaration>
+			
+			
+			<Anchor>//api/name/attributeAsDouble:inNamespace:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/child:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (RXMLElement *)child:(NSString *)tag</Declaration>
+			
+			
+			<Anchor>//api/name/child:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/child:inNamespace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (RXMLElement *)child:(NSString *)tag inNamespace:(NSString *)ns</Declaration>
+			
+			
+			<Anchor>//api/name/child:inNamespace:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/children:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)children:(NSString *)tag</Declaration>
+			
+			
+			<Anchor>//api/name/children:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/children:inNamespace:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)children:(NSString *)tag inNamespace:(NSString *)ns</Declaration>
+			
+			
+			<Anchor>//api/name/children:inNamespace:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/childrenWithRootXPath:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (NSArray *)childrenWithRootXPath:(NSString *)xpath</Declaration>
+			
+			
+			<Anchor>//api/name/childrenWithRootXPath:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/iterate:usingBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (void)iterate:(NSString *)query usingBlock:(void ( ^ ) ( RXMLElement *))blk</Declaration>
+			
+			
+			<Anchor>//api/name/iterate:usingBlock:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/iterateWithRootXPath:usingBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (void)iterateWithRootXPath:(NSString *)xpath usingBlock:(void ( ^ ) ( RXMLElement *))blk</Declaration>
+			
+			
+			<Anchor>//api/name/iterateWithRootXPath:usingBlock:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/iterateElements:usingBlock:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (void)iterateElements:(NSArray *)elements usingBlock:(void ( ^ ) ( RXMLElement *))blk</Declaration>
+			
+			
+			<Anchor>//api/name/iterateElements:usingBlock:</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/setXmlDoc:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) RXMLDocHolder *xmlDoc</Declaration>
+			
+			
+			<Anchor>//api/name/xmlDoc</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/xmlDoc</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) RXMLDocHolder *xmlDoc</Declaration>
+			
+			
+			<Anchor>//api/name/xmlDoc</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RXMLElement/xmlDoc</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, strong) RXMLDocHolder *xmlDoc</Declaration>
+			
+			
+			<Anchor>//api/name/xmlDoc</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/setTag:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *tag</Declaration>
+			
+			
+			<Anchor>//api/name/tag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/tag</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *tag</Declaration>
+			
+			
+			<Anchor>//api/name/tag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RXMLElement/tag</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *tag</Declaration>
+			
+			
+			<Anchor>//api/name/tag</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/setText:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/text</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RXMLElement/text</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *text</Declaration>
+			
+			
+			<Anchor>//api/name/text</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/setXml:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *xml</Declaration>
+			
+			
+			<Anchor>//api/name/xml</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/xml</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *xml</Declaration>
+			
+			
+			<Anchor>//api/name/xml</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RXMLElement/xml</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *xml</Declaration>
+			
+			
+			<Anchor>//api/name/xml</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/setInnerXml:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *innerXml</Declaration>
+			
+			
+			<Anchor>//api/name/innerXml</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/innerXml</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *innerXml</Declaration>
+			
+			
+			<Anchor>//api/name/innerXml</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RXMLElement/innerXml</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSString *innerXml</Declaration>
+			
+			
+			<Anchor>//api/name/innerXml</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/setTextAsInt:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger textAsInt</Declaration>
+			
+			
+			<Anchor>//api/name/textAsInt</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/textAsInt</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger textAsInt</Declaration>
+			
+			
+			<Anchor>//api/name/textAsInt</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RXMLElement/textAsInt</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) NSInteger textAsInt</Declaration>
+			
+			
+			<Anchor>//api/name/textAsInt</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/setTextAsDouble:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double textAsDouble</Declaration>
+			
+			
+			<Anchor>//api/name/textAsDouble</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/textAsDouble</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double textAsDouble</Declaration>
+			
+			
+			<Anchor>//api/name/textAsDouble</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RXMLElement/textAsDouble</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) double textAsDouble</Declaration>
+			
+			
+			<Anchor>//api/name/textAsDouble</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/setIsValid:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
+			
+			
+			<Anchor>//api/name/isValid</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLElement/isValid</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
+			
+			
+			<Anchor>//api/name/isValid</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instp/RXMLElement/isValid</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>@property (nonatomic, readonly) BOOL isValid</Declaration>
+			
+			
+			<Anchor>//api/name/isValid</Anchor>
+            <NodeRef refid="2"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>
