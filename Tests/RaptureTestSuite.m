@@ -13,7 +13,7 @@
 - (RXMLElement*) testXML
 {
     NSBundle* bundle = [NSBundle bundleForClass:[self class]];
-    NSString* xmlPath = [[bundle bundlePath] stringByAppendingPathComponent:@"players.xml"];
+    NSString* xmlPath = [bundle pathForResource:@"players" ofType:@"xml"];
     RXMLElement* rxml = [RXMLElement elementFromXMLFilePath:xmlPath];
     XCTAssertTrue(rxml.isValid);
     return rxml;
