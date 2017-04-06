@@ -382,7 +382,7 @@
 		};
 		3B9059161DAECB5200B4EEC0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B9059281DAECB9E00B4EEC0 /* Release.xcconfig */;
+			baseConfigurationReference = 3B9059271DAECB9E00B4EEC0 /* Project.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
