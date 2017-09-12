@@ -58,14 +58,14 @@
 		3B3B9D8E1E95CF8B005AB4DE /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
 		3B3B9D901E95D5C8005AB4DE /* RaptureTestSuite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RaptureTestSuite.h; sourceTree = "<group>"; };
 		3B3B9D911E95D5C8005AB4DE /* RaptureTestSuite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RaptureTestSuite.m; sourceTree = "<group>"; };
+		3B6E351D1F67C67C000741A0 /* Info-Target.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Target.plist"; sourceTree = "<group>"; };
+		3B6E351E1F67C688000741A0 /* Target.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Target.xcconfig; sourceTree = "<group>"; };
 		3B9059031DAECB5200B4EEC0 /* RaptureXML.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RaptureXML.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B90590C1DAECB5200B4EEC0 /* RaptureXMLUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RaptureXMLUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B9059251DAECB9E00B4EEC0 /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
-		3B9059261DAECB9E00B4EEC0 /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
 		3B9059271DAECB9E00B4EEC0 /* Project.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
 		3B9059281DAECB9E00B4EEC0 /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		3B9059291DAECB9E00B4EEC0 /* Tests.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Tests.xcconfig; sourceTree = "<group>"; };
-		3B90592B1DAECD9800B4EEC0 /* Info-Framework.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Framework.plist"; sourceTree = "<group>"; };
 		3B90592C1DAECD9800B4EEC0 /* Info-Tests.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Tests.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,7 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				3B9059241DAECB9E00B4EEC0 /* config */,
-				3B90592B1DAECD9800B4EEC0 /* Info-Framework.plist */,
+				3B6E351D1F67C67C000741A0 /* Info-Target.plist */,
 				3B90592C1DAECD9800B4EEC0 /* Info-Tests.plist */,
 			);
 			path = BuildControl;
@@ -161,9 +161,9 @@
 			isa = PBXGroup;
 			children = (
 				3B9059251DAECB9E00B4EEC0 /* Debug.xcconfig */,
-				3B9059261DAECB9E00B4EEC0 /* Framework.xcconfig */,
 				3B9059271DAECB9E00B4EEC0 /* Project.xcconfig */,
 				3B9059281DAECB9E00B4EEC0 /* Release.xcconfig */,
+				3B6E351E1F67C688000741A0 /* Target.xcconfig */,
 				3B9059291DAECB9E00B4EEC0 /* Tests.xcconfig */,
 			);
 			path = config;

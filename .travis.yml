@@ -1,0 +1,42 @@
+language: objective-c
+xcode_project: RaptureXML.xcodeproj
+os: osx
+osx_image: xcode9
+
+branches:
+  only:
+    - master
+
+git:
+  depth: 1
+  submodules: false
+
+before_install:
+  - sudo systemsetup -settimezone America/New_York					# temporary hack: NYC timezone is required for some MBDataEnvironment date-related unit tests
+  - git submodule update --init
+
+install:
+  - gem install xcpretty --no-rdoc --no-ri --no-document --quiet
+  - rm -rf ~/Library/Developer/CoreSimulator					  	# these two lines are a hack around a recurring Travis problem: multiple versions of the
+  - sudo killall -9 com.apple.CoreSimulator.CoreSimulatorService	# same simulator: https://github.com/travis-ci/travis-ci/issues/7580#issuecomment-292974395
+
+script:
+  - ./BuildControl/bin/travisBuildHelper.sh build iOS
+  - ./BuildControl/bin/travisBuildHelper.sh test iOS
+  - ./BuildControl/bin/travisBuildHelper.sh build macOS
+  - ./BuildControl/bin/travisBuildHelper.sh test macOS
+  - ./BuildControl/bin/travisBuildHelper.sh build tvOS
+  - ./BuildControl/bin/travisBuildHelper.sh test tvOS
+  - ./BuildControl/bin/travisBuildHelper.sh build watchOS
+
+after_failure:
+  - test -f "RaptureXML-iOS-build.log" && tail -n 2500 "RaptureXML-iOS-build.log"
+  - test -f "RaptureXML-iOS-test.log" && tail -n 2500 "RaptureXML-iOS-test.log"
+  - test -f "RaptureXML-iOS-test.log" && LINE_BEFORE=`cat "RaptureXML-iOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "RaptureXML-iOS-test.log" | tail -n 1` && cat "$LOG_FILE"
+  - test -f "RaptureXML-macOS-build.log" && tail -n 2500 "RaptureXML-macOS-build.log"
+  - test -f "RaptureXML-macOS-test.log" && tail -n 2500 "RaptureXML-macOS-test.log"
+  - test -f "RaptureXML-macOS-test.log" && LINE_BEFORE=`cat "RaptureXML-macOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "RaptureXML-macOS-test.log" | tail -n 1` && cat "$LOG_FILE"
+  - test -f "RaptureXML-tvOS-build.log" && tail -n 2500 "RaptureXML-tvOS-build.log"
+  - test -f "RaptureXML-tvOS-test.log" && tail -n 2500 "RaptureXML-tvOS-test.log"
+  - test -f "RaptureXML-tvOS-test.log" && LINE_BEFORE=`cat "RaptureXML-tvOS-test.log" | grep -n "IDETestOperationsObserverDebug. Writing diagnostic log for test session to." | awk -F':' '{print $1}'` && LINE=`expr $LINE_BEFORE + 1` && LOG_FILE=`head -n $LINE "RaptureXML-tvOS-test.log" | tail -n 1` && cat "$LOG_FILE"
+  - test -f "RaptureXML-watchOS-build.log" && tail -n 2500 "RaptureXML-watchOS-build.log"

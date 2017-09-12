@@ -2,8 +2,9 @@
 #
 .DS_Store
 
-# Xcode
+# Xcode / Swift
 #
+.build/
 build/
 *.pbxuser
 !default.pbxuser
@@ -21,6 +22,10 @@ DerivedData
 *.ipa
 *.xcuserstate
 *.xcscmblueprint
+
+# jazzy documentation generator
+#
+undocumented.json
 
 # Carthage: we --use-submodules for our non-leaf dependencies
 #

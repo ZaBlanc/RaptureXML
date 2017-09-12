@@ -10,22 +10,12 @@ fi
 OPERATION="$1"
 PLATFORM="$2"
 
-#
-# this function compensates for the fact that macOS is still on bash 3.x
-# and therefore a more sensible implementation using associative
-# arrays is not currently possible
-#
-runDestinationForPlatform()
-{
-	case $1 in
-	iOS) 		echo "platform=iOS Simulator,OS=10.3,name=iPad Pro (9.7 inch)";;
-	macOS) 		echo "platform=macOS";;	
-	tvOS) 		echo "platform=tvOS Simulator,OS=10.2,name=Apple TV 1080p";;
-	watchOS)	echo "platform=watchOS Simulator,OS=3.2,name=Apple Watch Series 2 - 42mm";;
-	esac
-}
+SCRIPT_NAME=$(basename "$0")
+SCRIPT_DIR=$(cd "$PWD" ; cd `dirname "$0"` ; echo "$PWD")
 
-case $OPERATION in 
+source "${SCRIPT_DIR}/include-common.sh"
+
+case $OPERATION in
 	build)
 		MAXIMUM_TRIES=1
 		XCODE_ACTION="clean build";;
@@ -54,7 +44,7 @@ while [[ $THIS_TRY < $MAXIMUM_TRIES ]]; do
 	if [[ $MAXIMUM_TRIES > 1 ]]; then
 		echo "Attempt $THIS_TRY of $MAXIMUM_TRIES..."
 	fi
-	
+
 	( set -o pipefail && xcodebuild -project RaptureXML.xcodeproj -configuration Debug -scheme "RaptureXML" -destination "$DESTINATION" -destination-timeout 300 $XCODE_ACTION 2>&1 | tee "RaptureXML-$PLATFORM-$OPERATION.log" | xcpretty )
 	XCODE_RESULT="${PIPESTATUS[0]}"
 	if [[ "$XCODE_RESULT" == "0" ]]; then
