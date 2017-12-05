@@ -1,5 +1,11 @@
-# Xcode
-build/*
+# Finder/Mac OS X
+#
+.DS_Store
+
+# Xcode / Swift
+#
+.build/
+build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -8,8 +14,21 @@ build/*
 !default.mode2v3
 *.perspectivev3
 !default.perspectivev3
-*.xcworkspace
-!default.xcworkspace
 xcuserdata
-profile
+*.xccheckout
 *.moved-aside
+DerivedData
+*.hmap
+*.ipa
+*.xcuserstate
+*.xcscmblueprint
+
+# jazzy documentation generator
+#
+undocumented.json
+
+# Carthage: we --use-submodules for our non-leaf dependencies
+#
+Carthage/*
+!Carthage/Checkouts/
+**/Carthage/

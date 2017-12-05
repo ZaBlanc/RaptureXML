@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>RXMLElement Class Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">RaptureXML </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">Rapture In Venice</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+	<optgroup label="Properties">
+		
+		<option value="//api/name/innerXml">innerXml</option>
+		
+		<option value="//api/name/isValid">isValid</option>
+		
+		<option value="//api/name/tag">tag</option>
+		
+		<option value="//api/name/text">text</option>
+		
+		<option value="//api/name/textAsDouble">textAsDouble</option>
+		
+		<option value="//api/name/textAsInt">textAsInt</option>
+		
+		<option value="//api/name/xml">xml</option>
+		
+		<option value="//api/name/xmlDoc">xmlDoc</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Class Methods">
+		
+		<option value="//api/name/elementFromHTMLData:">+ elementFromHTMLData:</option>
+		
+		<option value="//api/name/elementFromHTMLFile:">+ elementFromHTMLFile:</option>
+		
+		<option value="//api/name/elementFromHTMLFile:fileExtension:">+ elementFromHTMLFile:fileExtension:</option>
+		
+		<option value="//api/name/elementFromHTMLFilePath:">+ elementFromHTMLFilePath:</option>
+		
+		<option value="//api/name/elementFromHTMLString:encoding:">+ elementFromHTMLString:encoding:</option>
+		
+		<option value="//api/name/elementFromURL:">+ elementFromURL:</option>
+		
+		<option value="//api/name/elementFromXMLData:">+ elementFromXMLData:</option>
+		
+		<option value="//api/name/elementFromXMLDoc:node:">+ elementFromXMLDoc:node:</option>
+		
+		<option value="//api/name/elementFromXMLFile:">+ elementFromXMLFile:</option>
+		
+		<option value="//api/name/elementFromXMLFilePath:">+ elementFromXMLFilePath:</option>
+		
+		<option value="//api/name/elementFromXMLFilename:fileExtension:">+ elementFromXMLFilename:fileExtension:</option>
+		
+		<option value="//api/name/elementFromXMLString:encoding:">+ elementFromXMLString:encoding:</option>
+		
+	</optgroup>
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/attribute:">- attribute:</option>
+		
+		<option value="//api/name/attribute:inNamespace:">- attribute:inNamespace:</option>
+		
+		<option value="//api/name/attributeAsDouble:">- attributeAsDouble:</option>
+		
+		<option value="//api/name/attributeAsDouble:inNamespace:">- attributeAsDouble:inNamespace:</option>
+		
+		<option value="//api/name/attributeAsInt:">- attributeAsInt:</option>
+		
+		<option value="//api/name/attributeAsInt:inNamespace:">- attributeAsInt:inNamespace:</option>
+		
+		<option value="//api/name/attributeNames">- attributeNames</option>
+		
+		<option value="//api/name/child:">- child:</option>
+		
+		<option value="//api/name/child:inNamespace:">- child:inNamespace:</option>
+		
+		<option value="//api/name/children:">- children:</option>
+		
+		<option value="//api/name/children:inNamespace:">- children:inNamespace:</option>
+		
+		<option value="//api/name/childrenWithRootXPath:">- childrenWithRootXPath:</option>
+		
+		<option value="//api/name/initFromHTMLData:">- initFromHTMLData:</option>
+		
+		<option value="//api/name/initFromHTMLFile:">- initFromHTMLFile:</option>
+		
+		<option value="//api/name/initFromHTMLFile:fileExtension:">- initFromHTMLFile:fileExtension:</option>
+		
+		<option value="//api/name/initFromHTMLFilePath:">- initFromHTMLFilePath:</option>
+		
+		<option value="//api/name/initFromHTMLString:encoding:">- initFromHTMLString:encoding:</option>
+		
+		<option value="//api/name/initFromURL:">- initFromURL:</option>
+		
+		<option value="//api/name/initFromXMLData:">- initFromXMLData:</option>
+		
+		<option value="//api/name/initFromXMLDoc:node:">- initFromXMLDoc:node:</option>
+		
+		<option value="//api/name/initFromXMLFile:">- initFromXMLFile:</option>
+		
+		<option value="//api/name/initFromXMLFile:fileExtension:">- initFromXMLFile:fileExtension:</option>
+		
+		<option value="//api/name/initFromXMLFilePath:">- initFromXMLFilePath:</option>
+		
+		<option value="//api/name/initFromXMLString:encoding:">- initFromXMLString:encoding:</option>
+		
+		<option value="//api/name/iterate:usingBlock:">- iterate:usingBlock:</option>
+		
+		<option value="//api/name/iterateElements:usingBlock:">- iterateElements:usingBlock:</option>
+		
+		<option value="//api/name/iterateWithRootXPath:usingBlock:">- iterateWithRootXPath:usingBlock:</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">RXMLElement Class Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Inherits from</th>
+	<td>NSObject</td>
+</tr><tr>
+	<th>Conforms to</th>
+	<td>NSCopying</td>
+</tr><tr>
+	<th>Declared in</th>
+	<td>RXMLElement.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						
+						
+
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/initFromXMLString:encoding:" title="initFromXMLString:encoding:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromXMLString:encoding:">&ndash;&nbsp;initFromXMLString:encoding:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromXMLString:(NSString *)<em>xmlString</em> encoding:(NSStringEncoding)<em>encoding</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromXMLFile:" title="initFromXMLFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromXMLFile:">&ndash;&nbsp;initFromXMLFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromXMLFile:(NSString *)<em>filename</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromXMLFile:fileExtension:" title="initFromXMLFile:fileExtension:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromXMLFile:fileExtension:">&ndash;&nbsp;initFromXMLFile:fileExtension:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromXMLFile:(NSString *)<em>filename</em> fileExtension:(NSString *)<em>extension</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromXMLFilePath:" title="initFromXMLFilePath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromXMLFilePath:">&ndash;&nbsp;initFromXMLFilePath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromXMLFilePath:(NSString *)<em>fullPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromURL:" title="initFromURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromURL:">&ndash;&nbsp;initFromURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromURL:(NSURL *)<em>url</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromXMLData:" title="initFromXMLData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromXMLData:">&ndash;&nbsp;initFromXMLData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromXMLData:(NSData *)<em>data</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromXMLDoc:node:" title="initFromXMLDoc:node:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromXMLDoc:node:">&ndash;&nbsp;initFromXMLDoc:node:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromXMLDoc:(RXMLDocHolder *)<em>doc</em> node:(xmlNodePtr)<em>node</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromHTMLString:encoding:" title="initFromHTMLString:encoding:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromHTMLString:encoding:">&ndash;&nbsp;initFromHTMLString:encoding:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromHTMLString:(NSString *)<em>xmlString</em> encoding:(NSStringEncoding)<em>encoding</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromHTMLFile:" title="initFromHTMLFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromHTMLFile:">&ndash;&nbsp;initFromHTMLFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromHTMLFile:(NSString *)<em>filename</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromHTMLFile:fileExtension:" title="initFromHTMLFile:fileExtension:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromHTMLFile:fileExtension:">&ndash;&nbsp;initFromHTMLFile:fileExtension:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromHTMLFile:(NSString *)<em>filename</em> fileExtension:(NSString *)<em>extension</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromHTMLFilePath:" title="initFromHTMLFilePath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromHTMLFilePath:">&ndash;&nbsp;initFromHTMLFilePath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromHTMLFilePath:(NSString *)<em>fullPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/initFromHTMLData:" title="initFromHTMLData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/initFromHTMLData:">&ndash;&nbsp;initFromHTMLData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (id)initFromHTMLData:(NSData *)<em>data</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromXMLString:encoding:" title="elementFromXMLString:encoding:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromXMLString:encoding:">+&nbsp;elementFromXMLString:encoding:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromXMLString:(NSString *)<em>xmlString</em> encoding:(NSStringEncoding)<em>encoding</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromXMLFile:" title="elementFromXMLFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromXMLFile:">+&nbsp;elementFromXMLFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromXMLFile:(NSString *)<em>filename</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromXMLFilename:fileExtension:" title="elementFromXMLFilename:fileExtension:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromXMLFilename:fileExtension:">+&nbsp;elementFromXMLFilename:fileExtension:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromXMLFilename:(NSString *)<em>filename</em> fileExtension:(NSString *)<em>extension</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromXMLFilePath:" title="elementFromXMLFilePath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromXMLFilePath:">+&nbsp;elementFromXMLFilePath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromXMLFilePath:(NSString *)<em>fullPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromURL:" title="elementFromURL:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromURL:">+&nbsp;elementFromURL:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromURL:(NSURL *)<em>url</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromXMLData:" title="elementFromXMLData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromXMLData:">+&nbsp;elementFromXMLData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromXMLData:(NSData *)<em>data</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromXMLDoc:node:" title="elementFromXMLDoc:node:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromXMLDoc:node:">+&nbsp;elementFromXMLDoc:node:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromXMLDoc:(RXMLDocHolder *)<em>doc</em> node:(xmlNodePtr)<em>node</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromHTMLString:encoding:" title="elementFromHTMLString:encoding:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromHTMLString:encoding:">+&nbsp;elementFromHTMLString:encoding:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromHTMLString:(NSString *)<em>xmlString</em> encoding:(NSStringEncoding)<em>encoding</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromHTMLFile:" title="elementFromHTMLFile:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromHTMLFile:">+&nbsp;elementFromHTMLFile:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromHTMLFile:(NSString *)<em>filename</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromHTMLFile:fileExtension:" title="elementFromHTMLFile:fileExtension:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromHTMLFile:fileExtension:">+&nbsp;elementFromHTMLFile:fileExtension:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromHTMLFile:(NSString *)<em>filename</em> fileExtension:(NSString *)<em>extension</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromHTMLFilePath:" title="elementFromHTMLFilePath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromHTMLFilePath:">+&nbsp;elementFromHTMLFilePath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromHTMLFilePath:(NSString *)<em>fullPath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/elementFromHTMLData:" title="elementFromHTMLData:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/elementFromHTMLData:">+&nbsp;elementFromHTMLData:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>+ (id)elementFromHTMLData:(NSData *)<em>data</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attribute:" title="attribute:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attribute:">&ndash;&nbsp;attribute:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)attribute:(NSString *)<em>attributeName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attribute:inNamespace:" title="attribute:inNamespace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attribute:inNamespace:">&ndash;&nbsp;attribute:inNamespace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)attribute:(NSString *)<em>attributeName</em> inNamespace:(NSString *)<em>ns</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributeNames" title="attributeNames"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributeNames">&ndash;&nbsp;attributeNames</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)attributeNames</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributeAsInt:" title="attributeAsInt:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributeAsInt:">&ndash;&nbsp;attributeAsInt:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)attributeAsInt:(NSString *)<em>attributeName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributeAsInt:inNamespace:" title="attributeAsInt:inNamespace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributeAsInt:inNamespace:">&ndash;&nbsp;attributeAsInt:inNamespace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSInteger)attributeAsInt:(NSString *)<em>attributeName</em> inNamespace:(NSString *)<em>ns</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributeAsDouble:" title="attributeAsDouble:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributeAsDouble:">&ndash;&nbsp;attributeAsDouble:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (double)attributeAsDouble:(NSString *)<em>attributeName</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/attributeAsDouble:inNamespace:" title="attributeAsDouble:inNamespace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/attributeAsDouble:inNamespace:">&ndash;&nbsp;attributeAsDouble:inNamespace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (double)attributeAsDouble:(NSString *)<em>attributeName</em> inNamespace:(NSString *)<em>ns</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/child:" title="child:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/child:">&ndash;&nbsp;child:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (RXMLElement *)child:(NSString *)<em>tag</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/child:inNamespace:" title="child:inNamespace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/child:inNamespace:">&ndash;&nbsp;child:inNamespace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (RXMLElement *)child:(NSString *)<em>tag</em> inNamespace:(NSString *)<em>ns</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/children:" title="children:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/children:">&ndash;&nbsp;children:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)children:(NSString *)<em>tag</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/children:inNamespace:" title="children:inNamespace:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/children:inNamespace:">&ndash;&nbsp;children:inNamespace:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)children:(NSString *)<em>tag</em> inNamespace:(NSString *)<em>ns</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/childrenWithRootXPath:" title="childrenWithRootXPath:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/childrenWithRootXPath:">&ndash;&nbsp;childrenWithRootXPath:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (NSArray *)childrenWithRootXPath:(NSString *)<em>xpath</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/iterate:usingBlock:" title="iterate:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/iterate:usingBlock:">&ndash;&nbsp;iterate:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)iterate:(NSString *)<em>query</em> usingBlock:(void ( ^ ) ( RXMLElement *))<em>blk</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/iterateWithRootXPath:usingBlock:" title="iterateWithRootXPath:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/iterateWithRootXPath:usingBlock:">&ndash;&nbsp;iterateWithRootXPath:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)iterateWithRootXPath:(NSString *)<em>xpath</em> usingBlock:(void ( ^ ) ( RXMLElement *))<em>blk</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/iterateElements:usingBlock:" title="iterateElements:usingBlock:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/iterateElements:usingBlock:">&ndash;&nbsp;iterateElements:usingBlock:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>- (void)iterateElements:(NSArray *)<em>elements</em> usingBlock:(void ( ^ ) ( RXMLElement *))<em>blk</em></code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/xmlDoc" title="xmlDoc"></a>
+	<h3 class="method-title"><code><a href="#//api/name/xmlDoc">&nbsp;&nbsp;xmlDoc</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, strong) RXMLDocHolder *xmlDoc</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/tag" title="tag"></a>
+	<h3 class="method-title"><code><a href="#//api/name/tag">&nbsp;&nbsp;tag</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *tag</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/text" title="text"></a>
+	<h3 class="method-title"><code><a href="#//api/name/text">&nbsp;&nbsp;text</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *text</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/xml" title="xml"></a>
+	<h3 class="method-title"><code><a href="#//api/name/xml">&nbsp;&nbsp;xml</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *xml</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/innerXml" title="innerXml"></a>
+	<h3 class="method-title"><code><a href="#//api/name/innerXml">&nbsp;&nbsp;innerXml</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSString *innerXml</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textAsInt" title="textAsInt"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textAsInt">&nbsp;&nbsp;textAsInt</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) NSInteger textAsInt</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/textAsDouble" title="textAsDouble"></a>
+	<h3 class="method-title"><code><a href="#//api/name/textAsDouble">&nbsp;&nbsp;textAsDouble</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) double textAsDouble</code></div>
+
+		    
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/isValid" title="isValid"></a>
+	<h3 class="method-title"><code><a href="#//api/name/isValid">&nbsp;&nbsp;isValid</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+
+			<div class="method-subsection method-declaration"><code>@property (nonatomic, readonly) BOOL isValid</code></div>
+
+		    
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2017 Rapture In Venice. All rights reserved. Updated: 2017-04-05</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>

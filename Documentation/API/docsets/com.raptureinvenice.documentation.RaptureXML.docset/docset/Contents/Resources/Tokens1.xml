@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/RXMLDocHolder.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/RXMLDocHolder</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+            
+			
+			<NodeRef refid="1"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLDocHolder/initWithDocPtr:</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (id)initWithDocPtr:(xmlDocPtr)doc</Declaration>
+			
+			
+			<Anchor>//api/name/initWithDocPtr:</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/RXMLDocHolder/doc</TokenIdentifier>
+			<Abstract type="html"></Abstract>
+			<DeclaredIn>RXMLElement.h</DeclaredIn>
+			
+			<Declaration>- (xmlDocPtr)doc</Declaration>
+			
+			
+			<Anchor>//api/name/doc</Anchor>
+            <NodeRef refid="1"/>
+		</Token>
+		
+        
+        
+	</File>
+</Tokens>

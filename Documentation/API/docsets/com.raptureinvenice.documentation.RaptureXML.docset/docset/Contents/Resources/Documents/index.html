@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>RaptureXML Reference</title>
+
+	<link rel="stylesheet" href="css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1334)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="index.html">RaptureXML </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="index.html">Rapture In Venice</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="hierarchy.html">Hierarchy</a></li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview-contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">RaptureXML Reference</h1>
+
+					
+					<div class="section section-overview index-overview">
+						
+						
+						<p>RaptureXML is a simple, block-based XML library for the iOS platform that provides an expressive API that makes XML processing freakin' fun for once in my life.</p>
+
+<h1>Why do we need <em>another</em> XML library?</h1>
+
+<p>You tell me.  Processing XML in Objective-C is an awful, frustrating experience and the resulting code is never readable.  I&rsquo;m tired of it! RaptureXML solves this by providing a <em>powerful</em> new interface on top of libxml2.  Imagine for a minute the code you&rsquo;d write to process the XML for a list of baseball team members, retrieving their numbers, names, and positions using your favorite XML processing library.  Now, take a look at how you do it with RaptureXML:</p>
+
+<pre><code>RXMLElement *rootXML = [RXMLElement elementFromXMLFile:@"players.xml"];
+
+[rootXML iterate:@"players.player" usingBlock: ^(RXMLElement *e) {
+    NSLog(@"Player #%@: %@", [e attribute:@"number"], [e child:@"name"].text);
+}];    
+</code></pre>
+
+<p>RaptureXML changes the game when it comes to XML processing in Objective-C.  As you can see from the code, it takes only seconds to understand what this code does.  There are no wasted arrays and verbose looping you have to do.  The code is a breeze to read and maintain.</p>
+
+<p>I don&rsquo;t think any more needs to be said.</p>
+
+<h1>Adding RaptureXML to Your Project</h1>
+
+<p>The recommended way to add RaptureXML to your project is through CocoaPods. Simply add &lsquo;RaptureXML&rsquo; into your Podfile.</p>
+
+<p>To install manually, there&rsquo;s just a few simple steps:</p>
+
+<ul>
+<li>Copy the RaptureXML/RaptureXML folder into your own project and import &ldquo;<a href="Classes/RXMLElement.html">RXMLElement</a>.h&rdquo; somewhere (e.g., your PCH file).</li>
+<li>Link in libz.dylib to your target.</li>
+<li>Link in libxml2.dylib to your target.</li>
+<li>In your build settings, for the key &ldquo;Header Search Paths&rdquo;, add &ldquo;$(SDK_DIR)&rdquo;/usr/include/libxml2</li>
+</ul>
+
+
+<p>RaptureXML supports ARC. You are free to use any version of LLVM or gcc as well! (Though you should be using LLVM by now.)</p>
+
+<h1>ARC isn&rsquo;t just supported, it&rsquo;s required!</h1>
+
+<p>RaptureXML supports ARC.  In fact, it only supports ARC.  If you&rsquo;re still running a project that doesn&rsquo;t use ARC, RaptureXML won&rsquo;t be your cup of tea.</p>
+
+<h1>Getting Started</h1>
+
+<p>RaptureXML processes XML in two steps: load and path.  This means that you first load the XML from any source you want such as file, data, or string.  Then, you simply use its query language to find what you need.</p>
+
+<p>You can load the XML with any of the following constructors:</p>
+
+<pre><code>RXMLElement *rootXML = [RXMLElement elementFromXMLString:@"...my xml..." encoding:NSUTF8StringEncoding];
+RXMLElement *rootXML = [RXMLElement elementFromXMLFile:@"myfile.xml"];
+RXMLElement *rootXML = [RXMLElement elementFromXMLFilename:@"myfile" elementFromXMLFilename:@"xml"];
+RXMLElement *rootXML = [RXMLElement elementFromXMLData:myData];
+</code></pre>
+
+<p>These constructors return an <a href="Classes/RXMLElement.html">RXMLElement</a> object that represents the top-level tags. Now, you can query the data in any number of ways.</p>
+
+<p>Let&rsquo;s pretend your XML looks like this:</p>
+
+<pre><code>&lt;team year="2011" name="New York Mets"&gt;
+    &lt;players&gt;
+        &lt;coach&gt;
+            &lt;name&gt;Terry Collins&lt;/name&gt;
+            &lt;year&gt;1&lt;/year&gt;
+        &lt;/coach&gt;
+
+        &lt;player number="7"&gt;
+            &lt;name&gt;Jose Reyes&lt;/name&gt;
+            &lt;position&gt;SS&lt;/position&gt;
+        &lt;/player&gt;
+
+        &lt;player number="16"&gt;
+            &lt;name&gt;Angel Pagan&lt;/name&gt;
+            &lt;position&gt;CF&lt;/position&gt;
+        &lt;/player&gt;
+
+        &lt;player number="5"&gt;
+            &lt;name&gt;David Wright&lt;/name&gt;
+            &lt;position&gt;3B&lt;/position&gt;
+        &lt;/player&gt;
+
+        ...
+
+    &lt;/players&gt;
+&lt;/team&gt;
+</code></pre>
+
+<p>First, we&rsquo;d load the XML:</p>
+
+<pre><code>RXMLElement *rootXML = [RXMLElement elementFromXMLFile:@"players.xml"];
+</code></pre>
+
+<p>We can immediately query the top-level tag name:</p>
+
+<pre><code>rootXML.tag --&gt; @"team"
+</code></pre>
+
+<p>We can read attributes with:</p>
+
+<pre><code>[rootXML attribute:@"year"] --&gt; @"2011"
+[rootXML attribute:@"name"] --&gt; @"New York Mets"
+</code></pre>
+
+<p>We can get the players tag with:</p>
+
+<pre><code>RXMLElement *rxmlPlayers = [rootXML child:@"players"];
+</code></pre>
+
+<p>If we like, we can get all the individual player tags with:</p>
+
+<pre><code>NSArray *rxmlIndividualPlayers = [rxmlPlayers children:@"player"];
+</code></pre>
+
+<p>From there, we can process the individual players and be happy.  Now, this is already much better than any other XML library we&rsquo;ve seen, but RaptureXML can use query paths to make this ridiculously easy.  Let&rsquo;s use query paths to improve the conciseness our code:</p>
+
+<pre><code>[rootXML iterate:@"players.player" usingBlock: ^(RXMLElement *player) {
+    NSLog(@"Player: %@ (#%@)", [player child:@"name"].text, [player attribute:@"number"]);
+}];    
+</code></pre>
+
+<p>Your block is passed an <a href="Classes/RXMLElement.html">RXMLElement</a> representing each player in just one line!  Alternatively, you could have shortened it with:</p>
+
+<pre><code>[rootXML iterate:@"players.player" usingBlock: ^(RXMLElement *player) {
+    NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
+}];    
+</code></pre>
+
+<p>This also works because RXMLElement#description returns the text of the tag. Query paths are even more powerful with wildcards.  Let&rsquo;s say we wanted the name of every person on the team, player or coach.  We use the wildcard to get it:</p>
+
+<pre><code>[rootXML iterate:@"players.*.name" usingBlock: ^(RXMLElement *name) {
+    NSLog(@"Name: %@", name.text);
+}];
+</code></pre>
+
+<p>The wildcard processes every tag rather than the one you would&rsquo;ve named.  You can also use the wildcard to iterate all the children of an element:</p>
+
+<pre><code>[rootXML iterate:@"players.coach.*" usingBlock: ^(RXMLElement *e) {
+    NSLog(@"Tag: %@, Text: %@", e.tag, e.text);
+}];
+</code></pre>
+
+<p>This gives us all the tags for the coach.  Easy enough?</p>
+
+<h1>XPath</h1>
+
+<p>If you don&rsquo;t want to use the custom RaptureXML iteration query syntax, you can use the standard XPath query language as well.  Here&rsquo;s how you query all players with XPath:</p>
+
+<pre><code>[rootXML iterateWithRootXPath:@"//player" usingBlock: ^(RXMLElement *player) {
+    NSLog(@"Player: %@ (#%@)", [player child:@"name"], [player attribute:@"number"]);
+}];    
+</code></pre>
+
+<p>And remember, you can also test attributes using XPath as well. Here&rsquo;s how you can find the player with #5:</p>
+
+<pre><code>[rootXML iterateWithRootXPath:@"//player[@number='5']" usingBlock: ^(RXMLElement *player) {
+    NSLog(@"Player #5: %@", [player child:@"name"]);
+}];    
+</code></pre>
+
+<p>Note that you can only use XPath from the document root and it won&rsquo;t matter what <a href="Classes/RXMLElement.html">RXMLElement</a> you have.  If you have a derived <a href="Classes/RXMLElement.html">RXMLElement</a>, you can still build from the document root. If you&rsquo;re not familiar with XPath, you can use this <a href="http://www.w3schools.com/xpath/xpath_syntax.asp">handy guide</a>.</p>
+
+<h1>Namespaces</h1>
+
+<p>Namespaces are supported for most methods, however not for iterations.  If you want to use namespaces for that kind of thing, use the -children method manually.  When specifying namespaces, be sure to specify the namespace URI and <em>not</em> the prefix.  For example, if your XML looked like:</p>
+
+<pre><code>&lt;team xmlns:sport="*" sport:year="2011" sport:name="New York Mets"&gt;
+    ...
+&lt;/team&gt;
+</code></pre>
+
+<p>You would access the attributes with:</p>
+
+<pre><code>NSLog(@"Team Name: %@", [e attribute:@"name" inNamespace:@"*"]);
+</code></pre>
+
+<h1>RubyMotion Support</h1>
+
+<p>RaptureXML is easily integrated into RubyMotion!  <a href="http://raptureinvenice.com/797/">Here&rsquo;s how.</a></p>
+
+<h1>Unit Tests as Documentation</h1>
+
+<p>You can see the full usage of RaptureXML by reading the unit tests in the project.  Not only does it show you all the code, but you&rsquo;ll know it works! (You can run the unit tests by pressing Command-U in Xcode)</p>
+
+<h1>Who Created RaptureXML?</h1>
+
+<p>RaptureXML was created by John Blanco <a href="&#x6d;&#x61;&#105;&#108;&#x74;&#x6f;&#x3a;&#x6a;&#111;&#x68;&#x6e;&#46;&#98;&#108;&#x61;&#110;&#x63;&#x6f;&#64;&#114;&#97;&#x70;&#x74;&#x75;&#114;&#x65;&#105;&#x6e;&#118;&#x65;&#110;&#x69;&#x63;&#101;&#x2e;&#99;&#x6f;&#109;">&#x6a;&#111;&#x68;&#110;&#46;&#x62;&#108;&#x61;&#x6e;&#x63;&#111;&#x40;&#x72;&#97;&#x70;&#x74;&#x75;&#x72;&#101;&#x69;&#110;&#118;&#x65;&#x6e;&#105;&#99;&#x65;&#x2e;&#99;&#x6f;&#109;</a> of Rapture In Venice because he got sick of using all of the bizarre XML solutions for iPhone development.  If you like this code and/or need an iOS consultant, get in touch with me via my website, <a href="http://raptureinvenice.com">Rapture In Venice</a>.</p>
+						
+						
+					</div>
+					
+
+					<div class="index-container">
+						
+
+						
+						<div class="index-column">
+							<h2 class="index-title">Class References</h2>
+							<ul>
+								
+								<li><a href="Classes/RXMLDocHolder.html">RXMLDocHolder</a></li>
+								
+								<li><a href="Classes/RXMLElement.html">RXMLElement</a></li>
+								
+							</ul>
+						</div>
+						
+
+						
+						<div class="index-column">
+							
+
+							
+
+							
+						</div>
+						
+					</div>
+
+					<footer>
+						<div class="footer-copyright">
+							
+							<p class="copyright">Copyright &copy; 2017 Rapture In Venice. All rights reserved. Updated: 2017-04-05</p>
+							
+							
+							<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1334)</a>.</p>
+							
+						</div>
+					</footer>
+				</main>
+			</div>
+		</div>
+	</article>
+
+	<script src="js/script.js"></script>
+</body>
+</html>

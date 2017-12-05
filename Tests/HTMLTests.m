@@ -6,9 +6,10 @@
 //  Copyright (c) 2013 Rapture In Venice. All rights reserved.
 //
 
+#import <XCTest/XCTest.h>
 #import "RXMLElement.h"
 
-@interface HTMLTests : SenTestCase {
+@interface HTMLTests : XCTestCase {
     NSString *simpleHTML_;
 }
 @end
@@ -32,25 +33,25 @@
 - (void)testBasicXHTML {
     RXMLElement *html = [RXMLElement elementFromHTMLString:simpleHTML_ encoding:NSUTF8StringEncoding];
     NSArray *atts = [html attributeNames];
-    STAssertEquals(atts.count, 2U, nil);
+    XCTAssertEqual(atts.count, 2U);
     
     NSArray* children = [html childrenWithRootXPath:@"//html/body/p"];
-    STAssertTrue([children count] > 0, nil);
+    XCTAssertTrue([children count] > 0);
 
     RXMLElement* child = [children objectAtIndex:0];
     NSLog(@"content: %@", [child text]);
-    STAssertEqualObjects([child text], @"This is a minimal XHTML 1.1 document.", nil);
+    XCTAssertEqualObjects([child text], @"This is a minimal XHTML 1.1 document.");
 }
 
 -(void) testHtmlEntity {
     RXMLElement* html = [RXMLElement elementFromHTMLString:@"<p>Don&apos;t say &quot;lazy&quot;</p>" encoding:NSUTF8StringEncoding];
-    STAssertEqualObjects([html text], @"Don't say \"lazy\"", nil);
+    XCTAssertEqualObjects([html text], @"Don't say \"lazy\"");
 }
 
 -(void) testFixBrokenHtml {
     RXMLElement* html = [RXMLElement elementFromHTMLString:@"<p><b>Test</p> Broken HTML</b>" encoding:NSUTF8StringEncoding];
-    STAssertEqualObjects([html text], @"Test Broken HTML", nil);
-    STAssertEqualObjects([html xml], @"<html><body><p><b>Test</b></p> Broken HTML</body></html>", nil);
+    XCTAssertEqualObjects([html text], @"Test Broken HTML");
+    XCTAssertEqualObjects([html xml], @"<html><body><p><b>Test</b></p> Broken HTML</body></html>");
 }
 
 @end

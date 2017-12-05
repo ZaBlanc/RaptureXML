@@ -1,0 +1,20 @@
+<MBML>
+	<Var name="project:name" literal="RaptureXML"/>
+	<Var name="project:publisher" literal="Rapture In Venice"/>
+	<Var name="repo:owner" literal="emaloney"/>
+	<Var name="project:creator:name" literal="John Blanco"/>
+	<Var name="project:license" literal="MIT"/>
+	<Var name="project:bundlePrefix" literal="com.raptureinvenice"/>
+	<Var name="project:language" literal="ObjC"/>
+	<Var name="project:skeleton" literal="none"/>
+	<Var name="project:grouping" literal="Mockingbird"/>
+
+	<Var name="project:description">A simple, sensible, block-based XML API for Apple Platforms development.</Var>
+
+	<Var name="project:platforms" type="list">
+		<Var literal="iOS"/>
+		<Var literal="macOS"/>
+        <Var literal="tvOS"/>
+        <Var literal="watchOS"/>
+	</Var>
+</MBML>

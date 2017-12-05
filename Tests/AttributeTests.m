@@ -6,9 +6,10 @@
 //  Copyright (c) 2011 Rapture In Venice. All rights reserved.
 //
 
+#import <XCTest/XCTest.h>
 #import "RXMLElement.h"
 
-@interface AttributeTests : SenTestCase {
+@interface AttributeTests : XCTestCase {
     NSString *attributedXML_;
 }
 
@@ -28,16 +29,16 @@
 - (void)testAttributedText {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ encoding:NSUTF8StringEncoding];
     NSArray *atts = [rxml attributeNames];
-    STAssertEquals(atts.count, 2U, nil);
-    STAssertTrue([atts containsObject:@"count"], nil);
-    STAssertTrue([atts containsObject:@"style"], nil);
+    XCTAssertEqual(atts.count, 2U);
+    XCTAssertTrue([atts containsObject:@"count"]);
+    XCTAssertTrue([atts containsObject:@"style"]);
 
     RXMLElement *squarexml = [rxml child:@"square"];
     atts = [squarexml attributeNames];
-    STAssertEquals(atts.count, 3U, nil);
-    STAssertTrue([atts containsObject:@"name"], nil);
-    STAssertTrue([atts containsObject:@"id"], nil);
-    STAssertTrue([atts containsObject:@"sideLength"], nil);
+    XCTAssertEqual(atts.count, 3U);
+    XCTAssertTrue([atts containsObject:@"name"]);
+    XCTAssertTrue([atts containsObject:@"id"]);
+    XCTAssertTrue([atts containsObject:@"sideLength"]);
 }
 
 @end

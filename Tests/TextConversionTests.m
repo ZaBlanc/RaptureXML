@@ -6,9 +6,10 @@
 //  Copyright (c) 2011 Rapture In Venice. All rights reserved.
 //
 
+#import <XCTest/XCTest.h>
 #import "RXMLElement.h"
 
-@interface TextConversionTests : SenTestCase {
+@interface TextConversionTests : XCTestCase {
     NSString *simplifiedXML_;
     NSString *attributedXML_;
 }
@@ -49,9 +50,9 @@
     
     [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEquals([e child:@"id"].textAsInt, 1, nil);
+            XCTAssertEqual([e child:@"id"].textAsInt, 1);
         } else if (i == 1) {
-            STAssertEqualsWithAccuracy([e child:@"id"].textAsDouble, 2.5, 0.01, nil);
+            XCTAssertEqualWithAccuracy([e child:@"id"].textAsDouble, 2.5, 0.01);
         }
         
         i++;
@@ -64,11 +65,11 @@
     
     [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEquals([e attributeAsInt:@"id"], 1, nil);
+            XCTAssertEqual([e attributeAsInt:@"id"], 1);
         } else if (i == 1) {
-            STAssertEqualsWithAccuracy([e attributeAsDouble:@"id"], 2.5, 0.01, nil);
+            XCTAssertEqualWithAccuracy([e attributeAsDouble:@"id"], 2.5, 0.01);
         } else if (i == 2) {
-            STAssertEquals([e attributeAsInt:@"id"], 3, nil);
+            XCTAssertEqual([e attributeAsInt:@"id"], 3);
         }
         
         i++;

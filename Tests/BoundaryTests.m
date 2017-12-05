@@ -6,9 +6,10 @@
 //  Copyright (c) 2011 Rapture In Venice. All rights reserved.
 //
 
+#import <XCTest/XCTest.h>
 #import "RXMLElement.h"
 
-@interface BoundaryTests : SenTestCase {
+@interface BoundaryTests : XCTestCase {
     NSString *emptyXML_;
     NSString *emptyTopTagXML_;
     NSString *childXML_;
@@ -34,52 +35,52 @@
 
 - (void)testEmptyXML {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:emptyXML_ encoding:NSUTF8StringEncoding];
-    STAssertFalse(rxml.isValid, nil);
+    XCTAssertFalse(rxml.isValid);
 }
 
 - (void)testEmptyTopTagXML {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:emptyTopTagXML_ encoding:NSUTF8StringEncoding];
-    STAssertTrue(rxml.isValid, nil);
-    STAssertEqualObjects(rxml.text, @"", nil);
-    STAssertEqualObjects([rxml childrenWithRootXPath:@"*"], [NSArray array], nil);
+    XCTAssertTrue(rxml.isValid);
+    XCTAssertEqualObjects(rxml.text, @"");
+    XCTAssertEqualObjects([rxml childrenWithRootXPath:@"*"], [NSArray array]);
 }
 
 - (void)testAttribute {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:attributeXML_ encoding:NSUTF8StringEncoding];
-    STAssertTrue(rxml.isValid, nil);
-    STAssertEqualObjects([rxml attribute:@"foo"], @"bar", nil);
+    XCTAssertTrue(rxml.isValid);
+    XCTAssertEqualObjects([rxml attribute:@"foo"], @"bar");
 }
 
 - (void)testNamespaceAttribute {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:namespaceXML_ encoding:NSUTF8StringEncoding];
-    STAssertTrue(rxml.isValid, nil);
-    STAssertEqualObjects([rxml attribute:@"foo" inNamespace:@"*"], @"bar", nil);
-    STAssertEquals([rxml attributeAsInt:@"one" inNamespace:@"*"], 1, nil);
+    XCTAssertTrue(rxml.isValid);
+    XCTAssertEqualObjects([rxml attribute:@"foo" inNamespace:@"*"], @"bar");
+    XCTAssertEqual([rxml attributeAsInt:@"one" inNamespace:@"*"], 1);
 }
 
 - (void)testChild {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:childXML_ encoding:NSUTF8StringEncoding];
-    STAssertTrue(rxml.isValid, nil);
-    STAssertEqualObjects([rxml child:@"empty_child"].text, @"", nil);
-    STAssertEqualObjects([rxml child:@"text_child"].text, @"foo", nil);
+    XCTAssertTrue(rxml.isValid);
+    XCTAssertEqualObjects([rxml child:@"empty_child"].text, @"");
+    XCTAssertEqualObjects([rxml child:@"text_child"].text, @"foo");
 }
 
 - (void)testNamespaceChild {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:namespaceXML_ encoding:NSUTF8StringEncoding];
-    STAssertTrue(rxml.isValid, nil);
-    STAssertEqualObjects([rxml child:@"text" inNamespace:@"*"].text, @"something", nil);
+    XCTAssertTrue(rxml.isValid);
+    XCTAssertEqualObjects([rxml child:@"text" inNamespace:@"*"].text, @"something");
 }
 
 - (void)testChildren {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:childrenXML_ encoding:NSUTF8StringEncoding];
-    STAssertTrue(rxml.isValid, nil);
-    STAssertEquals([rxml children:@"child"].count, 3U, nil);
+    XCTAssertTrue(rxml.isValid);
+    XCTAssertEqual([rxml children:@"child"].count, 3U);
 }
 
 - (void)testNamespaceChildren {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:namespaceXML_ encoding:NSUTF8StringEncoding];
-    STAssertTrue(rxml.isValid, nil);
-    STAssertEquals([rxml children:@"text" inNamespace:@"*"].count, 1U, nil);
+    XCTAssertTrue(rxml.isValid);
+    XCTAssertEqual([rxml children:@"text" inNamespace:@"*"].count, 1U);
 }
 
 @end

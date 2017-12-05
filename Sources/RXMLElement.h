@@ -29,11 +29,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <libxml2/libxml/xmlreader.h>
-#import <libxml2/libxml/xmlmemory.h>
-#import <libxml2/libxml/HTMLparser.h>
-#import <libxml/xpath.h>
-#import <libxml/xpathInternals.h>
+
+#ifndef __XML_TREE_H__
+typedef void* xmlDocPtr;
+typedef void* xmlNodePtr;
+#endif
 
 @interface RXMLDocHolder : NSObject {
     xmlDocPtr doc_;

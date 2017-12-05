@@ -6,9 +6,9 @@
 //  Copyright (c) 2011 Rapture In Venice. All rights reserved.
 //
 
-#import "RXMLElement.h"
+#import "RaptureTestSuite.h"
 
-@interface DeepChildrenTests : SenTestCase {
+@interface DeepChildrenTests : RaptureTestSuite {
 }
 
 @end
@@ -18,7 +18,7 @@
 @implementation DeepChildrenTests
 
 - (void)testQuery {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *rxml = [self testXML];
     __block NSInteger i = 0;
     
     // count the players
@@ -29,26 +29,26 @@
         i++;
     }];    
     
-    STAssertEquals(i, 9, nil);
+    XCTAssertEqual(i, 9);
 }
 
 - (void)testDeepChildQuery {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
-    
+    RXMLElement *rxml = [self testXML];
+
     // count the players
     RXMLElement *coachingYears = [rxml child:@"players.coach.experience.years"];
     
-    STAssertEquals(coachingYears.textAsInt, 1, nil);
+    XCTAssertEqual(coachingYears.textAsInt, 1);
 }
 
 - (void)testDeepChildQueryWithWildcard {
-    RXMLElement *rxml = [RXMLElement elementFromXMLFile:@"players.xml"];
+    RXMLElement *rxml = [self testXML];
     
     // count the players
     RXMLElement *coachingYears = [rxml child:@"players.coach.experience.teams.*"];
     
     // first team returned
-    STAssertEquals(coachingYears.textAsInt, 53, nil);
+    XCTAssertEqual(coachingYears.textAsInt, 53);
 }
 
 @end
