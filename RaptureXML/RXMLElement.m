@@ -78,7 +78,7 @@
 
 - (id)initFromXMLData:(NSData *)data {
     if ((self = [super init])) {
-        xmlDocPtr doc = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER);
+        xmlDocPtr doc = xmlReadMemory([data bytes], (int)[data length], "", nil, XML_PARSE_RECOVER|XML_PARSE_NOENT);
         self.xmlDoc = [[RXMLDocHolder alloc] initWithDocPtr:doc];
         
         if ([self isValid]) {
@@ -202,7 +202,11 @@
 #pragma mark -
 
 - (NSString *)tag {
-    return [NSString stringWithUTF8String:(const char *)node_->name];
+    if (node_) {
+        return [NSString stringWithUTF8String:(const char *)node_->name];
+    } else {
+        return nil;
+    }
 }
 
 - (NSString *)text {
@@ -361,9 +365,20 @@
         } else {
             cur = cur->children;
             while (cur != nil) {
-                if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->name, tagC) && !xmlStrcmp(cur->ns->href, namespaceC)) {
-                    break;
+                if (cur->ns != nil) {
+                    if (cur->type == XML_ELEMENT_NODE &&
+                        !xmlStrcmp(cur->name, tagC) &&
+                        !xmlStrcmp(cur->ns->href, namespaceC)) {
+                        break;
+                    }
+                } else {
+                    if (cur->type == XML_ELEMENT_NODE &&
+                        !xmlStrcmp(cur->name, tagC) &&
+                        !xmlStrcmp(namespaceC, nil)) {
+                        break;
+                    }
                 }
+
                 
                 cur = cur->next;
             }
