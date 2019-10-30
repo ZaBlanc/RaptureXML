@@ -431,6 +431,37 @@
     return [children copy];
 }
 
+- (NSArray *)allChildren {
+    NSMutableArray *children = [NSMutableArray array];
+    xmlNodePtr cur = node_->children;
+    
+    while (cur != nil) {
+        if (cur->type == XML_ELEMENT_NODE) {
+            [children addObject:[RXMLElement elementFromXMLDoc:self.xmlDoc node:cur]];
+        }
+        
+        cur = cur->next;
+    }
+    
+    return [children copy];
+}
+
+- (NSArray *)allChildrenInNamespace:(NSString *)ns {
+    const xmlChar *namespaceC = (const xmlChar *)[ns cStringUsingEncoding:NSUTF8StringEncoding];
+    NSMutableArray *children = [NSMutableArray array];
+    xmlNodePtr cur = node_->children;
+    
+    while (cur != nil) {
+        if (cur->type == XML_ELEMENT_NODE && !xmlStrcmp(cur->ns->href, namespaceC)) {
+            [children addObject:[RXMLElement elementFromXMLDoc:self.xmlDoc node:cur]];
+        }
+        
+        cur = cur->next;
+    }
+    
+    return [children copy];
+}
+
 - (NSArray *)childrenWithRootXPath:(NSString *)xpath {
     // check for a query
     if (!xpath) {
