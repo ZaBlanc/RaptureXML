@@ -31,8 +31,8 @@
     STAssertEquals(atts.count, 2U, nil);
     STAssertTrue([atts containsObject:@"count"], nil);
     STAssertTrue([atts containsObject:@"style"], nil);
-
-    RXMLElement *squarexml = [rxml child:@"square"];
+    
+    RXMLElement *squarexml = [rxml childElementWithTag:@"square"];
     atts = [squarexml attributeNames];
     STAssertEquals(atts.count, 3U, nil);
     STAssertTrue([atts containsObject:@"name"], nil);

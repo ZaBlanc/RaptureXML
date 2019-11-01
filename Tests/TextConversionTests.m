@@ -47,11 +47,11 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
+    [rxml iterateWithQuery:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
-            STAssertEquals([e child:@"id"].textAsInt, 1, nil);
+            STAssertEquals([e childElementWithTag:@"id"].textAsInt, 1, nil);
         } else if (i == 1) {
-            STAssertEqualsWithAccuracy([e child:@"id"].textAsDouble, 2.5, 0.01, nil);
+            STAssertEqualsWithAccuracy([e childElementWithTag:@"id"].textAsDouble, 2.5, 0.01, nil);
         }
         
         i++;
@@ -62,7 +62,7 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:attributedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"*" usingBlock:^(RXMLElement *e) {
+    [rxml iterateWithQuery:@"*" usingBlock:^(RXMLElement *e) {
         if (i == 0) {
             STAssertEquals([e attributeAsInt:@"id"], 1, nil);
         } else if (i == 1) {

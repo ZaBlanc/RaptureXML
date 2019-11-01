@@ -29,11 +29,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <libxml2/libxml/xmlreader.h>
-#import <libxml2/libxml/xmlmemory.h>
-#import <libxml2/libxml/HTMLparser.h>
-#import <libxml/xpath.h>
-#import <libxml/xpathInternals.h>
+
+typedef struct _xmlDoc *xmlDocPtr;/* frorward declaration */
+typedef struct _xmlNode *xmlNodePtr; /* frorward declaration */
 
 @interface RXMLDocHolder : NSObject {
     xmlDocPtr doc_;
@@ -87,14 +85,14 @@
 - (double)attributeAsDouble:(NSString *)attributeName;
 - (double)attributeAsDouble:(NSString *)attributeName inNamespace:(NSString *)ns;
 
-- (RXMLElement *)child:(NSString *)tag;
-- (RXMLElement *)child:(NSString *)tag inNamespace:(NSString *)ns;
+- (RXMLElement *)childElementWithTag:(NSString *)tag;
+- (RXMLElement *)childElementWithTag:(NSString *)tag inNamespace:(NSString *)ns;
 
-- (NSArray *)children:(NSString *)tag;
-- (NSArray *)children:(NSString *)tag inNamespace:(NSString *)ns;
-- (NSArray *)childrenWithRootXPath:(NSString *)xpath;
+- (NSArray *)childrenArrayWithTag:(NSString *)tag;
+- (NSArray *)childrenArrayWithTag:(NSString *)tag inNamespace:(NSString *)ns;
+- (NSArray *)childrenArrayWithRootXPath:(NSString *)xpath;
 
-- (void)iterate:(NSString *)query usingBlock:(void (^)(RXMLElement *))blk;
+- (void)iterateWithQuery:(NSString *)query usingBlock:(void (^)(RXMLElement *))blk;
 - (void)iterateWithRootXPath:(NSString *)xpath usingBlock:(void (^)(RXMLElement *))blk;
 - (void)iterateElements:(NSArray *)elements usingBlock:(void (^)(RXMLElement *))blk;
 

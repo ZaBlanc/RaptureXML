@@ -36,7 +36,7 @@
 
 - (void)testMissingTag {
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
-    RXMLElement *hexagon = [rxml child:@"hexagon"];
+    RXMLElement *hexagon = [rxml childElementWithTag:@"hexagon"];
     
     STAssertNil(hexagon, nil);
 }
@@ -45,7 +45,7 @@
     RXMLElement *rxml = [RXMLElement elementFromXMLString:simplifiedXML_ encoding:NSUTF8StringEncoding];
     __block NSInteger i = 0;
     
-    [rxml iterate:@"hexagon" usingBlock:^(RXMLElement *e) {
+    [rxml iterateWithQuery:@"hexagon" usingBlock:^(RXMLElement *e) {
         i++;
     }];
      

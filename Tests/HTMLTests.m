@@ -34,7 +34,7 @@
     NSArray *atts = [html attributeNames];
     STAssertEquals(atts.count, 2U, nil);
     
-    NSArray* children = [html childrenWithRootXPath:@"//html/body/p"];
+    NSArray* children = [html childrenArrayWithRootXPath:@"//html/body/p"];
     STAssertTrue([children count] > 0, nil);
 
     RXMLElement* child = [children objectAtIndex:0];
